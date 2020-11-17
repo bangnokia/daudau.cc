@@ -1,0 +1,12 @@
+:root {
+	--cyan: rgba(56,178,172, 500);
+}
+html, body {
+	font-family: 'Inconsolata', monospace;
+}
+a {
+	color: var(--cyan);
+}
+a:hover {
+	text-decoration: underline;
+}

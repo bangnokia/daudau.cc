@@ -2,7 +2,10 @@
 	<ul>
 		@foreach($posts as $post)
 			<li>
-				[{{ $post->created_at }}] <a href="{{ $post->link() }}">{{ $post->title }}</a>
+				<div class="text-gray-600">
+					[{{ $post->created_at }}]
+				</div>
+				<a href="{{ $post->link() }}">{{ $post->title }}</a>
 			</li>
 		@endforeach
 	</ul>
