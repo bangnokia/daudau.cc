@@ -1,7 +1,8 @@
 :root {
 	--cyan: rgba(56,178,172, 500);
+	--red: rgba(245,101,101, 500);
 }
-html, body {
+html, body, code {
 	font-family: 'Inconsolata', monospace;
 }
 a {
@@ -9,4 +10,23 @@ a {
 }
 a:hover {
 	text-decoration: underline;
+}
+code {
+	background: #eee;
+	padding: 0 5px;
+	border-radius: 2px;
+	color: var(--red);
+}
+#post p {
+	padding: 0.5rem 0;
+}
+#post h2 {
+	font-size: 1.5rem;
+	color: var(--red);
+	margin: 1rem 0;
+}
+#post h2:before {
+	content: '#';
+	margin-right: 5px;
+	color: gray;
 }
