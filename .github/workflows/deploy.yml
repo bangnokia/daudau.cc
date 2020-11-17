@@ -27,9 +27,10 @@ jobs:
       - name: Build
         run: pekyll build
 
+      - run: rm ./public/.gitignore
+
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
-        run: rm ./public/.gitignore
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
