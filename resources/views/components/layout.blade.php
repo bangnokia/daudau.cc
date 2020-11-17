@@ -4,6 +4,7 @@
 <head>
 	<title>{{ $title }}</title>
 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="icon" type="image/png" href="/images/favicon-32x32.png">
     <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="/css/app.css">
