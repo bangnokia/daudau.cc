@@ -17,18 +17,17 @@ code {
 	padding: 0 5px;
 	border-radius: 2px;
 }
-#post {
-	p {
-		padding: 0.5rem 0;
-	}
- 	h2 {
-		@apply .text-red-500;
-		font-size: 1.5rem;
-		margin: 1rem 0;
-	}
-	h2:before {
-		@apply .text-gray-300;
-		content: '#';
-		margin-right: 5px;
-	}
+
+#post p {
+	padding: 0.5rem 0;
+}
+#post h2 {
+	@apply .text-red-500;
+	font-size: 1.5rem;
+	margin: 1rem 0;
+}
+#post h2:before {
+	@apply .text-gray-300;
+	content: '#';
+	margin-right: 5px;
 }
