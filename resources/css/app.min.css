@@ -776,24 +776,24 @@ code {
   border-radius: 2px;
 }
 
-#post {
-  p {
-    padding: 0.5rem 0;
-  }
-  h2 {
-    --text-opacity: 1;
-    color: #f56565;
-    color: rgba(245, 101, 101, var(--text-opacity));
-    font-size: 1.5rem;
-    margin: 1rem 0;
-  }
-  h2:before {
-    --text-opacity: 1;
-    color: #e2e8f0;
-    color: rgba(226, 232, 240, var(--text-opacity));
-    content: '#';
-    margin-right: 5px;
-  }
+#post p {
+  padding: 0.5rem 0;
+}
+
+#post h2 {
+  --text-opacity: 1;
+  color: #f56565;
+  color: rgba(245, 101, 101, var(--text-opacity));
+  font-size: 1.5rem;
+  margin: 1rem 0;
+}
+
+#post h2:before {
+  --text-opacity: 1;
+  color: #e2e8f0;
+  color: rgba(226, 232, 240, var(--text-opacity));
+  content: '#';
+  margin-right: 5px;
 }
 
 @media (min-width: 640px) {
