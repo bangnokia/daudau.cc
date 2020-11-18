@@ -1,0 +1,11 @@
+{
+  "name": "bangnokia.github.io",
+  "description": "My personal website",
+  "dependencies": {
+    "tailwindcss": "^1.9.6"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
