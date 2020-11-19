@@ -542,6 +542,10 @@ video {
   margin-top: 1.25rem;
 }
 
+.mt-10 {
+  margin-top: 2.5rem;
+}
+
 .max-w-xl {
   max-width: 36rem;
 }
