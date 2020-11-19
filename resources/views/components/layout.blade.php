@@ -1,8 +1,8 @@
-@props(['title' => 'Home page', 'fullWidth' => false])
+@props(['title' => '', 'fullWidth' => false])
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-	<title>{{ $title }}</title>
+	<title>{{ $title ? $title . ' | ' : '' }}daudau's blog</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -15,7 +15,7 @@
 <body>
 	<div class="pl-2 pt-2 {{ $fullWidth ? '' : 'max-w-xl' }}">
 		<x-navbar />
-		<div class="mt-5">
+		<div class="mt-10">
 			{{ $slot }}
 		</div>
 	</div>

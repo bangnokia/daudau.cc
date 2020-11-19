@@ -1,4 +1,4 @@
-<x-layout title="daudau's stubs">
+<x-layout>
 	<ul>
 		@foreach($posts as $post)
 			<li>
