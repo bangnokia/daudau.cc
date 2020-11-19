@@ -21,9 +21,9 @@ code {
 	padding: 0.5rem 0;
 }
 #post h2 {
-	@apply text-red-500;
+	@apply text-cyan-500;
 	font-size: 1.5rem;
-	margin: 1rem 0;
+	margin-top: 0.5rem;
 }
 #post h2:before {
 	@apply text-gray-300;

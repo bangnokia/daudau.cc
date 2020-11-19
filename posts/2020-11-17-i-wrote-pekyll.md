@@ -1,5 +1,5 @@
 ---
-title: Static blog đơn giản với pekyll
+title: Static blog với pekyll
 layout: post
 ---
 
@@ -20,6 +20,4 @@ Cái mình thích nhất ở blade những phiên bản gần đây của larave
 
 ## Thực hiện
 
-Thực ra ý tưởng đơn giản nên cũng ko cần phải làm cầu kì viết từ scratch làm gì, cài cắm package các kiểu cũng gần đủ hỗ trợ cho các chức năng rồi xD. Và blog này mình sử dụng chính [`pekyll on github`](https://github.com/bangnokia/pekyll) luôn 😜. Nếu thấy hay các bạn ghé qua cho mình 1 star nhé xD!
-
-
+Thực ra ý tưởng đơn giản nên cũng ko cần phải làm cầu kì viết từ scratch làm gì, cài cắm package các kiểu cũng gần đủ hỗ trợ cho các chức năng rồi xD. Và blog này mình sử dụng chính [`pekyll on github`](https://github.com/bangnokia/pekyll) luôn 😜.
