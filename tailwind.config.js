@@ -1,3 +1,5 @@
+const colors = require('tailwindcss/colors')
+
 module.exports = {
   future: {
     // removeDeprecatedGapUtilities: true,
@@ -7,7 +9,11 @@ module.exports = {
     './resources/views/**/*.blade.php'
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        cyan: colors.cyan
+      }
+    },
   },
   variants: {},
   plugins: [],
