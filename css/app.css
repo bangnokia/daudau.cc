@@ -686,14 +686,14 @@ code {
 }
 
 #post p {
-  padding: 0.5rem 0;
+  margin-bottom: 2rem;
 }
 
 #post h2 {
   --tw-text-opacity: 1;
   color: rgba(6, 182, 212, var(--tw-text-opacity));
   font-size: 1.5rem;
-  margin-top: 0.5rem;
+  margin-bottom: 0.75rem;
 }
 
 #post h2:before {
@@ -701,6 +701,10 @@ code {
   color: rgba(209, 213, 219, var(--tw-text-opacity));
   content: '#';
   margin-right: 5px;
+}
+
+#post ul {
+  margin-bottom: 0.5rem;
 }
 
 @media (min-width: 640px) {
