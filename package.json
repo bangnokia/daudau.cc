@@ -13,8 +13,8 @@
   },
   "scripts": {
     "watch": "postcss ./resources/scss/app.scss -o ./resources/css/app.css --watch",
-    "dev": "cross-env NODE_ENV=development ./node_modules/.bin/tailwind build ./resources/scss/app.scss -o ./resources/css/app.css",
-    "build": "cross-env NODE_ENV=production ./node_modules/.bin/tailwind build ./resources/scss/app.scss -o ./resources/css/app.css",
+    "dev": "cross-env NODE_ENV=development postcss ./resources/scss/app.scss -o ./resources/css/app.css",
+    "build": "cross-env NODE_ENV=production postcss ./resources/scss/app.scss -o ./resources/css/app.css",
     "deploy": "npm run build && git add . && git commit -m 'build asset' && git push origin HEAD"
   }
 }
