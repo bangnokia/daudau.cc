@@ -12,9 +12,9 @@ Mình cũng có xem qua [Jekyll](https://jekyllrb.com/), thằng này generate n
 ## Ý tưởng ban đầu
 
 Sau khi tham thảo jekyll -> đây cũng là tại sao mình đặt tên là pekyll (jekyll in php) xD, thì mình nghĩ chỉ cần những chức năng này là đủ:
-- [] parse file markdown
-- [] build ra file htmls và deploy lên github page
-- [] sử dụng blade của laravel
+- parse file markdown
+- build ra file htmls và deploy lên github page
+- sử dụng blade của laravel
 
 Cái mình thích nhất ở blade những phiên bản gần đây của laravel ở việc support view component, và mình muốn có thể sử dụng [`anonymous components`](https://laravel.com/docs/master/blade#anonymous-components) trong pekyll.
 
