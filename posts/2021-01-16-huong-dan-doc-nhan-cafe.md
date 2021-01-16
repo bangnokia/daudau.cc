@@ -1,3 +1,8 @@
+---
+title: Hướng dẫn đọc nhãn cafe
+layout: post
+---
+
 # Cách đọc nhãn dán cà phê
 
 Chúng ta thường nghĩ rằng việc mua cà phê nghe chừng đơn giản như mua một món hàng hóa: Xách đít ra ngoài, tìm gói cà phê bất kỳ về pha, ez!. Hoàn toàn dễ hiểu điều đó nếu như cà phê với bạn chỉ như một đồ tiêu thụ giúp bổ sung caffeine mỗi ngày. Còn nếu bạn là vế còn lại, những người clink vào tiêu đề và đọc bài viết này, những ngươi muốn tìm đến cà phê như bắt đầu một thú vui mới, hoặc đơn giản muốn thưởng thức trọn vị cà phê, chứ không chỉ uống cà phê vì nó là … cà phê, thì bài viết này dành cho bạn. Dù việc hiểu biết thêm các thông tin dưới đây không đảm bảo sẽ một cốc cà phê ngon, nhưng việc hiểu thêm về chúng sẽ giúp bạn tìm được loại cà phê phù hợp với cách uống của mình.
