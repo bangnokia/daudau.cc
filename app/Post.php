@@ -24,9 +24,22 @@ class Post
     {
         $this->attributes = $attributes;
     }
+
     public function link()
     {
         return "/posts/{$this->slug}.html";
+    }
+
+    public function description()
+    {
+        return $this->description ?? $this->findDescription();
+    }
+
+    protected function findDescription()
+    {
+        preg_match("/<p>(.*)<\/p>/", $this->content, $matches);
+
+        return substr($matches[1], 0, 160);
     }
 
     public function attributes(): array

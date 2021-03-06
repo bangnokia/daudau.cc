@@ -1,4 +1,4 @@
-<x-layout :title="$post->title">
+<x-layout :title="$post->title" :description="$post->description()">
 
 	<div id="post">
 	    <h1 class="text-cyan-600 text-3xl mb-10 text-bold">{{ $post->title }}</h1>

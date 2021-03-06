@@ -1,11 +1,15 @@
-@props(['title' => '', 'fullWidth' => false])
+@props([
+	'title' => null,
+	'description' => null,
+	'fullWidth' => false
+])
 <!DOCTYPE html>
 <html lang="vi">
 <head>
 	<title>{{ $title ? $title . ' | ' : '' }}daudau's blog</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <meta name="description" content="{{ $description ?? 'personal blog by Bang. I write stupid stuff with words and code.' }}">
 	<link rel="icon" type="image/png" href="/images/favicon-32x32.png">
     <link rel="stylesheet" type="text/css" href="/css/app.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
