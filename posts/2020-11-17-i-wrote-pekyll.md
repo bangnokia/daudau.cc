@@ -12,6 +12,7 @@ Mình cũng có xem qua [Jekyll](https://jekyllrb.com/), thằng này generate n
 ## Ý tưởng ban đầu
 
 Sau khi tham thảo jekyll -> đây cũng là tại sao mình đặt tên là pekyll (jekyll in php) xD, thì mình nghĩ chỉ cần những chức năng này là đủ:
+
 - parse file markdown
 - build ra file htmls và deploy lên github page
 - sử dụng blade của laravel

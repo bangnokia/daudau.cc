@@ -13,14 +13,19 @@
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
 </head>
 <body>
-	<div class="main-body flex-col pl-2 pt-2 {{ $fullWidth ? '' : 'max-w-xl' }}">
-		<x-navbar />
-		<div class="mt-20 flex-grow">
+	<div class="main-body flex flex-col min-h-screen px-5 pt-5 {{ $fullWidth ? '' : 'max-w-xl' }}">
+		<x-navbar class="flex-none" />
+
+		<div class="mt-20 flex-grow flex-shrink flex-1">
 			{{ $slot }}
 		</div>
 
-		<footer class="mt-20 flex-none">
-			<p class="text-sm" class=>crafted by <a href="http://github.com/bangnokia/pekyll" target="_blank">pekyll</a>.</p>
+		<footer class="flex-none flex justify-between h-12 border-t pt-3">
+			<div>
+				<a href="https://github.com/bangnokia" title="github">github</a>
+				<a href="https://facebook"></a>
+			</div>
+			<p>crafted by <a href="http://github.com/bangnokia/pekyll" target="_blank">pekyll</a>.</p>
 		</footer>
 	</div>
 
