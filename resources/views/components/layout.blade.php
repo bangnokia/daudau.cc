@@ -13,11 +13,15 @@
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
 </head>
 <body>
-	<div class="pl-2 pt-2 {{ $fullWidth ? '' : 'max-w-xl' }}">
+	<div class="main-body flex-col pl-2 pt-2 {{ $fullWidth ? '' : 'max-w-xl' }}">
 		<x-navbar />
-		<div class="mt-10">
+		<div class="mt-20 flex-grow">
 			{{ $slot }}
 		</div>
+
+		<footer class="mt-20 flex-none">
+			<p class="text-sm" class=>crafted by <a href="http://github.com/bangnokia/pekyll" target="_blank">pekyll</a>.</p>
+		</footer>
 	</div>
 
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-37232412-22"></script>
