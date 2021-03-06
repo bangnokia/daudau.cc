@@ -12,15 +12,17 @@
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
 </head>
 <body>
-	<div class="main-body flex-col pl-2 pt-2 max-w-xl">
-		 <div class="flex space-x-5">
+	<div class="main-body flex flex-col min-h-screen px-5 pt-5 max-w-xl">
+		 <div class="flex space-x-5 flex-none">
 	<a href="/" class="text-gray-500 hover:underline">Home</a>
-	<a href="/wakatime.html" class="text-gray-500 hover:underline">wakatime</a>
+    <a href="/open-sources.html" class="text-gray-500 hover:underline">Open sources</a>
+	<!-- <a href="/wakatime.html" class="text-gray-500 hover:underline">wakatime</a> -->
 </div>
  
-		<div class="mt-20 flex-grow">
+
+		<div class="mt-20 flex-grow flex-shrink flex-1">
 			<div id="post">
-	    <h1 class="text-cyan-600 text-3xl">Static blog với pekyll</h1>
+	    <h1 class="text-cyan-600 text-3xl mb-10 text-bold">Static blog với pekyll</h1>
 	    <div class="mt-5 leading-7 post-content font-light">
 	        <h2>Tại sao lại viết pekyll xD</h2>
 <p>Tình hình là dạo này mình cũng có nhiều thời gian rảnh, tính viết linh tinh gì đấy. Tất nhiên là chỉ cần những cái đơn giản kiểu markdown là đủ, ko cần phải wordpress setup linh tinh.</p>
@@ -39,8 +41,12 @@
 	</div>
 		</div>
 
-		<footer class="mt-20 flex-none">
-			<p class="text-sm" class=>crafted by <a href="http://github.com/bangnokia/pekyll" target="_blank">pekyll</a>.</p>
+		<footer class="flex-none flex justify-between h-12 border-t pt-3">
+			<div>
+				<a href="https://github.com/bangnokia" title="github">github</a>
+				<a href="https://facebook"></a>
+			</div>
+			<p>crafted by <a href="http://github.com/bangnokia/pekyll" target="_blank">pekyll</a>.</p>
 		</footer>
 	</div>
 
