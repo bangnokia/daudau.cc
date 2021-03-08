@@ -26,16 +26,12 @@ jobs:
         with:
           path: ~/.composer/vendor
           key: composer-${{ hashFiles('~/.composer/composer.lock') }}
-          restore-keys: |
-            composer-
 
       - name: Cache node_modules
         uses: actions/cache@v2
         with:
           path: node_modules
           key: node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            node-
 
       - name: Install Pekyll
         run: composer global require bangnokia/pekyll
