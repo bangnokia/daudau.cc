@@ -31,12 +31,12 @@ jobs:
         uses: actions/cache@v2
         with:
           path: node_modules
-          key: node-${{ hashFiles('**/package-lock.json') }}
+          key: node-${{ hashFiles('package-lock.json') }}
 
       - name: Install Pekyll
         run: composer global require bangnokia/pekyll
 
-      - name: Setup node
+      - name: Setup nodes
         uses: actions/setup-node@v2
         with:
           node-version: '14'
