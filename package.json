@@ -15,7 +15,7 @@
   "scripts": {
     "watch": "postcss ./resources/scss/app.scss -o ./resources/css/app.css --watch",
     "dev": "cross-env NODE_ENV=development postcss ./resources/scss/app.scss -o ./resources/css/app.css",
-    "build": "cross-env NODE_ENV=production postcss ./resources/scss/app.scss -o ./resources/css/app.css --env production",
+    "build": "cross-env NODE_ENV=production postcss ./resources/scss/app.scss -o ./resources/css/app.css",
     "deploy": "npm run build && git add . && git commit -m 'build asset' && git push origin HEAD"
   }
 }
