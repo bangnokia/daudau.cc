@@ -21,24 +21,21 @@ jobs:
           extensions: curl, mbstring, zip, pcntl, pdo, iconv
           coverage: none
 
-      - name: Get Composer Cache Directory
-        id: composer-cache
-        run: |
-          echo "::set-output name=dir::$(composer config cache-files-dir)"
-
-      - uses: actions/cache@v2
+      - name: Cache composer
+        uses: actions/cache@v2
         with:
-          path: ${{ steps.composer-cache.outputs.dir }}
-          key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
+          path: ~/.composer/vendor
+          key: composer-${{ hashFiles('~/.composer/composer.lock') }}
           restore-keys: |
-            ${{ runner.os }}-composer-
+            composer-
 
-      - uses: actions/cache@v2
+      - name: Cache node_modules
+        uses: actions/cache@v2
         with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          path: node_modules
+          key: node-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
-            ${{ runner.os }}-node-
+            node-
 
       - name: Install Pekyll
         run: composer global require bangnokia/pekyll
@@ -52,7 +49,7 @@ jobs:
         run: |
           npm install
           npm run build
-          pekyll build
+          ./vendor/bin/pekyll build
 
       - run: rm ./public/.gitignore
 
