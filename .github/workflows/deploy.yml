@@ -25,6 +25,7 @@ jobs:
         id: composer-cache
         run: |
           echo "::set-output name=dir::$(composer config cache-files-dir)"
+
       - uses: actions/cache@v2
         with:
           path: ${{ steps.composer-cache.outputs.dir }}
@@ -39,10 +40,10 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: '14'
-        run: npm install
 
       - name: Build
         run: |
+          npm install
           npm run build
           pekyll build
 
