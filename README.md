@@ -1,2 +1,3 @@
-# bangnokia.github.io
-My personal website
+# daudau.cc
+
+Source code of daudau.cc
