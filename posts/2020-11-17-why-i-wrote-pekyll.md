@@ -1,6 +1,7 @@
 ---
 title: Static blog với pekyll
 layout: post
+status: published
 ---
 
 ## Tại sao lại viết pekyll xD
