@@ -39,7 +39,7 @@ class Post
     {
         preg_match("/<p>(.*)<\/p>/", $this->content, $matches);
 
-        return substr($matches[1], 0, 160);
+        return substr($matches[1] ?? '', 0, 160);
     }
 
     public function attributes(): array
