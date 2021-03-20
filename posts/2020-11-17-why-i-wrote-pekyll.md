@@ -2,6 +2,7 @@
 title: Static blog với pekyll
 layout: post
 status: published
+tags[]: php
 ---
 
 ## Tại sao lại viết pekyll xD

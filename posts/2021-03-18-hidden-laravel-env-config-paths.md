@@ -2,14 +2,15 @@
 title: Hidden laravel config env paths maybe you don't know
 layout: post
 status: published
+tags[]: laravel
 ---
 
 There are some interesting env config keys of Laravel didn't mention in official documentation about storage path and cache path. May be you will never need to custom them in you entire developer life, but i think just know their existence, it's fun!
 
-By default in your Laravel application, you ussually have those folders
+By default in your Laravel application, you ussually have those folders:
 
-- `bootstrap/cache`: stores your application cached files: routes, configs, events
-- `storage/`:  stores compiled views, cache, session files, logs and upload files, etc
+- `bootstrap/cache`: *stores your application cached files such as routes, configs, events*
+- `storage/`:  *stores compiled views, cache, session files, logs and upload files, etc*
 
 About storage folder when deployment, i acctually just create an folder outside of the application and make a symbol link to the app, so we dont erase out uploaded files every time we deploy, and i think you doo too.
 
@@ -17,7 +18,7 @@ But acctually if you look at code at [`Illuminate/Foundation/Application.php`](h
 
 ## Customize storage path
 
-You can modify default storage path  by calling `$app->useStoragePath($yourPath)` in the `bootstrap/app.php`
+You can modify default storage path  by calling `$app->useStoragePath($yourPath)` in the `bootstrap/app.php`.
 
 ```php
 public function useStoragePath($path)
@@ -32,7 +33,7 @@ public function useStoragePath($path)
 
 ## Customize framework cache paths
 
-Now take a look at this `normalizeCachePath` function, if our value starts with any absolute prefixes `/` or `\`, so it will use absolute path, other wise relative path
+Now take a look at this `normalizeCachePath` function, if our value starts with any absolute prefixes `/` or `\`, so it will use absolute path, other wise relative path.
 
 ```php
 protected function normalizeCachePath($key, $default)
@@ -49,7 +50,7 @@ protected function normalizeCachePath($key, $default)
 
 And there are some hidden config if you want to customize the `bootstrap/cache` folder. This will useful when use want to ship application in some where you don't  have write permission in the application folder xD.
 
-You can set values for these keys in the `.env` file
+You can set values for these keys in the `.env` file:
 
 - `APP_SERVICES_CACHE`
 - `APP_PACKAGES_CACHE`

@@ -17,25 +17,22 @@ code:not([class]) {
 	padding: 0 5px;
 	border-radius: 2px;
 }
-#post p {
-	margin: 1.5rem 0;
-}
 #post h2 {
-	@apply text-gray-900 font-semibold text-2xl mb-5;
+	@apply text-gray-900 font-semibold text-2xl my-6;
 }
 #post h2:before {
-	@apply text-gray-300;
+	@apply text-gray-300 absolute -ml-5;
 	content: '#';
-	margin-right: 5px;
+}
+#post p {
+	@apply mb-5;
+}
+#post pre {
+	@apply mb-5;
 }
 #post ul {
-	margin: 0.5rem 0;
+	@apply mb-5 list-disc list-inside pl-5;
 }
-#post ul li:before {
-	content: '-';
-	@apply mx-3;
-}
-
 #post .hljs {
 	@apply p-5;
 }

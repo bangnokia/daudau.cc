@@ -23,12 +23,12 @@
 			{{ $slot }}
 		</div>
 
-		<footer class="flex-none flex justify-between h-12 border-t pt-3 mt-10">
+		<footer class="text-sm flex-none flex justify-end h-12 border-t pt-3 mt-10 space-x-2">
+			<a href="https://github.com/bangnokia" title="github">my github</a>
+			<span>|</span>
+			<a href="/wakatime.html">wakatime</a>
+			<span>|</span>
 			<p>crafted by <a href="http://github.com/bangnokia/pekyll" target="_blank">pekyll</a> with ❤️.</p>
-			<div>
-				<a href="https://github.com/bangnokia" title="github">github</a>
-				<a href="https://facebook"></a>
-			</div>
 		</footer>
 	</div>
 
