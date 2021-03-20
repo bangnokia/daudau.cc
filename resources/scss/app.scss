@@ -11,7 +11,7 @@ a {
 a:hover {
 	text-decoration: underline;
 }
-code {
+code:not([class]) {
 	@apply text-red-500;
 	background: #eee;
 	padding: 0 5px;
