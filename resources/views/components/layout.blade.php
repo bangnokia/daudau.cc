@@ -4,7 +4,7 @@
 	'fullWidth' => false
 ])
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
 <head>
 	<title>{{ $title ? $title . ' | ' : '' }}daudau's blog</title>
 
