@@ -35,3 +35,7 @@ code:not([class]) {
 	content: '-';
 	@apply mx-3;
 }
+
+#post .hljs {
+	@apply p-5;
+}
