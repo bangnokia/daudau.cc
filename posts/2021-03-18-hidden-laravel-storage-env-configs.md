@@ -9,7 +9,7 @@ By default in your Laravel application, you ussually have those folders
 - `bootstrap/cache`: where to stores your application cached files: routes, configs, events
 - `storage/`:  wherer to storage compiled views, cache, session files, logs and upload files, etc
 
-About storage folder when deployment, i acctually just create an folder outside of the application and make a symbol link to the app, so we dont erease out uploaded files every time we deploy, and i think you doo too.
+About storage folder when deployment, i acctually just create an folder outside of the application and make a symbol link to the app, so we dont erase out uploaded files every time we deploy, and i think you doo too.
 
 But acctually if you look at code at [`Illuminate/Foundation/Application.php`](https://github.com/laravel/framework/blob/72ea328b456ea570f8823c69f511583aa6234170/src/Illuminate/Foundation/Application.php) you can see there are some hiddens env config maybe useful sometimes.
 
