@@ -16,7 +16,7 @@
 	<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400&display=swap" rel="stylesheet">
 </head>
 <body>
-	<div class="main-body flex flex-col min-h-screen px-5 pt-5 {{ $fullWidth ? '' : 'max-w-xl' }}">
+	<div class="main-body mx-auto flex flex-col min-h-screen px-5 pt-5 {{ $fullWidth ? '' : 'max-w-2xl' }}">
 		<x-navbar class="flex-none" />
 
 		<div class="mt-20 flex-grow flex-shrink flex-1">
