@@ -8,7 +8,7 @@
 	    </div>
 	</div>
 
-    <script src="https://unpkg.com/@highlightjs/cdn-assets@10.6.0/highlight.min.js" async></script>
+    <script src="https://unpkg.com/@highlightjs/cdn-assets@10.6.0/highlight.min.js"></script>
     <script src="https://unpkg.com/@highlightjs/cdn-assets@10.6.0/languages/php.min.js"></script>
     <script>hljs.highlightAll();</script>
 
