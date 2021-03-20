@@ -1,13 +1,12 @@
 const colors = require('tailwindcss/colors')
 
 module.exports = {
-  future: {
-    // removeDeprecatedGapUtilities: true,
-    // purgeLayersByDefault: true,
+  purge: {
+    content: ['./resources/views/**/*.blade.php'],
+    options: {
+      safelist: ['hljs']
+    }
   },
-  purge: [
-    './resources/views/**/*.blade.php'
-  ],
   theme: {
     extend: {
       colors: {
