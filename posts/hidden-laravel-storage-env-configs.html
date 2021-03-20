@@ -33,7 +33,7 @@
 <p>About storage folder when deployment, i acctually just create an folder outside of the application and make a symbol link to the app, so we dont erease out uploaded files every time we deploy, and i think you doo too.</p>
 <p>But acctually if you look at code at <a href="https://github.com/laravel/framework/blob/72ea328b456ea570f8823c69f511583aa6234170/src/Illuminate/Foundation/Application.php"><code>Illuminate/Foundation/Application.php</code></a> you can see there are some hiddens env config maybe useful sometimes.</p>
 <h2>Customize your storage path</h2>
-<p>You can modify default storage path in the <code>bootstrap/app.php</code> by calling this function</p>
+<p>You can modify default storage path in the <code>bootstrap/app.php</code> by calling <code>$app-&gt;useStoragePath($yourPath)</code></p>
 <pre><code class="language-php">public function useStoragePath($path)
 {
     $this-&gt;storagePath = $path;
@@ -53,7 +53,9 @@
             ? $env
             : $this-&gt;basePath($env);
 }</code></pre>
-<p>And there are some hidden config if you want to customize the <code>bootstrap/cache</code> folder. This will usefull when use want to ship application in some where you don't  have write permission in the application folder xD.</p>
+<p>And there are some hidden config if you want to customize the <code>bootstrap/cache</code> folder. This will useful when use want to ship application in some where you don't  have write permission in the application folder xD.</p>
+<h2>Customize framework cache files location</h2>
+<p>You can use these key in the <code>.env</code> file</p>
 <ul>
 <li><code>APP_SERVICES_CACHE</code></li>
 <li><code>APP_PACKAGES_CACHE</code></li>
@@ -69,7 +71,7 @@
     <script>hljs.highlightAll();</script>
 		</div>
 
-		<footer class="flex-none flex justify-between h-12 border-t pt-3">
+		<footer class="flex-none flex justify-between h-12 border-t pt-3 mt-10">
 			<p>crafted by <a href="http://github.com/bangnokia/pekyll" target="_blank">pekyll</a> with ❤️.</p>
 			<div>
 				<a href="https://github.com/bangnokia" title="github">github</a>
