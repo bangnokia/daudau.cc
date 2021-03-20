@@ -15,7 +15,7 @@ But acctually if you look at code at [`Illuminate/Foundation/Application.php`](h
 
 ## Customize your storage path
 
-You can modify default storage path in the `bootstrap/app.php` by calling this function
+You can modify default storage path in the `bootstrap/app.php` by calling `$app->useStoragePath($yourPath)`
 
 ```php
 public function useStoragePath($path)
@@ -43,7 +43,11 @@ protected function normalizeCachePath($key, $default)
 }
 ```
 
-And there are some hidden config if you want to customize the `bootstrap/cache` folder. This will usefull when use want to ship application in some where you don't  have write permission in the application folder xD.
+And there are some hidden config if you want to customize the `bootstrap/cache` folder. This will useful when use want to ship application in some where you don't  have write permission in the application folder xD.
+
+## Customize framework cache files location
+
+You can use these key in the `.env` file
 
 - `APP_SERVICES_CACHE`
 - `APP_PACKAGES_CACHE`

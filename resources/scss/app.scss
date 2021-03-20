@@ -21,9 +21,7 @@ code:not([class]) {
 	margin: 1.5rem 0;
 }
 #post h2 {
-	@apply text-cyan-500;
-	font-size: 1.5rem;
-	margin-bottom: 0.75rem;
+	@apply text-gray-900 font-semibold text-2xl mb-5;
 }
 #post h2:before {
 	@apply text-gray-300;
