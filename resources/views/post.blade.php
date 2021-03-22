@@ -14,7 +14,7 @@
             <div class="post-content mt-5 leading-7 post-content font-light text-lg">
                 {!! $post->content !!}
             </div>
-            <div class="absolute top-0 right-0 h-full">
+            <div class="absolute top-0 right-0 h-full z-0">
                 <x-posts.toc class="hidden lg:block fixed"/>
             </div>
         </div>
