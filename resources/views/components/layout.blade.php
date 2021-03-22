@@ -32,6 +32,8 @@
 		</footer>
 	</div>
 
+    @stack('scripts')
+
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-37232412-22"></script>
 	<script>
 	  window.dataLayer = window.dataLayer || [];
