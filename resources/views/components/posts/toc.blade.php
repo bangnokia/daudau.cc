@@ -1,4 +1,4 @@
-<div {{ $attributes->merge(['class' => "sticky top-0 right-0"]) }} x-data="makeData()">
+<div {{ $attributes->merge(['class' => "fixed"]) }} x-data="makeData()">
     <div class="table-of-contents w-96 sticky top-0 right-0 pt-5 pl-5">
         <ol class="list-decimal list-inside">
             <template x-for="item in items" :key="item.id">

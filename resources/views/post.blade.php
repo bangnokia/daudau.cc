@@ -15,7 +15,7 @@
                 {!! $post->content !!}
             </div>
             <div class="absolute top-0 right-0 h-full">
-                <x-posts.toc class="hidden lg:block sticky top-0" style="margin-left: 100%" />
+                <x-posts.toc class="hidden lg:block fixed"/>
             </div>
         </div>
 
