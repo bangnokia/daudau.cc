@@ -4,6 +4,7 @@
 
 html, body, code {
 	font-family: 'Inconsolata', monospace;
+	scroll-behavior: smooth;
 }
 a {
 	@apply text-cyan-500;

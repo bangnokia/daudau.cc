@@ -5,12 +5,12 @@
 	    <h1 class="text-cyan-600 text-3xl mb-5 font-bold">{{ $post->title }}</h1>
 	    <div class="text-gray-400">Published on <time datetime="{{ $post->created_at }}">{{ date('M dS Y', strtotime($post->created_at)) }}</time></div>
 
-        <div class="relative flex">
+        <div class="relative block lg:flex">
             <div class="post-content mt-5 leading-7 post-content font-light text-lg">
                 {!! $post->content !!}
             </div>
 
-            <x-posts.toc class="hidden sm:block" />
+            <x-posts.toc class="hidden lg:block" />
         </div>
 
 	    <!-- tags -->
