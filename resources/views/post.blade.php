@@ -3,14 +3,20 @@
 
 	<div id="post">
 	    <h1 class="text-cyan-600 text-3xl mb-5 font-bold">{{ $post->title }}</h1>
-	    <div class="text-gray-400">Published on <time datetime="{{ $post->created_at }}">{{ date('M dS Y', strtotime($post->created_at)) }}</time></div>
+	    <div class="text-gray-400">
+            <span>Published on</span>
+            <time datetime="{{ $post->created_at }}">
+                {{ date('M dS Y', strtotime($post->created_at)) }}
+            </time>
+        </div>
 
         <div class="relative block lg:flex">
             <div class="post-content mt-5 leading-7 post-content font-light text-lg">
                 {!! $post->content !!}
             </div>
-
-            <x-posts.toc class="hidden lg:block" />
+            <div class="absolute top-0 right-0 h-full">
+                <x-posts.toc class="hidden lg:block sticky top-0" style="margin-left: 100%" />
+            </div>
         </div>
 
 	    <!-- tags -->
