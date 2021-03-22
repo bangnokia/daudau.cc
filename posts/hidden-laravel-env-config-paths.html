@@ -33,7 +33,7 @@
 </ul>
 <p>About storage folder when deployment, i acctually just create an folder outside of the application and make a symbol link to the app, so we dont erase out uploaded files every time we deploy, and i think you doo too.</p>
 <p>But acctually if you look at code at <a href="https://github.com/laravel/framework/blob/72ea328b456ea570f8823c69f511583aa6234170/src/Illuminate/Foundation/Application.php"><code>Illuminate/Foundation/Application.php</code></a> you can see there are some hidden env configs maybe useful sometimes.</p>
-<h2>Customize storage path</h2>
+<h2 id="customize-storage-path">Customize storage path</h2>
 <p>You can modify default storage path  by calling <code>$app-&gt;useStoragePath($yourPath)</code> in the <code>bootstrap/app.php</code>.</p>
 <pre><code class="language-php">public function useStoragePath($path)
 {
@@ -43,7 +43,7 @@
 
     return $this;
 }</code></pre>
-<h2>Customize framework cache paths</h2>
+<h2 id="customize-framework-cache-paths">Customize framework cache paths</h2>
 <p>Now take a look at this <code>normalizeCachePath</code> function, if our value starts with any absolute prefixes <code>/</code> or <code>\</code>, so it will use absolute path, other wise relative path.</p>
 <pre><code class="language-php">protected function normalizeCachePath($key, $default)
 {
