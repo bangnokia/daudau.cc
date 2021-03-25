@@ -14,6 +14,7 @@
     <link rel="stylesheet" type="text/css" href="/css/app.css?v={{ time() }}">
     <link rel="preconnect" href="https://fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400&display=swap" rel="stylesheet">
+    @stack('styles')
 </head>
 <body>
 	<div class="main-body mx-auto flex flex-col min-h-screen px-5 pt-5 {{ $fullWidth ? '' : 'max-w-2xl' }}">

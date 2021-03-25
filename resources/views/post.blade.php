@@ -1,5 +1,8 @@
 <x-layout :title="$post->title" :description="$post->description()">
-    <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@10.6.0/styles/default.min.css">
+
+    @push('styles')
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@10.6.0/styles/default.min.css">
+    @endpush
 
 	<div id="post">
 	    <h1 class="text-cyan-600 text-3xl mb-5 font-bold">{{ $post->title }}</h1>
