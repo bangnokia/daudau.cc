@@ -16,7 +16,7 @@ And in browser, some how it need to listen the websocket server, and reload the 
 
 Finally we also need file watchers, it watchs the files changing when we editing project, then tell websocket server send command tell the websocket client in browser reloads the url.
 
-## Laravel implement
+## Laravel package implementation {#laravel-packge-implementation}
 
 My purpose is integrate in the the `php artisan serve` command, i think it's convenient and simple to use.
 
