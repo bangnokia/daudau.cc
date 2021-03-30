@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Laravel live reloading without any npm package | daudau's blog</title>
+	<title>Laravel live reloading without any js stuff | daudau's blog</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Do you know that we can implement live reload in Laravel without any npm package. No &lt;code&gt;browser sync&lt;/code&gt;, &lt;code&gt;no nodejs&lt;/code&gt;, just &lt;code&gt;php&lt;/code&gt;.">
 	<link rel="icon" type="image/png" href="/images/favicon-32x32.png">
-    <link rel="stylesheet" type="text/css" href="/css/app.css?v=1617122332">
+    <link rel="stylesheet" type="text/css" href="/css/app.css?v=1617122407">
     <link rel="preconnect" href="https://fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400&display=swap" rel="stylesheet">
             <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@10.6.0/styles/default.min.css">
@@ -21,7 +21,7 @@
 
 		<div class="mt-20 flex-grow flex-shrink flex-1">
 			<div id="post">
-	    <h1 class="text-cyan-600 text-3xl mb-5 font-bold">Laravel live reloading without any npm package</h1>
+	    <h1 class="text-cyan-600 text-3xl mb-5 font-bold">Laravel live reloading without any js stuff</h1>
 	    <div class="text-gray-400">
             <span>Published on</span>
             <time datetime="2021-03-24">
@@ -32,12 +32,12 @@
         <div class="relative block">
             <div class="post-content mt-5 leading-7 post-content font-light text-lg box-border break-words">
                 <p>Do you know that we can implement live reload in Laravel without any npm package. No <code>browser sync</code>, <code>no nodejs</code>, just <code>php</code>.</p>
-<p>Self claim, i don't like nodejs xD, and i don't know nodejs too xD. And if you read to here, you got click bait xD. Sometimes working with laravel livewire, live reloading is really helpful, and i don't feel good if i have to install something like browsersync or some js stuff. So let do it with PHP</p>
-<h1 id="how-live-reloading-works">How live reloading works</h1>
+<p>Self claim, i don't like nodejs xD, and i don't know nodejs too xD. And if you read to here, you got click bait xD, we actually need a bit javascript. Sometimes working with laravel livewire, live reloading is really helpful, and i don't feel good if i have to install something like browsersync or some js stuff. So let do it with PHP</p>
+<h2 id="how-live-reloading-works">How live reloading works</h2>
 <p>First we need a <a href="https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API/Writing_WebSocket_servers">websocket server</a>, but we don't have to write it by ourself, thankfully <a href="https://reactphp.org/">ReactPHP</a> and <a href="http://socketo.me/">Rachet</a>.</p>
 <p>And in browser, some how it need to listen the websocket server, and reload the browser when the server told it to do.</p>
 <p>Finally we also need file watchers, it watchs the files changing when we editing project, then tell websocket server send command tell the websocket client in browser reloads the url.</p>
-<h1>Laravel implement</h1>
+<h2>Laravel implement</h2>
 <p>My purpose is integrate in the the <code>php artisan serve</code> command, i think it's convenient and simple to use.</p>
 <p>So i overwrite the <a href="https://github.com/bangnokia/laravel-serve-livereload/blob/84d9689444652ca8ab687e74b5c7bf65e04696b0/src/Commands/ServeCommand.php"><code>ServeCommand</code></a> class. This command now spawn 2 processes:</p>
 <ul>
