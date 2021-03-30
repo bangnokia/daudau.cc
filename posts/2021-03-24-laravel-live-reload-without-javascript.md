@@ -1,14 +1,14 @@
 ---
-title: Laravel live reloading without any npm package
+title: Laravel live reloading without any js stuff
 layout: post
 status: published
 ---
 
 Do you know that we can implement live reload in Laravel without any npm package. No `browser sync`, `no nodejs`, just `php`.
 
-Self claim, i don't like nodejs xD, and i don't know nodejs too xD. And if you read to here, you got click bait xD. Sometimes working with laravel livewire, live reloading is really helpful, and i don't feel good if i have to install something like browsersync or some js stuff. So let do it with PHP
+Self claim, i don't like nodejs xD, and i don't know nodejs too xD. And if you read to here, you got click bait xD, we actually need a bit javascript. Sometimes working with laravel livewire, live reloading is really helpful, and i don't feel good if i have to install something like browsersync or some js stuff. So let do it with PHP
 
-# How live reloading works {#how-live-reloading-works}
+## How live reloading works {#how-live-reloading-works}
 
 First we need a [websocket server](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API/Writing_WebSocket_servers), but we don't have to write it by ourself, thankfully [ReactPHP](https://reactphp.org/) and [Rachet](http://socketo.me/).
 
@@ -16,7 +16,7 @@ And in browser, some how it need to listen the websocket server, and reload the 
 
 Finally we also need file watchers, it watchs the files changing when we editing project, then tell websocket server send command tell the websocket client in browser reloads the url.
 
-# Laravel implement
+## Laravel implement
 
 My purpose is integrate in the the `php artisan serve` command, i think it's convenient and simple to use.
 
