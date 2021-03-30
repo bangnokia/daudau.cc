@@ -36,7 +36,7 @@ Cache::put('serve_websockets_running', true, 5);
 This can help us detect is that websocket server is running or not. I thin 5 seconds is ok. So we can inject the script to the html response via laravel middleware. Just put at the very begining of html response, doesn't look good but it works.
 
 ```php
- public function injectScripts($content)
+public function injectScripts($content)
 {
     $content = (string) view('serve_livereload::script', [
         'host' => '127.0.0.1',
