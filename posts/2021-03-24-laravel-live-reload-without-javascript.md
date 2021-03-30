@@ -18,18 +18,18 @@ First we need a [websocket server](https://developer.mozilla.org/en-US/docs/Web/
 
 And in browser, some how it need to listen the websocket server, and reload the browser when the server told it to do.
 
-Finally we also need file watchers, it watchs the files changing when we editing project, then tell websocket server send command tell the websocket client in browser reloads the url.
+Finally we also need file watchers, it watchs the files changing when we editing project, then asks websocket server send command to the websocket client in browser force him reloads the url.
 
 ## Laravel package implementation {#laravel-packge-implementation}
 
 My purpose is integrate in the the `php artisan serve` command, i think it's convenient and simple to use.
 
-So i overwrite the [ServeCommand](https://github.com/bangnokia/laravel-serve-livereload/blob/84d9689444652ca8ab687e74b5c7bf65e04696b0/src/Commands/ServeCommand.php) class. This command now spawn 2 processes:
+So i overwrited the [ServeCommand](https://github.com/bangnokia/laravel-serve-livereload/blob/84d9689444652ca8ab687e74b5c7bf65e04696b0/src/Commands/ServeCommand.php) class. This command now spawn 2 processes:
 
-- The default `artisan serve` from laravel, which now be `artisan serve:http`.
+- The default `artisan serve` from laravel, which now become `artisan serve:http`.
 - The websocket server `artisan serve:websockets`.
 
-The customization actually comes from `server:websockets` command. It's also spawn a file watcher, it watchs files changing every 500ms, and trigger the reload command to websocket server, then sending to all the listening clients.
+The customization magic actually comes from `server:websockets` command. It's also spawn a file watcher, which watchs files changing every 500ms, and trigger the reload command to websocket server, then sending to all the listener clients.
 
 And the file watcher also do a stupid task is writing a cache parameter
 
@@ -37,7 +37,7 @@ And the file watcher also do a stupid task is writing a cache parameter
 Cache::put('serve_websockets_running', true, 5);
 ```
 
-This can help us detect is that websocket server is running or not. I tink 5 seconds is ok. So we can inject the script to the html response via laravel middleware. Just put at the very begining of html response, doesn't look good but it works.
+This can help us detect is that websocket server is running or not. I think 5 seconds is ok. So we can inject the script to the html response via laravel middleware. Just put at the very begining of html response, doesn't look good but it works.
 
 ```php
 public function injectScripts($content)
