@@ -1,4 +1,4 @@
-<div {{ $attributes->merge(['class' => "fixed"]) }} x-data="makeData()">
+<div {{ $attributes->merge(['class' => "fixed"]) }} x-data="tableOfContents()">
     <div class="table-of-contents w-96 sticky top-0 right-0 pt-5 pl-5">
         <ol class="list-decimal list-inside">
             <template x-for="item in items" :key="item.id">
@@ -13,17 +13,13 @@
 @push('scripts')
 <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.1/dist/alpine.min.js" defer></script>
     <script>
-        function makeData() {
-            const elements = document.querySelectorAll('h2');
-            const items = [...elements].map(function (ele) {
+        function tableOfContents() {
+            return [...document.querySelectorAll('h2')].map(function (ele) {
                 return {
                     id: ele.getAttribute('id'),
                     label: ele.textContent
                 };
             });
-            return {
-                items: items
-            };
         }
     </script>
 @endpush
