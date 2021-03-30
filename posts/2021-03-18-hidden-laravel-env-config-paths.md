@@ -14,7 +14,7 @@ By default in your Laravel application, you ussually have those folders:
 
 About storage folder when deployment, i acctually just create an folder outside of the application and make a symbol link to the app, so we dont erase out uploaded files every time we deploy, and i think you doo too.
 
-But acctually if you look at code at [`Illuminate/Foundation/Application.php`](https://github.com/laravel/framework/blob/72ea328b456ea570f8823c69f511583aa6234170/src/Illuminate/Foundation/Application.php) you can see there are some hidden env configs maybe useful sometimes.
+But acctually if you look at code at [Illuminate/Foundation/Application.php](https://github.com/laravel/framework/blob/72ea328b456ea570f8823c69f511583aa6234170/src/Illuminate/Foundation/Application.php) you can see there are some hidden env configs maybe useful sometimes.
 
 ## Customize storage path {#customize-storage-path}
 

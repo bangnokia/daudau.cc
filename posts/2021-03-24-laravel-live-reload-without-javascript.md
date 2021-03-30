@@ -20,7 +20,7 @@ Finally we also need file watchers, it watchs the files changing when we editing
 
 My purpose is integrate in the the `php artisan serve` command, i think it's convenient and simple to use.
 
-So i overwrite the [`ServeCommand`](https://github.com/bangnokia/laravel-serve-livereload/blob/84d9689444652ca8ab687e74b5c7bf65e04696b0/src/Commands/ServeCommand.php) class. This command now spawn 2 processes:
+So i overwrite the [ServeCommand](https://github.com/bangnokia/laravel-serve-livereload/blob/84d9689444652ca8ab687e74b5c7bf65e04696b0/src/Commands/ServeCommand.php) class. This command now spawn 2 processes:
 
 - The default `artisan serve` from laravel, which now be `artisan serve:http`.
 - The websocket server `artisan serve:websockets`.
