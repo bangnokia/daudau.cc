@@ -11,6 +11,9 @@ Self claim, i don't like nodejs xD, and i don't know nodejs too xD. And if you r
 
 ## How live reloading works {#how-live-reloading-works}
 
+![how live reloading works](/images/live-reloading-sketch.png)
+<p align="center"><i>how live reloading works</i></p>
+
 First we need a [websocket server](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API/Writing_WebSocket_servers), but we don't have to write it by ourself, thankfully [ReactPHP](https://reactphp.org/) and [Rachet](http://socketo.me/).
 
 And in browser, some how it need to listen the websocket server, and reload the browser when the server told it to do.
@@ -34,7 +37,7 @@ And the file watcher also do a stupid task is writing a cache parameter
 Cache::put('serve_websockets_running', true, 5);
 ```
 
-This can help us detect is that websocket server is running or not. I thin 5 seconds is ok. So we can inject the script to the html response via laravel middleware. Just put at the very begining of html response, doesn't look good but it works.
+This can help us detect is that websocket server is running or not. I tink 5 seconds is ok. So we can inject the script to the html response via laravel middleware. Just put at the very begining of html response, doesn't look good but it works.
 
 ```php
 public function injectScripts($content)
