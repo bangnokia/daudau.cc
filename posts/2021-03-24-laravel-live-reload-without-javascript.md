@@ -2,6 +2,7 @@
 title: Laravel live reloading without any js stuff
 layout: post
 status: published
+tags[]: laravel, reactphp, live reload
 ---
 
 Do you know that we can implement live reload in Laravel without any npm package. No `browser sync`, `no nodejs`, just `php`.
