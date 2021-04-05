@@ -14,12 +14,14 @@
 <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.1/dist/alpine.min.js" defer></script>
     <script>
         function tableOfContents() {
-            return [...document.querySelectorAll('h2')].map(function (ele) {
+            const items = [...document.querySelectorAll('h2')].map(function (ele) {
                 return {
                     id: ele.getAttribute('id'),
                     label: ele.textContent
                 };
             });
+
+            return {items: items};
         }
     </script>
 @endpush
