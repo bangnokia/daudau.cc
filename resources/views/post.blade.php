@@ -6,10 +6,10 @@
 
 	<div id="post">
 	    <h1 class="text-cyan-600 text-3xl mb-5 font-bold">{{ $post->title }}</h1>
-	    <div class="text-gray-400">
+	    <div class="text-gray-400 text-sm mb-10">
             <span>Published on</span>
-            <time datetime="{{ $post->created_at }}">
-                {{ date('M dS Y', strtotime($post->created_at)) }}
+            <time datetime="{{ $post->created_at }}" class="tracking-tight">
+                {{ date('M, d Y', strtotime($post->created_at)) }}
             </time>
         </div>
 
@@ -31,6 +31,7 @@
 	    		@endforeach
 	    	</div>
 	    @endif
+
 	</div>
 
     @push('scripts')
