@@ -14,7 +14,7 @@
         </div>
 
         <div class="mt-10 leanding-10">
-            You can get in touch with me via <a href="mailto:bang@daudau.cc">bang@daudau.cc</a>, <a href="https://github.com/bangnokia" target="_blank">my Github</a> or <a href="https://twitter.com/bangnokia" target="_blank">Twitter</a>.
+            You can get in touch with me via <a href="mailto:bang@daudau.cc">bang@daudau.cc</a>, <a href="https://github.com/bangnokia" target="_blank">Github</a> or <a href="https://twitter.com/bangnokia" target="_blank">Twitter</a>.
         </div>
 
         <div class="mt-10 leading-8">
