@@ -4,9 +4,9 @@
 	<title>How to &quot;tinker&quot; with any PHP applicatons | daudau's blog</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="If you a Laravel devloper, i think you may be known a software called &lt;a href=&quot;https://tinkerwell.app&quot;&gt;Tinkerwell&lt;/a&gt; made by Marcel Pociot from &lt;a href=&quot;https:">
+    <meta name="description" content="If you a Laravel devloper, i think you may be known a software called &lt;a href=&quot;https://tinkerwell.app&quot;&gt;Tinkerwell&lt;/a&gt; made by Marcel Pociot, the fast &lt;del&gt;boy&lt;/">
 	<link rel="icon" type="image/png" href="/images/favicon-32x32.png">
-    <link rel="stylesheet" type="text/css" href="/css/app.css?v=1617904733">
+    <link rel="stylesheet" type="text/css" href="/css/app.css?v=1617904758">
     <link rel="preconnect" href="https://fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400&display=swap" rel="stylesheet">
             <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@10.6.0/styles/default.min.css">
@@ -31,9 +31,15 @@
 
         <div class="relative block">
             <div class="post-content mt-5 leading-7 post-content font-light text-lg box-border break-words">
-                <h2 id="Do+you+know+Tinkerwell+app%3F" name="Do+you+know+Tinkerwell+app%3F">Do you know Tinkerwell app?</h2>
-<p>If you a Laravel devloper, i think you may be known a software called <a href="https://tinkerwell.app">Tinkerwell</a> made by Marcel Pociot from <a href="https://beyondco.de/">BeyondCode</a>, which help you tinker with any PHP applications even on local machines or remote servers via SSH. </p>
-<p>You know, the first impression, what the hell how it works? That was epic!</p>
+                <h2 id="do-you-know-tinkerwell-app" name="do-you-know-tinkerwell-app">Do you know Tinkerwell app?</h2>
+<p>If you a Laravel devloper, i think you may be known a software called <a href="https://tinkerwell.app">Tinkerwell</a> made by Marcel Pociot, the fast <del>boy</del> developer from <a href="https://beyondco.de/">Beyond Code</a>, which help you tinker with any PHP applications even on local machine or remote server via SSH.</p>
+<p>You know, the first impression, what the hell how it works? That was epic! You should buy it.</p>
+<h2 id="how-it-works" name="how-it-works">How it works</h2>
+<blockquote>
+<p>I didn't buy the Tinkerwell or used it to disassemble the (because i don't have money xD). All the explainations in this blog post from some investigations about <a href="https://github.com/tinkerwellapp/drivers">public resources</a> of Tinkerwell and <a href="https://github.com/spatie/laravel-web-tinker">laravel-web-tinker</a></p>
+</blockquote>
+<p>My first thought, it's must be something base on <code>artisan tinker</code> command. So after digging into laravel tinker component, i see it's just an specific wrapper of <a href="https://github.com/bobthecow/psysh">PsySH</a> - a runtime developer console, interactive debugger and REPL for PHP.</p>
+<h3 id="bootstraps-php-application" name="bootstraps-php-application">Bootstraps PHP application</h3>
             </div>
             <div class="absolute top-0 right-0 h-full z-0">
                  <div class="fixed hidden lg:block fixed" x-data="tableOfContents()">
