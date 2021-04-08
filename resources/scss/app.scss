@@ -25,6 +25,9 @@ code:not([class]) {
 	@apply text-gray-300 absolute -ml-5;
 	content: '#';
 }
+#post h3 {
+	@apply text-gray-900 font-semibold text-xl my-6;
+}
 #post p {
 	@apply mb-5;
 }
@@ -33,6 +36,9 @@ code:not([class]) {
 }
 #post ul {
 	@apply mb-5 list-disc list-inside pl-5;
+}
+#post blockquote {
+	@apply pl-5 border-l-2 border-gray-500 italic;
 }
 #post .hljs {
 	@apply p-5;
