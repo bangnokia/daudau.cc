@@ -6,11 +6,13 @@
 
     <div id="post">
         <h1 class="text-cyan-600 text-3xl mb-5 font-bold">{{ $post->title }}</h1>
-        <div class="text-gray-400 text-sm mb-10">
-            <span>Published on</span>
-            <time datetime="{{ $post->created_at }}" class="tracking-tight">
-                {{ date('M, d Y', strtotime($post->created_at)) }}
-            </time>
+        <div class="text-gray-400 text-sm mb-10 flex items-center">
+            <span>
+               Published on <time datetime="{{ $post->created_at }}" class="tracking-tight">
+                    {{ date('M, d Y', strtotime($post->created_at)) }}
+                </time>
+            </span>
+            <x-posts.edit-button :date="$post->created_at" :slug="$post->slug" class="ml-5 text-gray-400" />
         </div>
 
         <div class="relative block">
