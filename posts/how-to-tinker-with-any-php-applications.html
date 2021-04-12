@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="If you a Laravel devloper, i think you may be known a software called &lt;a href=&quot;https://tinkerwell.app&quot;&gt;Tinkerwell&lt;/a&gt; made by Marcel Pociot, the fast &lt;del&gt;boy&lt;/">
 	<link rel="icon" type="image/png" href="/images/favicon-32x32.png">
-    <link rel="stylesheet" type="text/css" href="/css/app.css?v=1618237263">
+    <link rel="stylesheet" type="text/css" href="/css/app.css?v=1618237981">
     <link rel="preconnect" href="https://fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400&display=swap" rel="stylesheet">
             <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@10.6.0/styles/default.min.css">
@@ -110,6 +110,10 @@
                             </div>
         
     </div>
+
+    <div class="mt-10">
+        <div class="commentbox"></div>
+    </div>
 		</div>
 
 		<footer class="text-sm flex justify-end h-12 border-t pt-3 mt-10 space-x-2">
@@ -150,6 +154,8 @@
             return parseInt(heading.substr(1,1));
         }
     </script>
+        <script src="https://unpkg.com/commentbox.io/dist/commentBox.min.js"></script>
+        <script>commentBox('my-project-id')</script>
         <script src="https://unpkg.com/@highlightjs/cdn-assets@10.6.0/highlight.min.js"></script>
         <script src="https://unpkg.com/@highlightjs/cdn-assets@10.6.0/languages/php.min.js"></script>
         <script>hljs.highlightAll();</script>
