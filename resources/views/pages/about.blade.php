@@ -1,9 +1,11 @@
 <x-layout>
 
     <div>
-        <h1 class="text-5xl text-cyan-500 font-bold">你好</h1>
+        <div class="float-left mb-2 mr-2">
+            <img src="/images/me-angry.png" alt="me angry xD - @open peeps" class="w-48">
+        </div>
 
-        <h2 class="text-2xl font-bold mt-10">Hello, my name is <span class="text-cyan-500">Bang Nguyen Viet</span></h2>
+        <h1 class="text-2xl font-bold mt-10">Hello, my name is <span class="text-cyan-500">Bang Nguyen Viet</span></h1>
 
         <div class="mt-10 leading-8">
             I'm a developer from Viet Nam.
