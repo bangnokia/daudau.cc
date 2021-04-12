@@ -42,7 +42,7 @@
 
     @push('scripts')
         <script src="https://unpkg.com/commentbox.io/dist/commentBox.min.js"></script>
-        <script>commentBox('my-project-id')</script>
+        <script>commentBox('5672224602193920-proj')</script>
         <script src="https://unpkg.com/@highlightjs/cdn-assets@10.6.0/highlight.min.js"></script>
         <script src="https://unpkg.com/@highlightjs/cdn-assets@10.6.0/languages/php.min.js"></script>
         <script>hljs.highlightAll();</script>
