@@ -1,7 +1,8 @@
 @props([
 	'title' => null,
 	'description' => null,
-	'fullWidth' => false
+	'fullWidth' => false,
+    'imageUrl' => null
 ])
 @php
     $description = $description ?? 'personal blog by Bang. I write stupid stuff with words and code';
@@ -22,6 +23,11 @@
     <meta name="og:title" content="{{ $title }}">
     <meta name="og:description" content="{{ $description }}">
     <meta name="og:type" content="article">
+
+    @if ($imageUrl)
+        <meta name="og:image" content="{{ $imageUrl }}">
+        <meta name="twitter:image" content="{{ $imageUrl }}">
+    @endif
 
 	<link rel="icon" type="image/png" href="/images/favicon-32x32.png">
     <link rel="stylesheet" type="text/css" href="/css/app.css?v={{ time() }}">

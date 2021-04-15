@@ -42,6 +42,18 @@ class Post
         return substr($matches[1] ?? '', 0, 160);
     }
 
+    public function featureImage()
+    {
+        return $this->feature_image ?? $this->inferFeatureImage();
+    }
+
+    protected function inferFeatureImage()
+    {
+        preg_match('/<img.*?src="(.*?)"[^>]+>/', $this->content, $matches);
+
+        return count($matches) ? html_entity_decode($matches[1]) : null;
+    }
+
     public function attributes(): array
     {
         return $this->attributes;

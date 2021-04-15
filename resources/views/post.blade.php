@@ -1,4 +1,4 @@
-<x-layout :title="$post->title" :description="$post->description()">
+<x-layout :title="$post->title" :description="$post->description()" :image-url="$post->featureImage()">
 
     @push('styles')
         <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@10.6.0/styles/default.min.css">
