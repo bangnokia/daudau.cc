@@ -7,6 +7,11 @@
 @php
     $description = $description ?? 'personal blog by Bang. I write stupid stuff with words and code';
     $title = ($title ? $title . ' - ' : '') . "daudau's blog";
+    if ($imageUrl) {
+        if (strpos($imageUrl, 'http') === false) {
+            $imageUrl = 'https://daudau.cc' . $imageUrl;
+        }
+    }
 @endphp
 <!DOCTYPE html>
 <html lang="en">
