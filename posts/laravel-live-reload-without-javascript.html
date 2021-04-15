@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Do you know that we can implement live reload in Laravel without any npm package. No &lt;code&gt;browser sync&lt;/code&gt;, &lt;code&gt;no nodejs&lt;/code&gt;, just &lt;code&gt;php&lt;/code&gt;.">
 	<link rel="icon" type="image/png" href="/images/favicon-32x32.png">
-    <link rel="stylesheet" type="text/css" href="/css/app.css?v=1618238042">
+    <link rel="stylesheet" type="text/css" href="/css/app.css?v=1618473917">
     <link rel="preconnect" href="https://fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400&display=swap" rel="stylesheet">
             <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@10.6.0/styles/default.min.css">
@@ -104,7 +104,14 @@
     </div>
 
     <div class="mt-10">
-        <div class="commentbox"></div>
+        <script src="https://utteranc.es/client.js"
+            repo="bangnokia/daudau.cc"
+            issue-term="pathname"
+            label="comment"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+        </script>
     </div>
 		</div>
 
@@ -146,8 +153,6 @@
             return parseInt(heading.substr(1,1));
         }
     </script>
-        <script src="https://unpkg.com/commentbox.io/dist/commentBox.min.js"></script>
-        <script>commentBox('5672224602193920-proj')</script>
         <script src="https://unpkg.com/@highlightjs/cdn-assets@10.6.0/highlight.min.js"></script>
         <script src="https://unpkg.com/@highlightjs/cdn-assets@10.6.0/languages/php.min.js"></script>
         <script>hljs.highlightAll();</script>
