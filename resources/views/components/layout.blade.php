@@ -3,17 +3,31 @@
 	'description' => null,
 	'fullWidth' => false
 ])
+@php
+    $description = $description ?? 'personal blog by Bang. I write stupid stuff with words and code';
+    $title = ($title ? $title . ' - ' : '') . "daudau's blog";
+@endphp
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>{{ $title ? $title . ' | ' : '' }}daudau's blog</title>
+	<title>{{ $title }}</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="{{ $description ?? 'personal blog by Bang. I write stupid stuff with words and code.' }}">
+    <meta name="description" content="{{ $description }}">
+
+    <meta name="twitter:creator" content="@bangnokia">
+    <meta name="twitter:card" content="article">
+    <meta name="twitter:description" content="{{ $description }}">
+
+    <meta name="og:title" content="{{ $title }}">
+    <meta name="og:description" content="{{ $description }}">
+    <meta name="og:type" content="article">
+
 	<link rel="icon" type="image/png" href="/images/favicon-32x32.png">
     <link rel="stylesheet" type="text/css" href="/css/app.css?v={{ time() }}">
     <link rel="preconnect" href="https://fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400&display=swap" rel="stylesheet">
+
     @stack('styles')
 </head>
 <body>
