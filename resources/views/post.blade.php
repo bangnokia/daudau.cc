@@ -37,12 +37,17 @@
     </div>
 
     <div class="mt-10">
-        <div class="commentbox"></div>
+        <script src="https://utteranc.es/client.js"
+            repo="bangnokia/daudau.cc"
+            issue-term="pathname"
+            label="comment"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+        </script>
     </div>
 
     @push('scripts')
-        <script src="https://unpkg.com/commentbox.io/dist/commentBox.min.js"></script>
-        <script>commentBox('5672224602193920-proj')</script>
         <script src="https://unpkg.com/@highlightjs/cdn-assets@10.6.0/highlight.min.js"></script>
         <script src="https://unpkg.com/@highlightjs/cdn-assets@10.6.0/languages/php.min.js"></script>
         <script>hljs.highlightAll();</script>
