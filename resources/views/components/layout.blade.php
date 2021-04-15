@@ -16,7 +16,7 @@
     <meta name="description" content="{{ $description }}">
 
     <meta name="twitter:creator" content="@bangnokia">
-    <meta name="twitter:card" content="article">
+    <meta name="twitter:card" content="summary">
     <meta name="twitter:description" content="{{ $description }}">
 
     <meta name="og:title" content="{{ $title }}">
