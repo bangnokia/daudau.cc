@@ -34,9 +34,13 @@
             </div>
         @endif
 
+        <div class="mt-10 text-xs italic">
+            I'm not a good writer, there're always some stupid mistakes in my blog post. I'm so appreciated if you help me to correct <a href="https://github.com/bangnokia/daudau.cc/blob/master/posts/{{ $post->created_at }}-{{ $post->slug }}.md" target="_blank">this post on github</a>.
+        </div>
+
     </div>
 
-    <div class="mt-10">
+    <div class="mt-5">
         <script src="https://utteranc.es/client.js"
             repo="bangnokia/daudau.cc"
             issue-term="pathname"
