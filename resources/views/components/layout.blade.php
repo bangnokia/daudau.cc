@@ -58,12 +58,8 @@
 
     @stack('scripts')
 
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-37232412-22"></script>
-	<script>
-	  window.dataLayer = window.dataLayer || [];
-	  function gtag(){dataLayer.push(arguments);}
-	  gtag('js', new Date());
-	  gtag('config', 'UA-37232412-22');
-	</script>
+    <!-- Cloudflare Web Analytics -->
+    <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "30a5b4429388482ab4d3e7868edaf598"}'></script>
+    <!-- End Cloudflare Web Analytics -->
 </body>
 </html>
