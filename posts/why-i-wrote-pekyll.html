@@ -16,7 +16,7 @@
 
     
 	<link rel="icon" type="image/png" href="/images/favicon-32x32.png">
-    <link rel="stylesheet" type="text/css" href="/css/app.css?v=1636442227">
+    <link rel="stylesheet" type="text/css" href="/css/app.css?v=1636520777">
     <link rel="preconnect" href="https://fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400&display=swap" rel="stylesheet">
 
@@ -25,8 +25,9 @@
 <body>
 	<div class="main-body mx-auto flex flex-col min-h-screen px-5 pt-5 max-w-2xl">
 		<div class="flex space-x-5 flex-none">
-	<a href="/" class="text-gray-500 hover:underline">Home</a>
-    <a href="/open-source.html" class="text-gray-500 hover:underline">Open source</a>
+	<a href="/" class="text-gray-500 hover:underline">home</a>
+    <a href="/projects.html" class="text-gray-500 hover:underline">projects</a>
+    <a href="/about.html" class="text-gray-500 hover:underline">about me</a>
 </div>
 
 		<div class="mt-20 flex-grow flex-shrink flex-1">
@@ -46,7 +47,7 @@
         </div>
 
         <div class="relative block">
-            <div class="post-content mt-5 leading-7 post-content font-light text-lg box-border break-words">
+            <div class="post-content mt-5 leading-7 post-content text-gray-700 text-lg font-light box-border break-words">
                 <h2 id="why-pekyll" name="why-pekyll">Tại sao lại viết pekyll xD</h2>
 <p>Tình hình là dạo này mình cũng có nhiều thời gian rảnh, tính viết linh tinh gì đấy. Tất nhiên là chỉ cần những cái đơn giản kiểu markdown là đủ, ko cần phải wordpress setup linh tinh.</p>
 <p>Mình cũng có xem qua <a href="https://jekyllrb.com/">Jekyll</a>, thằng này generate nội dung thành các file static html và dùng được với github pages luôn, quá tiện 😊. Đọc qua doc thì thấy sử dụng liquid template và build bằng ruby. Mình thì ko biết ruby, và thấy sử dụng <code>liquid</code> template engine này cũng ngại đọc, mà chắc ko bằng <code>blade</code> template engine của laravel đâu xD, nên cũng có tìm qua 1 số thằng mà thấy nhiều chức năng mình ko cần. Nên tự build 1 thằng riêng xài cho dễ.</p>
@@ -110,8 +111,6 @@
 		</div>
 
 		<footer class="text-sm flex justify-end h-12 border-t pt-3 mt-10 space-x-2">
-			<a href="/about.html" title="github" class="text-gray-500">about</a>
-			<span>-</span>
 			<p>crafted by <a href="http://github.com/bangnokia/pekyll" target="_blank">pekyll</a> with ❤️.</p>
 		</footer>
 	</div>
