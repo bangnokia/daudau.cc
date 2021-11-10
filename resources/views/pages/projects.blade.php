@@ -1,4 +1,4 @@
-<x-layout title="Projects">
+<x-layout title="Open sources">
 
     <h1 class="text-3xl text-cyan-500">My stuffs</h1>
     <p>Some stupid stuff wrote on my freetime.</p>

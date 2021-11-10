@@ -16,7 +16,7 @@
         </div>
 
         <div class="relative block">
-            <div class="post-content mt-5 leading-7 post-content font-light text-lg box-border break-words">
+            <div class="post-content mt-5 leading-7 post-content text-gray-700 text-lg font-light box-border break-words">
                 {!! $post->content !!}
             </div>
             <div class="absolute top-0 right-0 h-full z-0">
