@@ -40,6 +40,7 @@
 
     </div>
 
+    <!--
     <div class="mt-5">
         <script src="https://utteranc.es/client.js"
             repo="bangnokia/daudau.cc"
@@ -50,6 +51,7 @@
             async>
         </script>
     </div>
+    -->
 
     @push('scripts')
         <script src="https://unpkg.com/@highlightjs/cdn-assets@10.6.0/highlight.min.js"></script>
