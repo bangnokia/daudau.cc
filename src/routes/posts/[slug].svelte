@@ -13,6 +13,7 @@
 <script lang="ts">
 	import type { Post } from 'src/types/post';
 	import SvelteMarkDown from 'svelte-markdown';
+	import { micromark } from 'micromark';
 
 	export let post: Post;
 </script>
@@ -28,7 +29,8 @@
 		</span>
 	</div>
 
-	<div id="blog-post-content" class="break-words box-border">
+	<div id="blog-post-content" class="break-words">
 		<SvelteMarkDown source={post.content} />
+		<!-- {@html micromark(post.content)} -->
 	</div>
 </div>
