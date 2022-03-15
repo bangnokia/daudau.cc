@@ -4,7 +4,7 @@
 
 <div>
 	<div class="float-left mb-2 mr-2">
-		<img src="/me-angry.png" alt="me angry xD - @open  peeps" class="w-48" />
+		<img src="/me-angry.png" alt="me angry xD - @open  peeps" class="w-48" loading="lazy" />
 	</div>
 	<h1 class="text-xl font-semibold mt-10">
 		Hello, my name is <span class="text-cyan-500">Bang Nguyen Viet</span>
