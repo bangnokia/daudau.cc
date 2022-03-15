@@ -12,6 +12,7 @@ Self claim, i don't like nodejs xD, and i don't know nodejs too xD. And if you r
 ## How live reloading works {#how-live-reloading-works}
 
 ![how live reloading works](/images/live-reloading-sketch.png)
+
 <p align="center"><i>how live reloading works</i></p>
 
 First we need a [websocket server](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API/Writing_WebSocket_servers), but we don't have to write it by ourself, thankfully [ReactPHP](https://reactphp.org/) and [Rachet](http://socketo.me/).
@@ -46,10 +47,9 @@ public function injectScripts($content)
         'host' => '127.0.0.1',
         'port' => ServeWebSocketsCommand::port(),
     ]).$content;
-
+lug
     return $content;
 }
 ```
 
 And this is [laravel-server-livereload](https://github.com/bangnokia/laravel-serve-livereload) package. Thank you for reading my explaination.
-
