@@ -28,7 +28,7 @@
 					{post.tags.map((tag) => tag.name).join(', ')}
 				</div>
 			</div>
-			<a href="/posts/{post.slug}" class="mt-5 text-sky-500 text-base">
+			<a href="/posts/{post.slug}" class="mt-5 font-sans text-sky-500 text-base">
 				{post.title}
 			</a>
 		</li>

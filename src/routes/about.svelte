@@ -11,7 +11,7 @@
 	</h1>
 
 	<div class="mt-10 leading-7">
-		<p>I'm a developer from Vietnam. I'm a Full Stack Overflow developer with a passion for web development.</p>
+		<p>I'm a developer from Vietnam and a Full Stack Overflow guy with a passion for web development.</p>
 		<p class="mt-10">I love creating blazing fast and easy-to-use things.</p>
 	</div>
 	<div class="mt-10 leading-7 flex flex-col gap-y-10 w-full">
