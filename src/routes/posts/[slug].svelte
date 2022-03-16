@@ -26,7 +26,7 @@
 </svelte:head>
 
 <div class="prose prose-slate prose-a:text-sky-500">
-	<h1 class="text-sky-600 text-3xl mb-5 font-bold tracking-wider">{post.title}</h1>
+	<h1 class="text-sky-600 text-3xl mb-5 font-bold tracking-tight">{post.title}</h1>
 
 	<div class="text-gray-400 text-sm mb-10 flex items-center">
 		<span>
