@@ -1,5 +1,9 @@
 <svelte:head>
 	<title>About me</title>
+	<meta
+		name="description"
+		content="I'm a developer from Vietnam and a Full Stack Overflow guy with a passion for web development"
+	/>
 </svelte:head>
 
 <div>

@@ -19,6 +19,11 @@
 	export let posts: Post[];
 </script>
 
+<svelte:head>
+	<title>My little Journey | Blog of Nguyen</title>
+	<meta name="description" content="I write stupid stuff with words and code" />
+</svelte:head>
+
 <ul>
 	{#each posts as post}
 		<li class="mt-8">

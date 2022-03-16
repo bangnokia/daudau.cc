@@ -1,5 +1,10 @@
 <script></script>
 
+<svelte:head>
+	<title>Open source projects | Blog of Nguyen</title>
+	<meta name="description" content="Soem of my funny open source projects" />
+</svelte:head>
+
 <h1 class="text-3xl text-cyan-500">My stuffs</h1>
 <p>Some stupid stuff wrote on my freetime.</p>
 <div class="grid mt-10 space-y-5 grid-cols-1">

@@ -15,7 +15,15 @@
 	import SvelteMarkDown from 'svelte-markdown';
 
 	export let post: Post;
+
+	// get first 160 words from post content
+	export let excerpt: string = post.content.split(' ').slice(0, 160).join(' ');
 </script>
+
+<svelte:head>
+	<title>{post.title} | Blog of Nguyen</title>
+	<meta name="description" content={excerpt} />
+</svelte:head>
 
 <div class="prose prose-slate prose-a:text-sky-500">
 	<h1 class="text-sky-600 text-3xl mb-5 font-bold tracking-wider">{post.title}</h1>
