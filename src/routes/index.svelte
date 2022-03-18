@@ -1,11 +1,13 @@
 <script context="module">
 	export async function load({ fetch }) {
 		const response = await fetch('https://lab.daudau.cc/api/blog/posts');
+		const posts = await response.json();
 
 		return {
 			status: response.status,
+			maxage: 60 * 60 * 5,
 			props: {
-				posts: await response.json()
+				posts
 			}
 		};
 	}
@@ -13,8 +15,6 @@
 
 <script lang="ts">
 	import type { Post } from 'src/types/post';
-	import type { Tag } from 'src/types/tag';
-	import { HtmlTag } from 'svelte/internal';
 
 	export let posts: Post[];
 </script>
@@ -33,7 +33,7 @@
 					{post.tags.map((tag) => tag.name).join(', ')}
 				</div>
 			</div>
-			<a href="/posts/{post.slug}" class="mt-5 text-sky-500">
+			<a href="/posts/{post.slug}" class="mt-5 text-sky-500" sveltekit:prefetch>
 				{post.title}
 			</a>
 		</li>

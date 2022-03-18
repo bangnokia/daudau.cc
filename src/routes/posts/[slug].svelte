@@ -3,6 +3,7 @@
 		const response = await fetch(`https://lab.daudau.cc/api/blog/posts/${params.slug}`);
 
 		return {
+			maxage: 60 * 60 * 5,
 			props: {
 				post: await response.json()
 			}
