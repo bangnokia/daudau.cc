@@ -23,6 +23,10 @@
 <svelte:head>
 	<title>{post.title} | Blog of Nguyen</title>
 	<meta name="description" content={excerpt} />
+	<meta property="og:title" content={post.title} />
+	<meta property="og:description" content={excerpt} />
+	<meta property="og:type" content="article" />
+	<meta property="og:image" content={`https://cdn.statically.io/og/${post.title}.jpg`} />
 </svelte:head>
 
 <div class="prose prose-slate prose-a:text-sky-500">

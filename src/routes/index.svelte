@@ -22,6 +22,10 @@
 <svelte:head>
 	<title>My little Journey | Blog of Nguyen</title>
 	<meta name="description" content="I write stupid stuff with words and code" />
+	<meta property="og:title" content="My little Journey | Blog of Nguyen" />
+	<meta property="og:description" content="I write stupid stuff with words and code" />
+	<meta property="og:type" content="website" />
+	<meta property="og:image" content={`https://cdn.statically.io/og/daudau blog.jpg`} />
 </svelte:head>
 
 <h1 class="hidden">Nguyen's blog posts</h1>
@@ -35,7 +39,7 @@
 					{post.tags.map((tag) => tag.name).join(', ')}
 				</div>
 			</div>
-			<a href="/posts/{post.slug}" class="mt-5 text-sky-500" sveltekit:prefetch>
+			<a href="/posts/{post.slug}" class="mt-5 text-sky-500 text-lg" sveltekit:prefetch>
 				{post.title}
 			</a>
 		</li>
