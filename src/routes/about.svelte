@@ -9,7 +9,7 @@
 <div>
 	<div class="float-left mb-2 mr-2">
 		<svg
-			class="w-64 h-full"
+			class="-mt-5 md:-mt-12 w-32 md:w-64 h-full"
 			width="512"
 			height="691"
 			viewBox="0 0 512 691"
