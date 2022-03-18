@@ -5,8 +5,8 @@
 	<meta name="description" content="Soem of my funny open source projects" />
 </svelte:head>
 
-<h1 class="text-3xl text-cyan-500">My stuffs</h1>
-<p>Some stupid stuff wrote on my freetime.</p>
+<h1 class="text-3xl text-cyan-500">My open source projects</h1>
+<p class="text-sm mt-5">Some stupid stuff wrote on my freetime.</p>
 <div class="grid mt-10 space-y-5 grid-cols-1">
 	<div class="border py-5 px-3">
 		<div class="flex items-center justify-between">

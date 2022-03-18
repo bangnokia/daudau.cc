@@ -3,6 +3,9 @@
 @tailwind utilities;
 
 @layer base {
+	body {
+		margin-left: calc(100vw - 100%);
+	}
 	a {
 		@apply text-sky-500 hover:underline;
 	}

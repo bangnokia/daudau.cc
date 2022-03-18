@@ -24,9 +24,11 @@
 	<meta name="description" content="I write stupid stuff with words and code" />
 </svelte:head>
 
-<ul>
+<h1 class="hidden">Nguyen's blog posts</h1>
+
+<ul class="flex flex-col gap-5">
 	{#each posts as post}
-		<li class="mt-8">
+		<li>
 			<div class=" text-sm flex space-x-5 content-end">
 				<div class="text-gray-400">[<time datetime={post.created_at}>{post.created_at.substring(0, 10)}</time>]</div>
 				<div class="flex gap-x-2 text-gray-600">
