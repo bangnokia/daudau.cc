@@ -17,7 +17,6 @@
 
 	export let post: Post;
 
-	// get first 160 words from post content
 	export let excerpt: string = post.content.split(' ').slice(0, 160).join(' ');
 </script>
 
