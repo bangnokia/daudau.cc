@@ -17,7 +17,7 @@
 
 	export let post: Post;
 
-	export let excerpt: string = post.content.split(' ').slice(0, 160).join(' ');
+	let excerpt: string = post.content.split(' ').slice(0, 160).join(' ');
 </script>
 
 <svelte:head>
