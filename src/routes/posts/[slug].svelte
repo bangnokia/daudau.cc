@@ -30,7 +30,7 @@
 </svelte:head>
 
 <div class="prose prose-lg prose-slate prose-a:text-sky-500 prose-h2:text-rose-500">
-	<h1 class="text-sky-500 text-3xl mb-5 font-bold tracking-tight">{post.title}</h1>
+	<h1 class="text-sky-500 text-4xl mb-5 font-bold tracking-tight">{post.title}</h1>
 
 	<div class="text-gray-400 text-sm mb-10 flex items-center">
 		<span>
