@@ -5,7 +5,7 @@
 
 		return {
 			status: response.status,
-			maxage: 60 * 60 * 5,
+			cache: 60 * 60 * 5,
 			props: {
 				posts
 			}
