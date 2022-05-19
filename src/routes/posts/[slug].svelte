@@ -29,8 +29,8 @@
 	<meta property="og:image" content={`https://cdn.statically.io/og/${post.title}.jpg`} />
 </svelte:head>
 
-<div class="prose prose-lg prose-slate prose-a:text-sky-500 prose-h2:text-slate-800 prose-h3:text-slate-800">
-	<h1 class="text-sky-700 text-4xl mb-5 font-bold tracking-tight">{post.title}</h1>
+<div class="prose prose-lg prose-slate prose-a:text-rose-500 prose-h2:text-slate-800 prose-h3:text-slate-800">
+	<h1 class="text-rose-500 text-4xl mb-5 font-bold tracking-tight">{post.title}</h1>
 
 	<div class="text-gray-400 text-sm mb-10 flex items-center">
 		<span>

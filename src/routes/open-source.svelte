@@ -44,11 +44,10 @@
 
 <svelte:head>
 	<title>Open source projects | Blog of Nguyen</title>
-	<meta name="description" content="Soem of my funny open source projects" />
+	<meta name="description" content="Some of my funny open source projects" />
 </svelte:head>
 
-<h1 class="text-3xl text-cyan-500">My open source projects</h1>
-<p class="text-sm mt-5">Some stupid stuff wrote on my freetime.</p>
+<h1 class="text-4xl text-rose-500 font-bold">My open source projects</h1>
 <div class="grid mt-10 gap-8 grid-cols-1">
 	{#each projects as project}
 		<Project {...project} />

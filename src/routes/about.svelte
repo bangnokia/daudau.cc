@@ -79,7 +79,7 @@
 		</svg>
 	</div>
 	<h1 class="text-xl font-semibold">
-		Hello, my name is <span class="text-cyan-500">Bang Nguyen Viet</span>
+		Hello, my name is <span class="text-rose-500">Bang Nguyen Viet</span>
 	</h1>
 
 	<div class="mt-10 leading-7">
@@ -88,10 +88,10 @@
 	</div>
 	<div class="mt-10 leading-7 flex flex-col gap-y-10 w-full">
 		<p>
-			I work with <span class="text-rose-500">Laravel</span> and occasionally <span class="text-rose-500">VueJS</span>
+			I work with <span class="text-rose-500">Laravel</span> and occasionally <span class="text-green-600">VueJS</span>
 			or
-			<span class="text-rose-500">ReactJS</span>, but now I've fallen in love with
-			<span class="text-rose-500 hover:animate-ping inline-block">Svelte</span>.
+			<span class="text-sky-400">ReactJS</span>, but now I've fallen in love with
+			<span class="text-orange-500 hover:animate-ping inline-block">Svelte</span>.
 		</p>
 
 		<p>

@@ -7,6 +7,6 @@
 		margin-left: calc(100vw - 100%);
 	}
 	a {
-		@apply text-sky-500 hover:underline;
+		@apply text-rose-500 hover:underline;
 	}
 }
