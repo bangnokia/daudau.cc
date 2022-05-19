@@ -20,7 +20,7 @@
 </script>
 
 <svelte:head>
-	<title>My little Journey | Blog of Bang Ng</title>
+	<title>My little Journey | Blog of Nguyen</title>
 	<meta name="description" content="I write stupid stuff with words and code" />
 	<meta property="og:title" content="My little Journey | Blog of Nguyen" />
 	<meta property="og:description" content="I write stupid stuff with words and code" />
@@ -28,7 +28,7 @@
 	<meta property="og:image" content="https://cdn.statically.io/og/daudau blog.jpg" />
 </svelte:head>
 
-<h1 class="hidden">Bang Ng's blog posts</h1>
+<h1 class="hidden">Nguyen's blog posts</h1>
 
 <ul class="flex flex-col gap-5">
 	{#each posts as post}
