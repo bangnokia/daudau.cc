@@ -14,9 +14,7 @@
 	</div>
 	<footer class="text-xs flex justify-end h-12 border-t pt-3 mt-10 space-x-2">
 		<p>
-			crafted using <a href="https://kit.svelte.dev">Sveltekit</a>
-			and <a href="https://tailwindcss.com">Tailwind CSS</a>
-			with ❤️.
+			crafted with ❤️
 		</p>
 	</footer>
 </div>
