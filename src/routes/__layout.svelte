@@ -1,5 +1,6 @@
 <script>
-	import '../app.css';
+	// import '../app.css';
+    import 'unocss';
 </script>
 
 <div class="antialiased font-sans mx-auto flex flex-col min-h-screen px-5 pt-5 max-w-2xl overflow-y-hidden">
