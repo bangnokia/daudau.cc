@@ -26,6 +26,7 @@
 	<meta property="og:description" content="I write stupid stuff with words and code" />
 	<meta property="og:type" content="website" />
 	<meta property="og:image" content="https://cdn.statically.io/og/daudau blog.jpg" />
+    <script async src="https://cdn.splitbee.io/sb.js"></script>
 </svelte:head>
 
 <h1 class="hidden">Nguyen's blog posts</h1>
