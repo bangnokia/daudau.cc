@@ -12,7 +12,7 @@
     <div class="mt-24 flex-grow flex-shrink flex-1">
         <slot/>
     </div>
-    <footer class="text-xs flex justify-end h-12 border-t pt-3 mt-10 space-x-2">
+    <footer class="text-xs flex justify-end h-12 border-t border-slate-200 pt-3 mt-10 space-x-2">
         <p>
             crafted using <a href="https://kit.svelte.dev" target="_blank" class="text-rose-500">Sveltekit</a>
             and <a href="https://github.com/unocss/unocss" target="_blank" class="text-rose-500">Unocss</a>
