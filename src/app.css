@@ -1,12 +1,9 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-@layer base {
-	body {
-		margin-left: calc(100vw - 100%);
-	}
-	a {
-		@apply text-rose-500 hover:underline;
-	}
+body {
+    margin-left: calc(100vw - 100%);
+}
+a {
+    color: rgba(244,63,94)
+}
+a:hover {
+    text-decoration: underline;
 }
