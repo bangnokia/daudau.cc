@@ -9,6 +9,7 @@
 		<a href="/" class="text-slate-700" sveltekit:prefetch>blog</a>
 		<a href="/open-source" class="text-slate-700" sveltekit:prefetch>open source</a>
 		<a href="/about" class="text-slate-700" sveltekit:prefetch>about me</a>
+		<a href="/wakatime" class="text-slate-700" sveltekit:prefetch>wakatime</a>
 	</nav>
 	<div class="mt-24 flex-grow flex-shrink flex-1">
 		<slot />
