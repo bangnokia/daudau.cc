@@ -9,12 +9,12 @@
 		<a href="/" class="text-slate-700" sveltekit:prefetch>blog</a>
 		<a href="/open-source" class="text-slate-700" sveltekit:prefetch>open source</a>
 		<a href="/about" class="text-slate-700" sveltekit:prefetch>about me</a>
-		<a href="/wakatime" class="text-slate-700" sveltekit:prefetch>wakatime</a>
 	</nav>
 	<div class="mt-24 flex-grow flex-shrink flex-1">
 		<slot />
 	</div>
-	<footer class="text-xs flex justify-end h-12 border-t border-slate-200 pt-3 mt-10 space-x-2">
+	<footer class="text-xs flex justify-between h-12 border-t border-slate-200 pt-3 mt-10 space-x-2">
+		<a href="/wakatime" class="text-slate-700">wakatime</a>
 		<p>
 			crafted using <a href="https://kit.svelte.dev" target="_blank" class="text-rose-500">Sveltekit</a>
 			and <a href="https://github.com/unocss/unocss" target="_blank" class="text-rose-500">Unocss</a>
