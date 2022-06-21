@@ -7,7 +7,17 @@ export default {
             presets: [
                 presetAttributify(),
                 presetUno(),
-                presetTypography(),
+                presetTypography({
+                    cssExtend: {
+                        a: {
+                            'text-decoration': 'none',
+                            color: 'rose'
+                        },
+                        'a:hover': {
+                            'text-decoration': 'underline',
+                        }
+                    }
+                }),
             ]
         })
     ]
