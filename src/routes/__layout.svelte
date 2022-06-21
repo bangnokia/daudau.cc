@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import '@unocss/reset/tailwind.css';
 	import '../app.css';
 	import 'uno.css';

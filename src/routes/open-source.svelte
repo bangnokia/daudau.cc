@@ -11,11 +11,6 @@
 
 	let projects: ProjectType[] = [
 		{
-			name: 'Laravel backup Telegram',
-			githubUrl: 'https://github.com/bangnokia/laravel-backup-telegram',
-			description: 'Store your Laravel backups in Telegram channel'
-		},
-		{
 			name: 'Tinker 2',
 			website: 'https://tinker2.app',
 			githubUrl: 'https://github.com/bangnokia/tinker2',
@@ -28,6 +23,11 @@
 			githubUrl: 'https://github.com/bangnokia/blademail',
 			description: 'Desktop app for testing email locally',
 			logo: '/blademail.png'
+		},
+		{
+			name: 'Laravel backup Telegram',
+			githubUrl: 'https://github.com/bangnokia/laravel-backup-telegram',
+			description: 'Store your Laravel backups in Telegram channel'
 		},
 		{
 			name: 'Laravel serve livereload',

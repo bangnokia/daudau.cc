@@ -1,10 +1,14 @@
 import Unocss from 'unocss/vite'
-import presetUno from '@unocss/preset-uno'
+import { presetUno, presetAttributify, presetTypography } from "unocss";
 
 export default {
     plugins: [
         Unocss({
-            presets: [presetUno()]
+            presets: [
+                presetAttributify(),
+                presetUno(),
+                presetTypography(),
+            ]
         })
     ]
 }
