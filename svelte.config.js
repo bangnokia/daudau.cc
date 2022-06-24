@@ -1,6 +1,4 @@
 import preprocess from 'svelte-preprocess';
-import Unocss from 'unocss/vite'
-import { presetUno, presetAttributify, presetTypography } from "unocss";
 import adapter from '@sveltejs/adapter-auto';
 
 
