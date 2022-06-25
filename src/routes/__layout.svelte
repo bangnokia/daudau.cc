@@ -16,8 +16,8 @@
 	<footer class="text-xs flex justify-between h-12 border-t border-slate-200 pt-3 mt-10 space-x-2">
 		<a href="/wakatime" class="text-slate-700">wakatime</a>
 		<p>
-			crafted using <a href="https://kit.svelte.dev" target="_blank" class="text-rose-500">Sveltekit</a>
-			and <a href="https://github.com/unocss/unocss" target="_blank" class="text-rose-500">Unocss</a>
+			crafted using <a href="https://kit.svelte.dev" target="_blank">Sveltekit</a>
+			and <a href="https://github.com/unocss/unocss" target="_blank">Unocss</a>
 			with ❤️.
 		</p>
 	</footer>
