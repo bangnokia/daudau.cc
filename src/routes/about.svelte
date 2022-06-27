@@ -1,6 +1,7 @@
 <script>
-    import MeAngry from '../components/images/me-angry.svelte'
+	import MeAngry from '../components/images/me-angry.svelte';
 </script>
+
 <svelte:head>
 	<title>About me</title>
 	<meta
@@ -11,15 +12,15 @@
 
 <div>
 	<div class="float-left mb-2 mr-2">
-        <MeAngry />
-    </div>
+		<MeAngry />
+	</div>
 	<h1 class="text-xl font-semibold">
 		Hello, my name is <span class="text-rose-500">Bang Nguyen Viet</span>
 	</h1>
 
 	<div class="mt-10 leading-7">
 		<p>I'm a developer from Vietnam and a Full Stack Overflow guy with a passion for web development.</p>
-		<p class="mt-10">I love creating blazing fast and easy-to-use things.</p>
+		<p class="mt-10">I love creating blazingly fast and easy-to-use things.</p>
 	</div>
 	<div class="mt-10 leading-7 flex flex-col gap-y-10 w-full">
 		<p>
