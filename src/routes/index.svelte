@@ -14,9 +14,11 @@
 </script>
 
 <script lang="ts">
-	import type { Post } from 'src/types/post';
+	import type { Post } from '../types/post';
 
 	export let posts: Post[];
+
+	let tag = '';
 </script>
 
 <svelte:head>
@@ -34,10 +36,12 @@
 <ul class="flex flex-col gap-5">
 	{#each posts as post}
 		<li>
-			<div class=" text-sm flex space-x-5 content-end">
+			<div class="text-sm flex space-x-5 content-end">
 				<div class="text-gray-400">[<time datetime={post.created_at}>{post.created_at.substring(0, 10)}</time>]</div>
-				<div class="flex gap-x-2 text-gray-600">
-					{post.tags.map((tag) => tag.name).join(', ')}
+				<div class="flex gap-x-2 text-gray-600 text-xs">
+					{#each post.tags.map((tag) => tag.name) as tagName}
+						<span class="bg-gray-50 rounded px-2 py-0.5">{tagName}</span>
+					{/each}
 				</div>
 			</div>
 			<a href="/posts/{post.slug}" class="mt-5 text-rose-500 text-lg" sveltekit:prefetch>
