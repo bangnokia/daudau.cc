@@ -14,11 +14,19 @@
 </script>
 
 <script lang="ts">
+	import { fade } from 'svelte/transition';
 	import type { Post } from '../types/post';
 
 	export let posts: Post[];
 
-	let tag = '';
+	let filterTag = '';
+
+	$: filteredPosts = filterTag ? posts.filter((post) => post.tags.map((tag) => tag.name).includes(filterTag)) : posts;
+	console.log(filteredPosts);
+
+	function filterByTag(tag: string) {
+		filterTag = tag;
+	}
 </script>
 
 <svelte:head>
@@ -33,20 +41,36 @@
 
 <h1 class="hidden">Nguyen's blog posts</h1>
 
-<ul class="flex flex-col gap-5">
-	{#each posts as post}
-		<li>
-			<div class="text-sm flex space-x-5 content-end">
-				<div class="text-gray-400">[<time datetime={post.created_at}>{post.created_at.substring(0, 10)}</time>]</div>
-				<div class="flex gap-x-2 text-gray-600 text-xs">
-					{#each post.tags.map((tag) => tag.name) as tagName}
-						<span class="bg-gray-50 rounded px-2 py-0.5">{tagName}</span>
-					{/each}
+<div class="relative">
+	<div class={`absolute top-0 -mt-10 text-sm ${filterTag ? 'visible' : 'invisible'}`}>
+		Posts with tags: <span class="tag">{filterTag}</span>
+		<button type="button" on:click={() => (filterTag = '')} class="hover:text-rose-500">
+			<svg
+				class="w-3 h-3 inline-block"
+				fill="none"
+				stroke="currentColor"
+				viewBox="0 0 24 24"
+				xmlns="http://www.w3.org/2000/svg"
+				><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg
+			>
+		</button>
+	</div>
+
+	<ul class="flex flex-col gap-5">
+		{#each filteredPosts as post}
+			<li>
+				<div class="text-sm flex space-x-5 content-end">
+					<div class="text-gray-400">[<time datetime={post.created_at}>{post.created_at.substring(0, 10)}</time>]</div>
+					<div class="flex gap-x-2 text-gray-600 text-xs">
+						{#each post.tags.map((tag) => tag.name) as tagName}
+							<span class="tag" type="button" on:click={() => filterByTag(tagName)}> {tagName}</span>
+						{/each}
+					</div>
 				</div>
-			</div>
-			<a href="/posts/{post.slug}" class="mt-5 text-rose-500 text-lg" sveltekit:prefetch>
-				{post.title}
-			</a>
-		</li>
-	{/each}
-</ul>
+				<a href="/posts/{post.slug}" class="mt-5 text-rose-500 text-lg" sveltekit:prefetch>
+					{post.title}
+				</a>
+			</li>
+		{/each}
+	</ul>
+</div>

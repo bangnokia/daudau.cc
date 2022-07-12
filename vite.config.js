@@ -1,9 +1,12 @@
 import Unocss from 'unocss/vite'
-import { presetUno, presetAttributify, presetTypography } from "unocss";
+import { presetUno, presetAttributify, presetTypography, transformerDirectives } from "unocss";
 
 export default {
     plugins: [
         Unocss({
+            transformers: [
+                transformerDirectives(),
+            ],
             presets: [
                 presetAttributify(),
                 presetUno(),
@@ -21,7 +24,7 @@ export default {
                         },
                         img: {
                             'border-radius': '0.5rem',
-                        }
+                        },
                     }
                 }),
             ]
