@@ -40,7 +40,7 @@
 		</span>
 	</div>
 
-	<div id="blog-post-content" class="prose prose-slate break-words">
+	<div id="blog-post-content" class="prose prose-slate break-words text-gray-900">
 		<SvelteMarkDown source={post.content} />
 	</div>
 </article>

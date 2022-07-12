@@ -15,7 +15,7 @@
 		<MeAngry />
 	</div>
 	<h1 class="text-xl font-semibold">
-		Hello, my name is <span class="text-rose-500">Eugene Nguyen</span>
+		Hello, my name is <span class="text-rose-500">Bang Nguyen Viet</span>
 	</h1>
 
 	<div class="mt-10 leading-7">
