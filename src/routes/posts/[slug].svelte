@@ -43,4 +43,11 @@
 	<div id="blog-post-content" class="prose prose-slate break-words text-gray-900">
 		<SvelteMarkDown source={post.content} />
 	</div>
+
+	{#if post.tags.length > 0}
+		<div class="rounded-md mt-10 bg-gray-50 px-2 py-1 text-sm">
+			<span class="inline-block mr-2">Tags:</span>
+			<span>{post.tags.map((tag) => tag.name).join(', ')}</span>
+		</div>
+	{/if}
 </article>

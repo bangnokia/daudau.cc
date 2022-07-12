@@ -20,7 +20,6 @@ export default {
                             margin: "1\.5rem 0",
                         },
                         img: {
-                            border: '1px solid #eee',
                             'border-radius': '0.5rem',
                         }
                     }
