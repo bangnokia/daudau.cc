@@ -25,6 +25,9 @@ export default {
                         img: {
                             'border-radius': '0.5rem',
                         },
+                        'pre': {
+                            'background-color': "#eee !important",
+                        },
                     }
                 }),
             ]

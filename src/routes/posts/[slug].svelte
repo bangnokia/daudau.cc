@@ -32,22 +32,23 @@
 <article>
 	<h1 class="text-rose-500 text-4xl mb-5 font-bold tracking-tight">{post.title}</h1>
 
-	<div class="text-gray-400 text-sm mb-10 flex items-center">
-		<span>
+	<div class="text-gray-500 font-mono text-xs mb-10 flex w-full items-center">
+		<div>
 			<time datetime={post.created_at} class="tracking-tight">
 				{new Date(post.created_at).toDateString()}
 			</time>
-		</span>
+		</div>
+		{#if post.tags.length > 0}
+			<span class="mx-2">-</span>
+			<div class="flex gap-2">
+				{#each post.tags as tag}
+					<span class="tag">{tag.name}</span>
+				{/each}
+			</div>
+		{/if}
 	</div>
 
 	<div id="blog-post-content" class="prose prose-slate break-words text-gray-900">
 		<SvelteMarkDown source={post.content} />
 	</div>
-
-	{#if post.tags.length > 0}
-		<div class="rounded-md mt-10 bg-gray-50 px-2 py-1 text-sm">
-			<span class="inline-block mr-2">Tags:</span>
-			<span>{post.tags.map((tag) => tag.name).join(', ')}</span>
-		</div>
-	{/if}
 </article>
