@@ -30,7 +30,7 @@
 </script>
 
 <svelte:head>
-	<title>My little Journey | Blog of Nguyen</title>
+	<title>My little journey | Blog of Nguyen</title>
 	<meta name="description" content="I write stupid stuff with words and code" />
 	<meta property="og:title" content="My little Journey | Blog of Nguyen" />
 	<meta property="og:description" content="I write stupid stuff with words and code" />
