@@ -14,7 +14,6 @@
 </script>
 
 <script lang="ts">
-	import { fade } from 'svelte/transition';
 	import type { Post } from '../types/post';
 
 	export let posts: Post[];
