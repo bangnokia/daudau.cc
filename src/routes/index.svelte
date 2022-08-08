@@ -21,7 +21,6 @@
 	let filterTag = '';
 
 	$: filteredPosts = filterTag ? posts.filter((post) => post.tags.map((tag) => tag.name).includes(filterTag)) : posts;
-	console.log(filteredPosts);
 
 	function filterByTag(tag: string) {
 		filterTag = tag;
