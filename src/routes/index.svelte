@@ -61,7 +61,7 @@
 					<div class="text-gray-400">[<time datetime={post.created_at}>{post.created_at.substring(0, 10)}</time>]</div>
 					<div class="flex gap-x-2 text-gray-600 text-xs">
 						{#each post.tags.map((tag) => tag.name) as tagName}
-							<span class="tag" on:click={() => filterByTag(tagName)}> {tagName}</span>
+							<span class="tag" on:click={() => filterByTag(tagName)}>{tagName}</span>
 						{/each}
 					</div>
 				</div>
