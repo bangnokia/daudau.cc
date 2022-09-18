@@ -14,6 +14,6 @@
 		<slot />
 	</div>
 	<footer class="text-xs flex justify-end h-12 border-t border-slate-200 pt-3 mt-10 space-x-2">
-		<a href="/wakatime" class="text-slate-700">wakatime</a>
+		<a href="/wakatime" class="text-white">wakatime</a>
 	</footer>
 </div>
