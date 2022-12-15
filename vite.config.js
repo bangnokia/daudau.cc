@@ -1,8 +1,10 @@
 import Unocss from 'unocss/vite'
 import { presetUno, presetAttributify, presetTypography, transformerDirectives } from "unocss";
+import { sveltekit } from '@sveltejs/kit/vite';
 
 export default {
     plugins: [
+        sveltekit(),
         Unocss({
             transformers: [
                 transformerDirectives(),
