@@ -56,7 +56,7 @@
 						{/each}
 					</div>
 				</div>
-				<a href="/posts/{post.slug}" class="mt-5 text-rose-500 text-lg" sveltekit:prefetch>
+				<a href="/posts/{post.slug}" class="mt-5 text-rose-500 text-lg" data-sveltekit-preload-data="hover">
 					{post.title}
 				</a>
 			</li>
