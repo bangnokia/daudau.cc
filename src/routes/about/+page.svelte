@@ -1,5 +1,5 @@
 <script>
-	import MeAngry from '../components/images/me-angry.svelte';
+	import MeAngry from '../../components/images/me-angry.svelte';
 </script>
 
 <svelte:head>

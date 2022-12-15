@@ -1,22 +1,8 @@
-<script context="module">
-	export async function load({ fetch }) {
-		const response = await fetch('https://lab.daudau.cc/api/blog/posts');
-		const posts = await response.json();
-
-		return {
-			status: response.status,
-			cache: 60 * 60 * 5,
-			props: {
-				posts
-			}
-		};
-	}
-</script>
-
 <script lang="ts">
-	import type { Post } from '../types/post';
+	/** @type {import('./$types').PageData}*/
+	export let data;
 
-	export let posts: Post[];
+	let { posts } = data;
 
 	let filterTag = '';
 

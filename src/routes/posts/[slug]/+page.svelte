@@ -1,17 +1,6 @@
-<script context="module">
-	export async function load({ params, fetch }) {
-		const response = await fetch(`https://lab.daudau.cc/api/blog/posts/${params.slug}`);
-
-		return {
-			cache: 60 * 60 * 5,
-			props: {
-				post: await response.json()
-			}
-		};
-	}
-</script>
-
 <script lang="ts">
+	throw new Error("@migration task: Add data prop (https://github.com/sveltejs/kit/discussions/5774#discussioncomment-3292707)");
+
 	import type { Post } from 'src/types/post';
 	import SvelteMarkDown from 'svelte-markdown';
 
