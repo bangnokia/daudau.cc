@@ -38,8 +38,8 @@
 
 		<p>
 			You can get in touch with me via <a href="mailto:bang@daudau.cc">bang@daudau.cc</a>,
-			<a href="https://github.com/bangnokia" target="_blank">Github</a>, or
-			<a href="https://twitter.com/bangnokia" target="_blank">Twitter</a>.
+			<a href="https://github.com/bangnokia" target="_blank" rel="noreferrer">Github</a>, or
+			<a href="https://twitter.com/bangnokia" target="_blank" rel="noreferrer">Twitter</a>.
 		</p>
 
 		<p>

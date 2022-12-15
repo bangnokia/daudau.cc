@@ -1,10 +1,11 @@
 <script lang="ts">
-	throw new Error("@migration task: Add data prop (https://github.com/sveltejs/kit/discussions/5774#discussioncomment-3292707)");
-
 	import type { Post } from 'src/types/post';
 	import SvelteMarkDown from 'svelte-markdown';
 
-	export let post: Post;
+	/** @type {import('./$types').PageData} */
+	export let data;
+
+	let { post } = data;
 
 	let excerpt: string = post.content.split(' ').slice(0, 160).join(' ');
 </script>

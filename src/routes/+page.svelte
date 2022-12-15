@@ -1,12 +1,15 @@
 <script lang="ts">
+	import type { Post } from 'src/types/post';
+
 	/** @type {import('./$types').PageData}*/
 	export let data;
 
-	let { posts } = data;
-
+	let posts = data.posts;
 	let filterTag = '';
 
-	$: filteredPosts = filterTag ? posts.filter((post) => post.tags.map((tag) => tag.name).includes(filterTag)) : posts;
+	$: filteredPosts = filterTag
+		? posts.filter((post: Post) => post.tags.map((tag) => tag.name).includes(filterTag))
+		: posts;
 
 	function filterByTag(tag: string) {
 		filterTag = tag;
@@ -47,7 +50,9 @@
 					<div class="text-gray-400">[<time datetime={post.created_at}>{post.created_at.substring(0, 10)}</time>]</div>
 					<div class="flex gap-x-2 text-gray-600 text-xs">
 						{#each post.tags.map((tag) => tag.name) as tagName}
-							<span class="tag" on:click={() => filterByTag(tagName)}>{tagName}</span>
+							<a href="#${tagName}" class="tag text-gray-500 hover:no-underline" on:click={() => filterByTag(tagName)}
+								>{tagName}</a
+							>
 						{/each}
 					</div>
 				</div>
