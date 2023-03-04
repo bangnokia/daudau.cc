@@ -1,5 +1,6 @@
 <script lang="ts">
 	import type { Post } from 'src/types/post';
+	import type {Tag} from 'src/types/tag';
 
 	/** @type {import('./$types').PageData}*/
 	export let data;
@@ -8,7 +9,7 @@
 	let filterTag = '';
 
 	$: filteredPosts = filterTag
-		? posts.filter((post: Post) => post.tags.map((tag) => tag.name).includes(filterTag))
+		? posts.filter((post: Post) => post.tags.map((tag: Tag) => tag.name).includes(filterTag))
 		: posts;
 
 	function filterByTag(tag: string) {
