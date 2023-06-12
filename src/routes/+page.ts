@@ -1,15 +1,29 @@
 import type { PageLoad } from './$types';
-import type { Post } from 'src/types/post';
+import type { Post } from '../types/post';
+import matter from 'gray-matter';
 
 export const load: PageLoad = async ({ fetch, setHeaders }) => {
-	const response = await fetch('https://lab.daudau.cc/api/blog/posts');
-	const posts: Post[] = await response.json();
+	// read all post in folder `/posts`, extract created date, slug, and metadata from file
+	const files = import.meta.glob('/posts/*.md', { as: 'raw' });
+	const posts: Post[] = [];
 
-	setHeaders({
-		'cache-control': 'max-age=1800, s-maxage=1800, stale-while-revalidate'
-	})
+	for (const path in files) {
+		const fileName = path.split('/').pop()!.replace('.md', '');
+		const createdAt = fileName.substring(0, 10)
+		const slug = fileName.substring(11)
+
+		const rawContent = await files[path]()
+		const { data: { title, tags } } = matter(rawContent)
+
+		posts.push({
+			slug,
+			title,
+			createdAt,
+			tags: tags ? tags.split(',').map(tag => tag.trim()) : []
+		})
+	}
 
 	return {
-		posts
+		posts: posts.reverse()
 	}
 }

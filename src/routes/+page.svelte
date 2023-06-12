@@ -8,9 +8,7 @@
 	let posts: Post[] = data.posts;
 	let filterTag = '';
 
-	$: filteredPosts = filterTag
-		? posts.filter((post: Post) => post.tags.map((tag: Tag) => tag.name).includes(filterTag))
-		: posts;
+	$: filteredPosts = filterTag ? posts.filter((post: Post) => post.tags.includes(filterTag)) : posts;
 
 	function filterByTag(tag: string) {
 		filterTag = tag;
@@ -48,11 +46,13 @@
 		{#each filteredPosts as post}
 			<li>
 				<div class="text-sm flex space-x-5 content-end">
-					<div class="text-gray-400">[<time datetime={post.created_at}>{post.created_at.substring(0, 10)}</time>]</div>
+					<div class="text-gray-400">
+						[<time datetime={post.createdAt}>{new Date(post.createdAt).toDateString()}</time>]
+					</div>
 					<div class="flex gap-x-2 text-gray-600 text-xs">
-						{#each post.tags.map((tag) => tag.name) as tagName}
-							<a href="#{tagName}" class="tag text-gray-500 hover:no-underline" on:click={() => filterByTag(tagName)}>
-								{tagName}
+						{#each post.tags as tag}
+							<a href="#{tag}" class="tag text-gray-500 hover:no-underline" on:click={() => filterByTag(tag)}>
+								{tag}
 							</a>
 						{/each}
 					</div>

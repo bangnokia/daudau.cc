@@ -1,10 +1,9 @@
 import type { Tag } from './tag';
 
 export interface Post {
-	id: number;
 	title: string;
 	slug: string;
-	content: string;
-	created_at: string;
+	content?: string;
+	createdAt: string;
 	tags: Tag[];
 }

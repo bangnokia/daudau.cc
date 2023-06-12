@@ -1,5 +1,4 @@
 <script lang="ts">
-	import type { Post } from 'src/types/post';
 	import SvelteMarkDown from 'svelte-markdown';
 
 	/** @type {import('./$types').PageData} */
