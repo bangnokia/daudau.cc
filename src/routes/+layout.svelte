@@ -1,5 +1,5 @@
 <script lang="ts">
-	import '@unocss/reset/tailwind.css';
+	import '@unocss/preset/tailwind.css';
 	import '../app.css';
 	import 'uno.css';
 </script>
