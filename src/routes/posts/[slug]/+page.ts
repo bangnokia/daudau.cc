@@ -1,15 +1,12 @@
+import matter from 'gray-matter';
 import type { PageLoad } from './$types';
 import type { Post } from 'src/types/post';
+import { getPost } from '../../../libs/utils';
 
 export const load: PageLoad = async ({ params, fetch, setHeaders }) => {
-	const response = await fetch(`https://lab.daudau.cc/api/blog/posts/${params.slug}`);
-	const post: Post = await response.json();
-
-	setHeaders({
-		'cache-control': 'max-age=1800, s-maxage=1800, stale-while-revalidate'
-	})
+	const post = await getPost(params.slug);
 
 	return {
-		post
+		post: post
 	};
 }

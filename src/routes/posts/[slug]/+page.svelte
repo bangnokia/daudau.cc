@@ -24,14 +24,14 @@
 	<div class="text-gray-500 font-mono text-xs mb-10 flex w-full items-center">
 		<div>
 			<time datetime={post.created_at} class="tracking-tight">
-				{new Date(post.created_at).toDateString()}
+				{new Date(post.createdAt).toDateString()}
 			</time>
 		</div>
 		{#if post.tags.length > 0}
 			<span class="mx-2">-</span>
 			<div class="flex gap-2">
 				{#each post.tags as tag}
-					<span class="tag">{tag.name}</span>
+					<span class="tag">{tag}</span>
 				{/each}
 			</div>
 		{/if}
