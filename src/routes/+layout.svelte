@@ -1,7 +1,6 @@
 <script lang="ts">
-	import '@unocss/preset/tailwind.css';
 	import '../app.css';
-	import 'uno.css';
+	import 'virtual:uno.css';
 </script>
 
 <div class="antialiased font-sans mx-auto flex flex-col min-h-screen px-5 pt-5 max-w-2xl overflow-y-hidden">
