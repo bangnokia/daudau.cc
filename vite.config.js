@@ -29,7 +29,7 @@ export default {
                             'border-radius': '0.5rem',
                         },
                         'pre': {
-                            'background-color': "#eee !important",
+                            'background-color': "#e5e5e5 !important",
                         },
                     }
                 }),
