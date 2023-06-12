@@ -1,5 +1,6 @@
 <script lang="ts">
 	import SvelteMarkDown from 'svelte-markdown';
+	import { marked } from 'marked';
 
 	/** @type {import('./$types').PageData} */
 	export let data;
@@ -7,6 +8,7 @@
 	let { post } = data;
 
 	let excerpt: string = post.content.split(' ').slice(0, 160).join(' ');
+	let content = marked.parse(post.content);
 </script>
 
 <svelte:head>
@@ -38,6 +40,8 @@
 	</div>
 
 	<div id="blog-post-content" class="prose prose-slate break-words text-gray-900">
-		<SvelteMarkDown source={post.content} />
+		<article>
+			{@html content}
+		</article>
 	</div>
 </article>
