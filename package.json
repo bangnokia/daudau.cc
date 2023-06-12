@@ -30,7 +30,7 @@
 		"svelte-markdown": "^0.2.2",
 		"tslib": "^2.4.1",
 		"typescript": "^4.9.3",
-		"unocss": "^0.34.0",
+		"unocss": "^0.53.1",
 		"vite": "^4.1.5",
 		"vitest": "^0.25.3"
 	},
