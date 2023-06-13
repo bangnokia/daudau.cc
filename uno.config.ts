@@ -27,4 +27,19 @@ export default defineConfig({
       }
     }),
   ],
+  preflights: [
+    {
+      getCSS: () => `
+        body {
+            margin-left: calc(100vw - 100%);
+        }
+        a {
+            color: rgba(244, 63, 94)
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+      `
+    }
+  ]
 })

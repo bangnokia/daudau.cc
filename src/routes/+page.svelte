@@ -16,9 +16,9 @@
 	}
 
 	onMount(() => {
-		const hash = window.location.hash;
-		if (hash) {
-			filterByTag(hash.slice(1));
+		const tag = new URLSearchParams(location.search).get('tag');
+		if (tag) {
+			filterByTag(tag);
 		}
 	});
 </script>
@@ -59,7 +59,7 @@
 					</div>
 					<div class="flex gap-x-2 text-gray-600 text-xs">
 						{#each post.tags as tag}
-							<Tag href="#{tag}" on:click={() => filterByTag(tag)}>{tag}</Tag>
+							<Tag on:click={() => filterByTag(tag)}>{tag}</Tag>
 						{/each}
 					</div>
 				</div>
