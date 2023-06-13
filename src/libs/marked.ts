@@ -1,8 +1,8 @@
-import { marked as baseMarked } from "marked"
+import { Marked } from "marked"
 import { markedHighlight } from 'marked-highlight';
 import hljs from 'highlight.js';
 
-const marked = baseMarked;
+const marked = new Marked();
 
 marked.use(
   markedHighlight({

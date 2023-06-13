@@ -20,6 +20,9 @@ dependencies:
   highlight.js:
     specifier: ^11.8.0
     version: 11.8.0
+  marked:
+    specifier: ^5.1.0
+    version: 5.1.0
   marked-highlight:
     specifier: ^2.0.1
     version: 2.0.1(marked@5.1.0)
