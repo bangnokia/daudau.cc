@@ -1,4 +1,5 @@
 <script lang="ts">
+	import '@unocss/reset/tailwind.css';
 	import 'virtual:uno.css';
 </script>
 
@@ -15,3 +16,9 @@
 		<a href="/wakatime" class="text-white">wakatime</a>
 	</footer>
 </div>
+
+<style>
+	:global(a:hover) {
+		text-decoration: underline;
+	}
+</style>
