@@ -9,8 +9,3 @@ a {
 a:hover {
     text-decoration: underline;
 }
-
-.tag {
-    @apply ;
-    --at-apply: "hover:bg-gray-100";
-}
