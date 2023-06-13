@@ -1,5 +1,5 @@
-import type { Post } from "../types/post";
-import fm from 'front-matter';
+import type { Post } from "../types/post"
+import fm from 'front-matter'
 
 export async function allPosts() {
   const files = import.meta.glob('/posts/*.md', { as: 'raw' });
