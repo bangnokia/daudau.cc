@@ -1,5 +1,6 @@
 <script lang="ts">
 	import marked from '$lib/marked';
+	import Tag from '../../../components/Tag.svelte';
 
 	/** @type {import('./$types').PageData} */
 	export let data;
@@ -33,7 +34,7 @@
 			<span class="mx-2">-</span>
 			<div class="flex gap-2">
 				{#each post.tags as tag}
-					<span class="tag">{tag}</span>
+					<Tag>{tag}</Tag>
 				{/each}
 			</div>
 		{/if}

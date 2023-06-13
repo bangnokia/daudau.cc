@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Project from '../../components/project.svelte';
+	import Project from '../../components/Project.svelte';
 
 	interface ProjectType {
 		name: string;

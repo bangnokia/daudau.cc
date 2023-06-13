@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { Post } from '../types/post';
-	import type { Tag } from '../types/tag';
+	import Tag from '../components/Tag.svelte';
 
 	/** @type {import('./$types').PageData}*/
 	export let data;
@@ -51,9 +51,7 @@
 					</div>
 					<div class="flex gap-x-2 text-gray-600 text-xs">
 						{#each post.tags as tag}
-							<a href="#{tag}" class="tag text-gray-500 hover:no-underline" on:click={() => filterByTag(tag)}>
-								{tag}
-							</a>
+							<Tag href="#{tag}" on:click={() => filterByTag(tag)}>{tag}</Tag>
 						{/each}
 					</div>
 				</div>
