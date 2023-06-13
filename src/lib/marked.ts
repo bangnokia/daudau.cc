@@ -2,7 +2,11 @@ import { Marked } from "marked"
 import { markedHighlight } from 'marked-highlight';
 import hljs from 'highlight.js';
 
-const marked = new Marked();
+const marked = new Marked({
+  langPrefix: '',
+  mangle: false,
+  headerIds: false
+});
 
 marked.use(
   markedHighlight({

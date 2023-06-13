@@ -34,11 +34,11 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"@esbuild-plugins/node-globals-polyfill": "^0.2.3",
 		"@types/marked": "^5.0.0",
-		"gray-matter": "^4.0.3",
+		"front-matter": "^4.0.2",
 		"highlight.js": "^11.8.0",
 		"marked": "^5.1.0",
-		"marked-highlight": "^2.0.1"
+		"marked-highlight": "^2.0.1",
+		"yarn": "^1.22.19"
 	}
 }

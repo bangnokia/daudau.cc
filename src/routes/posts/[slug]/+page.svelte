@@ -1,5 +1,5 @@
 <script lang="ts">
-	import marked from '../../../libs/marked';
+	import marked from '$lib/marked';
 
 	/** @type {import('./$types').PageData} */
 	export let data;

@@ -1,6 +1,5 @@
-import { marked } from "marked";
 import type { Post } from "../types/post";
-import matter from 'gray-matter';
+import fm from 'front-matter';
 
 export async function allPosts() {
   const files = import.meta.glob('/posts/*.md', { as: 'raw' });
@@ -12,7 +11,7 @@ export async function allPosts() {
     const slug = fileName.substring(11)
 
     const rawContent = await files[path]()
-    const { data: { title, tags } } = matter(rawContent)
+    const { attributes: { title, tags } } = fm(rawContent)
 
     posts.push({
       slug,
@@ -35,7 +34,7 @@ export async function getPost(slug: string) {
       const rawContent = await files[path]()
       const fileName = path.split('/').pop()!.replace('.md', '');
       const createdAt = fileName.substring(0, 10)
-      const { content, data: { title, tags } } = matter(rawContent)
+      const { body: content, attributes: { title, tags } } = fm(rawContent)
 
       return {
         slug,

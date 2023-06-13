@@ -1,7 +1,6 @@
 import Unocss from 'unocss/vite'
 import { presetUno, presetAttributify, presetTypography, transformerDirectives } from "unocss";
 import { sveltekit } from '@sveltejs/kit/vite';
-import { NodeGlobalsPolyfillPlugin } from '@esbuild-plugins/node-globals-polyfill'
 
 export default {
     plugins: [
@@ -35,19 +34,5 @@ export default {
                 }),
             ]
         })
-    ],
-    optimizeDeps: {
-        esbuildOptions: {
-            // Node.js global to browser globalThis
-            define: {
-                global: 'globalThis'
-            },
-            // Enable esbuild polyfill plugins
-            plugins: [
-                NodeGlobalsPolyfillPlugin({
-                    buffer: true
-                })
-            ]
-        }
-    }
+    ]
 }
