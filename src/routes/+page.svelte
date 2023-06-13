@@ -1,6 +1,7 @@
 <script lang="ts">
 	import type { Post } from '../types/post';
 	import Tag from '../components/Tag.svelte';
+	import { onMount } from 'svelte';
 
 	/** @type {import('./$types').PageData}*/
 	export let data;
@@ -13,6 +14,13 @@
 	function filterByTag(tag: string) {
 		filterTag = tag;
 	}
+
+	onMount(() => {
+		const hash = window.location.hash;
+		if (hash) {
+			filterByTag(hash.slice(1));
+		}
+	});
 </script>
 
 <svelte:head>
@@ -29,7 +37,7 @@
 
 <div class="relative">
 	<div class={`absolute top-0 -mt-10 text-sm ${filterTag ? 'visible' : 'invisible'}`}>
-		Posts with tags: <span class="tag">{filterTag}</span>
+		Posts with tags: <Tag on:click={() => (filterTag = '')}>{filterTag}</Tag>
 		<button type="button" on:click={() => (filterTag = '')} class="hover:text-rose-500">
 			<svg
 				class="w-3 h-3 inline-block"
