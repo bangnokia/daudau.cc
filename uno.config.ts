@@ -1,11 +1,18 @@
 // uno.config.ts
 import { defineConfig } from 'unocss'
-import { presetUno, presetTypography } from "unocss";
+import { presetUno, presetTypography, presetWebFonts } from "unocss";
 
 
 export default defineConfig({
   presets: [
     presetUno(),
+    presetWebFonts({
+      provider: 'bunny',
+      fonts: {
+        sans: ['Roboto Mono'],
+        mono: ['Fira Code', 'Fira Mono:400,700']
+      }
+    }),
     presetTypography({
       cssExtend: {
         a: {
