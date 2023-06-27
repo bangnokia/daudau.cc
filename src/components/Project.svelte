@@ -6,7 +6,7 @@
 	export let logo: string | undefined = undefined;
 </script>
 
-<div class="p-5 bg-neutral-100 hover:bg-white ring ring-transparent hover:ring-rose transition rounded-lg">
+<div class="p-5 bg-neutral-800 hover:bg-neutral-700 transition rounded-lg">
 	<div class="flex w-full items-center gap-5">
 		{#if logo}
 			<div>
@@ -16,7 +16,7 @@
 		<div class="grow">
 			<div class="flex items-center justify-between">
 				<div class="flex items-center">
-					<a class="text-xl text-rose-500 font-medium" href={website || githubUrl} target="_blank">{name}</a>
+					<a class="text-xl font-medium" href={website || githubUrl} target="_blank">{name}</a>
 				</div>
 				<div class="flex items-center gap-3">
 					{#if website}

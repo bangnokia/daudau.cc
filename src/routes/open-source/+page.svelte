@@ -52,7 +52,7 @@
 	<meta name="description" content="Some of my funny open source projects" />
 </svelte:head>
 
-<h1 class="text-4xl text-rose-500 font-bold">My open source projects</h1>
+<h1 class="text-4xl text-neutral-100 font-bold">My open source projects</h1>
 <div class="grid mt-10 gap-8 grid-cols-1">
 	{#each projects as project}
 		<Project {...project} />

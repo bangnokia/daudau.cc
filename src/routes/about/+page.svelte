@@ -15,7 +15,7 @@
 		<MeAngry />
 	</div>
 	<h1 class="text-xl font-semibold">
-		Hello, my name is <span class="text-rose-500">Tommy Nguyen</span>
+		Hello, my name is <span class="text-teal-500">Tommy Nguyen</span>
 	</h1>
 
 	<div class="mt-10 leading-7">
@@ -26,7 +26,7 @@
 		<p>
 			I work with <span class="text-rose-500">Laravel</span> and occasionally <span class="text-green-600">VueJS</span>
 			or
-			<span class="text-sky-400">ReactJS</span>, but now I've fallen in love with
+			<span class="text-teal-400">ReactJS</span>, but now I've fallen in love with
 			<span class="text-orange-500 hover:animate-ping inline-block">Svelte</span>.
 		</p>
 

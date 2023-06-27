@@ -54,8 +54,8 @@
 		{#each filteredPosts as post}
 			<li>
 				<div class="text-sm flex space-x-5 content-end">
-					<div class="text-gray-400">
-						[<time datetime={post.createdAt}>{new Date(post.createdAt).toDateString()}</time>]
+					<div class="text-neutral-600">
+						<time datetime={post.createdAt}>{new Date(post.createdAt).toDateString()}</time>
 					</div>
 					<div class="flex gap-x-2 text-gray-600 text-xs">
 						{#each post.tags as tag}
