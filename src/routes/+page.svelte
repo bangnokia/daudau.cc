@@ -63,7 +63,11 @@
 						{/each}
 					</div>
 				</div>
-				<a href="/posts/{post.slug}" class="mt-5 text-rose-500 text-lg" data-sveltekit-preload-data="hover">
+				<a
+					href="/posts/{post.slug}"
+					class="mt-5 text-gray-200 text-lg hover:text-teal-500"
+					data-sveltekit-preload-data="hover"
+				>
 					{post.title}
 				</a>
 			</li>

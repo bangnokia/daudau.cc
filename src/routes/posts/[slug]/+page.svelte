@@ -22,7 +22,7 @@
 </svelte:head>
 
 <article>
-	<h1 class="text-rose-500 text-4xl mb-5 font-bold tracking-tight">{post.title}</h1>
+	<h1 class="text-gray-200 text-4xl mb-5 font-bold tracking-tight">{post.title}</h1>
 
 	<div class="text-gray-500 font-mono text-xs mb-10 flex w-full items-center">
 		<div>
@@ -40,7 +40,7 @@
 		{/if}
 	</div>
 
-	<div id="blog-post-content" class="prose prose-slate break-words text-gray-900">
+	<div id="blog-post-content" class="prose prose-white break-words text-gray-400">
 		<article>
 			{@html content}
 		</article>

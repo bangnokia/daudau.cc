@@ -19,11 +19,11 @@ export default defineConfig({
           margin: "1.5rem 0",
         },
         img: {
-          'border-radius': '0.5rem',
+          'border-radius': '1rem',
         },
         'pre': {
-          'background-color': "#e5e5e5 !important",
-        },
+          border: '1px solid rgba(255, 255, 255, 0.2)',
+        }
       }
     }),
   ],
@@ -31,10 +31,10 @@ export default defineConfig({
     {
       getCSS: () => `
         body {
-            margin-left: calc(100vw - 100%);
+          background-color: #f5f5f5;
         }
         a {
-            color: rgba(244, 63, 94)
+            color: rgba(20,184,166)
         }
         a:hover {
             text-decoration: underline;
