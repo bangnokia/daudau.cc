@@ -21,9 +21,6 @@ export default defineConfig({
         img: {
           'border-radius': '1rem',
         },
-        'pre': {
-          border: '1px solid rgba(255, 255, 255, 0.2)',
-        }
       }
     }),
   ],
