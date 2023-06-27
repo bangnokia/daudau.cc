@@ -1,21 +1,12 @@
-import { Marked } from "marked"
-import { markedHighlight } from 'marked-highlight'
-import hljs from 'highlight.js'
+import MarkdownIt from "markdown-it"
+import Anchor from "markdown-it-anchor"
 
-const marked = new Marked({
-  langPrefix: '',
-  mangle: false,
-  headerIds: false
+const marked = MarkdownIt({
+  linkify: true
+});
+
+marked.use(Anchor, {
+  level: 2,
 })
-
-marked.use(
-  markedHighlight({
-    langPrefix: 'hljs language-',
-    highlight(code, lang) {
-      const language = hljs.getLanguage(lang) ? lang : 'plaintext'
-      return hljs.highlight(code, { language }).value
-    }
-  })
-)
 
 export default marked

@@ -13,7 +13,7 @@ About storage folder when deployment, i acctually just create an folder outside 
 
 But acctually if you look at code at [Illuminate/Foundation/Application.php](https://github.com/laravel/framework/blob/72ea328b456ea570f8823c69f511583aa6234170/src/Illuminate/Foundation/Application.php) you can see there are some hidden env configs maybe useful sometimes.
 
-## Customize storage path {#customize-storage-path}
+## Customize storage path
 
 You can modify default storage path  by calling `$app->useStoragePath($yourPath)` in the `bootstrap/app.php`.
 
@@ -28,7 +28,7 @@ public function useStoragePath($path)
 }
 ```
 
-## Customize framework cache paths {#customize-framework-cache-paths}
+## Customize framework cache paths
 
 Now take a look at this `normalizeCachePath` function, if our value starts with any absolute prefixes `/` or `\`, so it will use absolute path, other wise relative path.
 
