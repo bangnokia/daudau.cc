@@ -9,7 +9,7 @@ export default defineConfig({
     presetWebFonts({
       provider: 'bunny',
       fonts: {
-        sans: ['Roboto Mono'],
+        sans: ['Roboto'],
         mono: ['Fira Code', 'Fira Mono:400,700']
       }
     }),
