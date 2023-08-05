@@ -11,7 +11,7 @@
 
 	$: filteredPosts = filterTag ? posts.filter((post: Post) => post.tags.includes(filterTag)) : posts;
 
-	function filterByTag(tag: string) {
+	function filterByTag(tag) {
 		filterTag = tag;
 	}
 
