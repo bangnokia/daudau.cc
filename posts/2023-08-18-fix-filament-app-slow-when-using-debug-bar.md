@@ -1,6 +1,6 @@
 ---
 title: Fixing Filament App Slowness When Using Laravel Debugbar
-tags: filament, laravel debug bar
+tags: filament, laravel debug bar, laravel
 ---
 
 By default, [Laravel Debugbar](https://github.com/barryvdh/laravel-debugbar) enables logging views, which consumes a significant amount of resources in the Filament app. Displaying all view names can potentially cause the Debugbar to crash itself, rather than the application. Therefore, it is advisable to disable this feature, unless you are specifically working on a custom field.
