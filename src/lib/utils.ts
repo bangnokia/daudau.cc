@@ -1,5 +1,5 @@
 import type { Post } from "../types/post"
-import fm from 'front-matter'
+import fm, { type FrontMatterResult } from 'front-matter'
 import marked from '$lib/marked'
 
 export async function allPosts() {
@@ -12,7 +12,7 @@ export async function allPosts() {
     const slug = fileName.substring(11)
 
     const rawContent = await files[path]()
-    const { attributes: { title, tags } } = fm(rawContent)
+    const { attributes: { title, tags } }: FrontMatterResult<{ title: string, tags: string }> = fm(rawContent)
 
     posts.push({
       slug,
