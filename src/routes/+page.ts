@@ -1,10 +1,9 @@
-import type { PageLoad } from './$types';
-import { allPosts } from '../lib/utils';
+import type { Post } from '../types/post'
 
-export const load: PageLoad = async ({ fetch, setHeaders }) => {
-	const posts = await allPosts()
+export async function load({ fetch }) {
+  const response = await fetch('/api/posts')
 
-	return {
-		posts
-	}
+  const posts: Post[] = await response.json()
+
+  return { posts }
 }
