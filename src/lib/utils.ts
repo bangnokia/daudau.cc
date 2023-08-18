@@ -3,7 +3,7 @@ import fm, { type FrontMatterResult } from 'front-matter'
 import marked from '$lib/marked'
 
 export async function allPosts() {
-  const files = import.meta.glob('/posts/*.md', { as: 'raw' });
+  const files = import.meta.glob('/posts/*.md', { as: 'raw', eager: true });
   const posts: Post[] = [];
 
   for (const path in files) {
@@ -11,7 +11,7 @@ export async function allPosts() {
     const createdAt = fileName.substring(0, 10)
     const slug = fileName.substring(11)
 
-    const rawContent = await files[path]()
+    const rawContent = files[path]
     const { attributes: { title, tags } }: FrontMatterResult<{ title: string, tags: string }> = fm(rawContent)
 
     posts.push({
@@ -35,7 +35,7 @@ export async function getPost(slug: string) {
       const rawContent = await files[path]()
       const fileName = path.split('/').pop()!.replace('.md', '');
       const createdAt = fileName.substring(0, 10)
-      const { body: content, attributes: { title, tags } } = fm(rawContent)
+      const { body: content, attributes: { title, tags } }: FrontMatterResult<{ title: string, tags: string }> = fm(rawContent)
 
       return {
         slug,

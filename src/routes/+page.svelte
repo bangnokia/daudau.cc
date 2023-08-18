@@ -11,7 +11,7 @@
 
 	$: filteredPosts = filterTag ? posts.filter((post: Post) => post.tags.includes(filterTag)) : posts;
 
-	function filterByTag(tag) {
+	function filterByTag(tag: string) {
 		filterTag = tag;
 	}
 
@@ -66,7 +66,6 @@
 				<a
 					href="/posts/{post.slug}"
 					class="mt-5 text-gray-300 hover:text-gray-100 hover:no-underline text-lg transition"
-					data-sveltekit-preload-data="hover"
 				>
 					{post.title}
 				</a>
