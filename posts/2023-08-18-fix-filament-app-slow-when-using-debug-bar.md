@@ -1,5 +1,5 @@
 ---
-title: Fixing Filament app slowness when wsing Laravel Debugbar
+title: Fixing Filament app slowness when using Laravel Debugbar
 tags: filament, laravel debugbar, laravel
 ---
 
