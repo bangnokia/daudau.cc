@@ -12,13 +12,13 @@ export async function allPosts() {
     const slug = fileName.substring(11)
 
     const rawContent = files[path]
-    const { attributes: { title, tags } }: FrontMatterResult<{ title: string, tags: string }> = fm(rawContent)
+    const { attributes: { title, tags } }: FrontMatterResult<{ title: string, tags: Array }> = fm(rawContent)
 
     posts.push({
       slug,
       title,
       createdAt,
-      tags: tags ? tags.split(',').map((tag: string) => tag.trim()) : []
+      tags,
     })
   }
 
@@ -26,27 +26,24 @@ export async function allPosts() {
 }
 
 export async function getPost(slug: string) {
-  const test = "2023-08-18-fixing-filament-app-slowness-when-using-laravel-debug-bar"
-  slug = test
-  const file = await import(`/posts/${slug}.md`, { eager: true })
-  console.log('file is', file)
-  return
-  // const files = import.meta.glob(`/posts/*-${slug}.md`, { as: 'raw' });
+  const files = import.meta.glob(`/posts/*.md`, { as: 'raw' });
 
   for (const path in files) {
-    const rest = path.substring(18);
+    const rest = path.substring(18); // remove the '/posts/yyyy-mm-dd-' string from the path
 
     if (rest === slug + '.md') {
       const rawContent = await files[path]()
       const fileName = path.split('/').pop()!.replace('.md', '');
       const createdAt = fileName.substring(0, 10)
-      const { body: content, attributes: { title, tags } }: FrontMatterResult<{ title: string, tags: string }> = fm(rawContent)
+      const { body: content, attributes: { title, tags } }: FrontMatterResult<{ title: string, tags: Array }> = fm(rawContent)
+      console.log('tags', tags)
 
       return {
         slug,
         title,
         createdAt,
-        tags: tags ? tags.split(',').map((tag: string) => tag.trim()) : [],
+        // tags: tags ? tags.split(',').map((tag: string) => tag.trim()) : [],
+        tags,
         content
       }
     }

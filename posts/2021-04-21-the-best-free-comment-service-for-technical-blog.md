@@ -1,6 +1,7 @@
 ---
 title: The best "Free" comment service for technical blog
-tags: 
+tags:
+  - disqus
 ---
 I'm sure you have to find some free comment services which support widget to embed in our websites. For example this blog, it's includes on static html files, and have to write it's own comments function, that's too overhead!
 

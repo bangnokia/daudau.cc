@@ -1,6 +1,7 @@
 ---
 title: Hidden laravel config env paths maybe you don't know
-tags: laravel
+tags:
+    - laravel
 ---
 There are some interesting env config keys of Laravel didn't mention in official documentation about storage path and cache path. May be you will never need to custom them in you entire developer life, but i think just know their existence, it's fun!
 

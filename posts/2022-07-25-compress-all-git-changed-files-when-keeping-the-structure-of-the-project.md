@@ -1,6 +1,7 @@
 ---
 title: Compress all git changed files when keeping the structure of the project
-tags: git
+tags:
+  - git
 ---
 Sometimes I do freelance jobs, and I have some clients people who don't use `git`, they send me the source code and database, then I need to send back to them all the modified files.
 

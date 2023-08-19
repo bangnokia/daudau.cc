@@ -1,6 +1,7 @@
 ---
 title: Why I wrote Pekyll
-tags: php
+tags:
+  - php
 ---
 ## Tại sao lại viết pekyll xD {#why-pekyll}
 

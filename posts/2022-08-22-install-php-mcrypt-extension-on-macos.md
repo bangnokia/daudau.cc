@@ -1,6 +1,9 @@
 ---
 title: Install PHP mcrypt extension on macOS
-tags: php, macos, mcrypt
+tags:
+  - php
+  - macos
+  - mcrypt
 ---
 Sometimes you upgrade the legacy project, which requires some old extension that is already deprecated like `mcrypt`.   This extension doesn't come with PHP by default, so we have to install it via `pecl`
 

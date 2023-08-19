@@ -1,6 +1,8 @@
 ---
 title: Why you should learn Vim (motions)
-tags: vim, neovim
+tags:
+  - vim
+  - neovim
 ---
 *Disclaimer: This post is not about convincing you to give up your lovely IDEs like VSCode or PHPStorm*
 
@@ -24,11 +26,11 @@ I think macOS and Vim motions are the best combo, tho. Because almost keybinding
 
 If you don't know Vim, you are still ok, but if you know Vim, you would have a powerful toolkit, is that sound great?
 
-You don't have to use vim as your code editor, daily working. You just need to know Vim motions, that would help you so much. 
+You don't have to use vim as your code editor, daily working. You just need to know Vim motions, that would help you so much.
 
 You're a coder, so most of the time you're writing code, Moving in Vim, basically, you just press `h`, `j`, `k`, `l`, and don't have to lift your right hand to press arrow keys, that's suck. Using vim, almost time you jump between points in the editor, not line by line as traditional, or scrolling your mouse :(, (how to do it, you need to find yourself).
 
-When you `ssh` in your Linux server, and modify some configuration files, you can use `nano`, and spam your arrow key to move around your file, that's terrible,  vim is a savior with lots of no-brain keyboard shortcuts to save your time: `G`, `gg`, `C-f`, `C-b`, `dd`, `%`, `w`, `b`,... You see, they are random bullshit keybindings but it works 🤣, 
+When you `ssh` in your Linux server, and modify some configuration files, you can use `nano`, and spam your arrow key to move around your file, that's terrible,  vim is a savior with lots of no-brain keyboard shortcuts to save your time: `G`, `gg`, `C-f`, `C-b`, `dd`, `%`, `w`, `b`,... You see, they are random bullshit keybindings but it works 🤣,
 
 Anyway, you can ssh into your production server and edit source code using vim, that's real-time deployment 🔥.
 
