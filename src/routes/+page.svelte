@@ -17,7 +17,7 @@
 
 	onMount(() => {
 		const tag = new URLSearchParams(location.search).get('tag');
-		filterByTag(tag);
+		filterByTag(tag + '');
 	});
 </script>
 
