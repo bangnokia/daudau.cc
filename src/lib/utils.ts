@@ -26,7 +26,12 @@ export async function allPosts() {
 }
 
 export async function getPost(slug: string) {
-  const files = import.meta.glob('/posts/*.md', { as: 'raw' });
+  const test = "2023-08-18-fixing-filament-app-slowness-when-using-laravel-debug-bar"
+  slug = test
+  const file = await import(`/posts/${slug}.md`, { eager: true })
+  console.log('file is', file)
+  return
+  // const files = import.meta.glob(`/posts/*-${slug}.md`, { as: 'raw' });
 
   for (const path in files) {
     const rest = path.substring(18);
