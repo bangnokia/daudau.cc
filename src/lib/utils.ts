@@ -1,6 +1,5 @@
-import type { Post } from "../types/post"
+import type { Post } from "$lib/types"
 import fm, { type FrontMatterResult } from 'front-matter'
-import marked from '$lib/marked'
 
 export async function allPosts() {
   const files = import.meta.glob('/posts/*.md', { as: 'raw', eager: true });
@@ -36,13 +35,11 @@ export async function getPost(slug: string) {
       const fileName = path.split('/').pop()!.replace('.md', '');
       const createdAt = fileName.substring(0, 10)
       const { body: content, attributes: { title, tags } }: FrontMatterResult<{ title: string, tags: Array }> = fm(rawContent)
-      console.log('tags', tags)
 
       return {
         slug,
         title,
         createdAt,
-        // tags: tags ? tags.split(',').map((tag: string) => tag.trim()) : [],
         tags,
         content
       }

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { Post } from '../types/post';
+	import type { Post } from '$lib/types';
 	import Tag from '../components/Tag.svelte';
 	import { onMount } from 'svelte';
 
