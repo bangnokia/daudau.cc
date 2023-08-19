@@ -17,9 +17,7 @@
 
 	onMount(() => {
 		const tag = new URLSearchParams(location.search).get('tag');
-		if (tag) {
-			filterByTag(tag);
-		}
+		filterByTag(tag + '');
 	});
 </script>
 
@@ -66,6 +64,7 @@
 				<a
 					href="/posts/{post.slug}"
 					class="mt-5 text-gray-300 hover:text-gray-100 hover:no-underline text-lg transition"
+					data-sveltekit-preload-data="hover"
 				>
 					{post.title}
 				</a>
