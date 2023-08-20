@@ -4,7 +4,6 @@
 
 	/** @type {import('./$types').PageData} */
 	export let data;
-	// export let content;
 
 	let { post } = data;
 	let excerpt: string = post.content.split(' ').slice(0, 160).join(' ');
