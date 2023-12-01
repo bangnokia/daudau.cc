@@ -3,6 +3,7 @@ title: Setup Contabo Object Storage s3 compatible in Laravel application
 tags:
     - laravel
     - contabo
+    - storage
 ---
 
 ## Introduction
