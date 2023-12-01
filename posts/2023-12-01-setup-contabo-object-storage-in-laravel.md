@@ -63,4 +63,4 @@ Storage::disk('s3')->put('test.txt', 'Hello World');
 
 ## Conclusion
 I think Contabo object storage is a good choice for s3 compatible storage, it's cheap and easy to use.
-If you have a tight budget like me, you can try it.
+If you have a tight budget like me, you can try it. 🚀
