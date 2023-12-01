@@ -25,7 +25,7 @@ Afterward, visit `Account -> Security & Access`, you will get the credentials li
 ### Install package in Laravel
 First, you need to install the package:
 ```bash
-composer require league/flysystem-path-prefixing "^3.0"
+composer require league/flysystem-aws-s3-v3 "^3.0" --with-all-dependencies
 ```
 
 In the `config/filesystems.php`, modify the following code if you want, but I will keep this as default:
