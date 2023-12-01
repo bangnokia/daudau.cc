@@ -27,6 +27,7 @@ export default defineConfig({
         },
         img: {
           'border-radius': '1rem',
+          'margin-top': '1rem',
         },
       }
     }),

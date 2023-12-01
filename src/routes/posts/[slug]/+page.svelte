@@ -38,7 +38,7 @@
 		{/if}
 	</div>
 
-	<div id="blog-post-content" class="prose prose-white break-words text-gray-400">
+	<div id="blog-post-content" class="prose prose-white prose-img:mt-4 break-words text-gray-400">
 		<article>
 			{@html content}
 		</article>
