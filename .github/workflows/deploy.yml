@@ -23,6 +23,7 @@ jobs:
 
       - name: Install Lina
         run: |
+          composer global config minimum-stability dev
           composer global require bangnokia/lina:dev-main
 
       - name: Build
