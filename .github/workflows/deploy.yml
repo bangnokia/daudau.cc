@@ -24,7 +24,7 @@ jobs:
       - name: Install Line
         run: |
           composer global config minimum-stability dev
-          composer global require bangnokia/lina:dev-main
+          composer global require bangnokia/lina:0.3.1
 
       - name: Build
         run: php ~/.composer/vendor/bin/lina build
