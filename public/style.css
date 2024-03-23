@@ -95,7 +95,11 @@ footer {
 .main-menu {
     display: flex;
     gap: 1rem;
-    font-weight: 500;
+    font-weight: 400;
+
+    a {
+        color: initial;
+    }
 }
 
 .text-center {

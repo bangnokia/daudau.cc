@@ -4,8 +4,11 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ implode(' | ', [$data->title ?? '', 'My awesome blog']) }}</title>
+
+    <title>{{ implode(' | ', [$data->title ?? '', 'Blog of Nguyen']) }}</title>
     <meta name="description" content="{{ substr(strip_tags($data->content), 0, 165) }}">
+
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,7 +20,7 @@
 <body>
     <header class="container">
         <nav class="main-menu">
-            <a href="/">Home</a>
+            <a href="/">Blog</a>
             <a href="/about">About</a>
         </nav>
     </header>
@@ -31,4 +34,5 @@
         <a href="/wakatime" style="color: white">wakatime</a>
     </footer>
 </body>
+
 </html>

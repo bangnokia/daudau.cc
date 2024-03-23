@@ -1,5 +1,5 @@
 ---
-title: home page
+title: My little corner
 layout: home
 ---
 

@@ -6,7 +6,7 @@
 
 @section('content')
     <div>
-        <ul style="display: flex; flex-direction: column; gap: 1rem; list-style: none; padding: 0">
+        <ul style="display: flex; flex-direction: column; gap: 0.5rem; list-style: none; padding: 0">
             @foreach($posts as $post)
                 <li>
                     <x-date>{{ $post->createdAt }}</x-date>
