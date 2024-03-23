@@ -27,7 +27,7 @@ jobs:
           composer global require bangnokia/lina:dev-main
 
       - name: Build
-        run: composer global exec lina build
+        run: php ~/.composer/vendor/bin/lina build
       - run: rm ./public/.gitignore
 
       - name: Deploy
