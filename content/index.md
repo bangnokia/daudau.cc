@@ -1,0 +1,4 @@
+---
+title: home page
+layout: home
+---
