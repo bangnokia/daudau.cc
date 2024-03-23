@@ -14,7 +14,6 @@ You know, the first impression, that was epic! What the hell is how it works? **
 ## How it works
 
 > I haven't bought the Tinkerwell or used it before (because US pricing isn't sweetly in my country xD), all the explanations in this blog post from some investigations about public resources of Tinkerwell and laravel-web-tinker
->
 
 My first thought, was it must be something based on the `artisan tinker` command. So after digging into the Laravel tinker component, I see it's just a specific wrapper of [PsySH](https://github.com/bobthecow/psysh) - a runtime developer console, interactive debugger, and REPL for PHP. From row, the light is opened for us.
 
