@@ -2,10 +2,9 @@
 
 @section('content')
     <h1>{{ $data->title }}</h1>
+    <x-date>{{ $data->createdAt }}</x-date>
 
-    <time>{{ $data->createdAt }}</time>
-    <article>
+    <article class="prose">
         {!! $data->content !!}
-{{--        {{ $data->content }}--}}
     </article>
 @endsection

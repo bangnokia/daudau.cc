@@ -55,6 +55,11 @@ p {
     line-height: 1.75rem;
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+}
+
 #app {
     padding: 1rem 0;
 }
@@ -93,6 +98,14 @@ p {
 }
 .text-sm {
     font-size: 0.875rem;
+}
+
+.prose {
+    img {
+        margin-top: 1rem;
+        border-radius: 1rem;
+        box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+    }
 }
 
 
