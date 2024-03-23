@@ -27,7 +27,7 @@ jobs:
 
       - name: Build
         run: |
-          php ~/.composer/vendor/bangnokia/lina build
+          php ~/.composer/vendor/bangnokia/lina/lina build
           rm ./public/.gitignore
 
       - name: Deploy
