@@ -23,12 +23,13 @@ jobs:
 
       - name: Install Lina
         run: |
-          composer global config minimum-stability dev
-          composer global require bangnokia/lina:dev-main
+          // init the composer
+          composer init --name=yourname/yourproject --stability=dev --no-interaction
+          composer require bangnokia/lina:dev-main
 
       - name: Build
         run: |
-          php ~/.composer/vendor/bangnokia/lina/lina build
+          php vendor/bin/lina build
           rm ./public/.gitignore
 
       - name: Deploy
