@@ -22,7 +22,9 @@ jobs:
           coverage: none
 
       - name: Install Line
-        run: composer global require bangnokia/lina:dev-main
+        run:
+          composer global config minimum-stability dev
+          composer global require bangnokia/lina:dev-main
 
       - name: Build
         run: composer global exec lina build
