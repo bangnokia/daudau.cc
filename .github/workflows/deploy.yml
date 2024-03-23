@@ -28,7 +28,7 @@ jobs:
 
       - name: Build
         run: |
-          ls -la ./public
+          ls -la ./content
           php vendor/bin/lina build --verbose
           rm ./public/.gitignore
 
