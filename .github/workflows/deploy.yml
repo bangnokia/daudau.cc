@@ -29,7 +29,7 @@ jobs:
       - name: Build
         run: |
           ls -la
-          php ~/.composer/vendor/bin/lina build
+          php lina.phar build
           rm ./public/.gitignore
 
       - name: Deploy
