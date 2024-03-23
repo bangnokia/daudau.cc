@@ -21,9 +21,9 @@ jobs:
           extensions: curl, mbstring, zip, pcntl, pdo, iconv
           coverage: none
 
-      - name: Install Line
+      - name: Install Lina
         run: |
-          composer init --name=your-name/your-repo --require=bangnokia/lina:dev-main --stability=dev --no-interaction
+          composer global require bangnokia/lina:dev-main
 
       - name: Build
         run: |
