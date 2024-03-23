@@ -1,94 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<title>daudau&#039;s blog</title>
-
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="personal blog by Bang. I write stupid stuff with words and code">
+    <title>home page | My awesome blog</title>
+    <meta name="description" content="Nothing here">
 
-    <meta name="twitter:creator" content="@bangnokia">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:description" content="personal blog by Bang. I write stupid stuff with words and code">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..700;1,100..700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+</head>
 
-    <meta name="og:title" content="daudau&#039;s blog">
-    <meta name="og:description" content="personal blog by Bang. I write stupid stuff with words and code">
-    <meta name="og:type" content="article">
-
-    
-	<link rel="icon" type="image/png" href="/images/favicon-32x32.png">
-    <link rel="stylesheet" type="text/css" href="/css/app.css?v=1641452989">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-	<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400&display=swap" rel="stylesheet">
-
-    </head>
 <body>
-	<div class="main-body mx-auto flex flex-col min-h-screen px-5 pt-5 max-w-2xl">
-		<div class="flex space-x-5 flex-none">
-	<a href="/" class="text-gray-500 hover:underline">home</a>
-    <a href="/projects.html" class="text-gray-500 hover:underline">projects</a>
-    <a href="/about.html" class="text-gray-500 hover:underline">about me</a>
-</div>
+    <header class="container">
+        <nav class="main-menu">
+            <a href="/">Home</a>
+            <a href="/about">About</a>
+        </nav>
+    </header>
 
-		<div class="mt-20 flex-grow flex-shrink flex-1">
-			<ul>
-                                    <li class="mt-8">
-                    <div class="block text-sm flex space-x-5 content-end">
-                        <div class="text-gray-400">[<time datetime="2021-04-22">2021-04-22</time>]</div>
-                        <div class="text-gray-600"></div>
-                    </div>
-
-                    <a href="/posts/free-comment-service-for-technical-blog.html" class="text-lg mt-5">The best &quot;Free&quot; comment service for technical blog</a>
+    <main class="container" style="padding: 4rem 0 0; width: 100%; height: 100%; flex-grow: 1">
+            <div>
+        <ul style="display: flex; flex-direction: column; gap: 1rem; list-style: none; padding: 0">
+                            <li>
+                    <time class="text-sm">December 1, 2023</time>
+                    <a href="/posts/setup-contabo-object-storage-in-laravel" class="block" style="padding: 0.25rem 0;">
+                        Setup Contabo Object Storage s3 compatible in Laravel application
+                    </a>
                 </li>
-            		                            <li class="mt-8">
-                    <div class="block text-sm flex space-x-5 content-end">
-                        <div class="text-gray-400">[<time datetime="2021-04-09">2021-04-09</time>]</div>
-                        <div class="text-gray-600">laravel, tinker</div>
-                    </div>
-
-                    <a href="/posts/how-to-tinker-with-any-php-applications.html" class="text-lg mt-5">How to &quot;tinker&quot; with any PHP applications</a>
+                            <li>
+                    <time class="text-sm">August 18, 2023</time>
+                    <a href="/posts/fixing-filament-app-slowness-when-using-laravel-debug-bar" class="block" style="padding: 0.25rem 0;">
+                        Fixing Filament app slowness when using Laravel Debugbar
+                    </a>
                 </li>
-            		                            <li class="mt-8">
-                    <div class="block text-sm flex space-x-5 content-end">
-                        <div class="text-gray-400">[<time datetime="2021-03-24">2021-03-24</time>]</div>
-                        <div class="text-gray-600">laravel, reactphp, live reload</div>
-                    </div>
-
-                    <a href="/posts/laravel-live-reload-without-javascript.html" class="text-lg mt-5">Laravel live reloading without any js stuff</a>
+                            <li>
+                    <time class="text-sm">August 22, 2022</time>
+                    <a href="/posts/install-php-mcrypt-extension-on-macos" class="block" style="padding: 0.25rem 0;">
+                        Install PHP mcrypt extension on macOS
+                    </a>
                 </li>
-            		                            <li class="mt-8">
-                    <div class="block text-sm flex space-x-5 content-end">
-                        <div class="text-gray-400">[<time datetime="2021-03-18">2021-03-18</time>]</div>
-                        <div class="text-gray-600">laravel</div>
-                    </div>
-
-                    <a href="/posts/hidden-laravel-env-config-paths.html" class="text-lg mt-5">Hidden laravel config env paths maybe you don&#039;t know</a>
+                            <li>
+                    <time class="text-sm">July 25, 2022</time>
+                    <a href="/posts/compress-all-git-changed-files-when-keeping-the-structure-of-the-project" class="block" style="padding: 0.25rem 0;">
+                        Compress all git changed files when keeping the structure of the project
+                    </a>
                 </li>
-            		                            <li class="mt-8">
-                    <div class="block text-sm flex space-x-5 content-end">
-                        <div class="text-gray-400">[<time datetime="2020-11-17">2020-11-17</time>]</div>
-                        <div class="text-gray-600">php</div>
-                    </div>
-
-                    <a href="/posts/why-i-wrote-pekyll.html" class="text-lg mt-5">Static blog với pekyll</a>
+                            <li>
+                    <time class="text-sm">June 15, 2022</time>
+                    <a href="/posts/why-you-should-learn-vim-motions" class="block" style="padding: 0.25rem 0;">
+                        Why you should learn Vim (motions)
+                    </a>
                 </li>
-            			</ul>
-		</div>
+                            <li>
+                    <time class="text-sm">May 19, 2022</time>
+                    <a href="/posts/using-telegram-to-stores-laravel-website-backup" class="block" style="padding: 0.25rem 0;">
+                        Using Telegram to stores Laravel website backup
+                    </a>
+                </li>
+                            <li>
+                    <time class="text-sm">April 21, 2021</time>
+                    <a href="/posts/the-best-free-comment-service-for-technical-blog" class="block" style="padding: 0.25rem 0;">
+                        The best &quot;Free&quot; comment service for technical blog
+                    </a>
+                </li>
+                            <li>
+                    <time class="text-sm">April 8, 2021</time>
+                    <a href="/posts/how-to-tinker-with-any-php-applications" class="block" style="padding: 0.25rem 0;">
+                        How to &quot;tinker&quot; with any PHP applications
+                    </a>
+                </li>
+                            <li>
+                    <time class="text-sm">March 23, 2021</time>
+                    <a href="/posts/laravel-live-reloading-without-any-js-stuff" class="block" style="padding: 0.25rem 0;">
+                        Laravel live reloading without any js stuff
+                    </a>
+                </li>
+                            <li>
+                    <time class="text-sm">March 17, 2021</time>
+                    <a href="/posts/hidden-laravel-config-env-paths-maybe-you-dont-know" class="block" style="padding: 0.25rem 0;">
+                        Hidden laravel config env paths maybe you don&#039;t know
+                    </a>
+                </li>
+                            <li>
+                    <time class="text-sm">November 16, 2020</time>
+                    <a href="/posts/why-i-wrote-pekyll" class="block" style="padding: 0.25rem 0;">
+                        Why I wrote Pekyll
+                    </a>
+                </li>
+                    </ul>
+    </div>
+    </main>
 
-		<footer class="text-sm flex justify-end h-12 border-t pt-3 mt-10 space-x-2">
-			<p>crafted by <a href="http://github.com/bangnokia/pekyll" target="_blank">pekyll</a> with ❤️.</p>
-		</footer>
-	</div>
-
-    
-    <!-- Cloudflare Web Analytics -->
-    <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "30a5b4429388482ab4d3e7868edaf598"}'></script>
-    <!-- End Cloudflare Web Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-37232412-22"></script>
-	<script>
-	  window.dataLayer = window.dataLayer || [];
-	  function gtag(){dataLayer.push(arguments);}
-	  gtag('js', new Date());
-	  gtag('config', 'UA-37232412-22');
-	</script>
+    <footer class="container">
+        <div>&copy; Nguyen Viet</div>
+        <a href="/wakatime" style="color: white">wakatime</a>
+    </footer>
 </body>
 </html>

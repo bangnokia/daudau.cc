@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hidden laravel config env paths maybe you don&#039;t know | My awesome blog</title>
+    <meta name="description" content="There are some interesting env config keys of Laravel didn&#039;t mention in official documentation about storage path and cache path. May be you will never need to custo">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..700;1,100..700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <header class="container">
+        <nav class="main-menu">
+            <a href="/">Home</a>
+            <a href="/about">About</a>
+        </nav>
+    </header>
+
+    <main class="container" style="padding: 4rem 0 0; width: 100%; height: 100%; flex-grow: 1">
+            <h1>Hidden laravel config env paths maybe you don&#039;t know</h1>
+    <time class="text-sm">March 17, 2021</time>
+
+    <article class="prose">
+        <p>There are some interesting env config keys of Laravel didn't mention in official documentation about storage path and cache path. May be you will never need to custom them in you entire developer life, but i think just know their existence, it's fun!</p>
+<p>By default in your Laravel application, you ussually have those folders:</p>
+<ul>
+<li><code>bootstrap/cache</code>: <em>stores your application cached files such as routes, configs, events</em></li>
+<li><code>storage/</code>:  <em>stores compiled views, cache, session files, logs and upload files, etc</em></li>
+</ul>
+<p>About storage folder when deployment, i acctually just create an folder outside of the application and make a symbol link to the app, so we dont erase out uploaded files every time we deploy, and i think you doo too.</p>
+<p>But acctually if you look at code at <a href="https://github.com/laravel/framework/blob/72ea328b456ea570f8823c69f511583aa6234170/src/Illuminate/Foundation/Application.php">Illuminate/Foundation/Application.php</a> you can see there are some hidden env configs maybe useful sometimes.</p>
+<h2 id="Customize+storage+path" name="Customize+storage+path">Customize storage path</h2>
+<p>You can modify default storage path  by calling <code>$app-&gt;useStoragePath($yourPath)</code> in the <code>bootstrap/app.php</code>.</p>
+<pre><code class="language-php"><span class="hl-keyword">public</span> <span class="hl-keyword">function</span> <span class="hl-property">useStoragePath</span>(<span class="hl-variable">$path</span>)
+{
+    <span class="hl-variable">$this</span>-&gt;<span class="hl-property">storagePath</span> = <span class="hl-variable">$path</span>;
+
+    <span class="hl-variable">$this</span>-&gt;<span class="hl-property">instance</span>('<span class="hl-value">path.storage</span>', <span class="hl-variable">$path</span>);
+
+    <span class="hl-keyword">return</span> <span class="hl-variable">$this</span>;
+}</code></pre>
+<h2 id="Customize+framework+cache+paths" name="Customize+framework+cache+paths">Customize framework cache paths</h2>
+<p>Now take a look at this <code>normalizeCachePath</code> function, if our value starts with any absolute prefixes <code>/</code> or <code>\</code>, so it will use absolute path, other wise relative path.</p>
+<pre><code class="language-php"><span class="hl-keyword">protected</span> <span class="hl-keyword">function</span> <span class="hl-property">normalizeCachePath</span>(<span class="hl-variable">$key</span>, <span class="hl-property">$default</span>)
+{
+    <span class="hl-keyword">if</span> (<span class="hl-property">is_null</span>(<span class="hl-variable">$env</span> = <span class="hl-type">Env</span>::<span class="hl-property">get</span>(<span class="hl-variable">$key</span>))) {
+        <span class="hl-keyword">return</span> <span class="hl-variable">$this</span>-&gt;<span class="hl-property">bootstrapPath</span>(<span class="hl-variable">$default</span>);
+    }
+
+    <span class="hl-keyword">return</span> <span class="hl-type">Str</span>::<span class="hl-property">startsWith</span>(<span class="hl-variable">$env</span>, <span class="hl-variable">$this</span>-&gt;<span class="hl-property">absoluteCachePathPrefixes</span>)
+            <span class="hl-operator">?</span> <span class="hl-variable">$env</span>
+            : <span class="hl-variable">$this</span>-&gt;<span class="hl-property">basePath</span>(<span class="hl-variable">$env</span>);
+}</code></pre>
+<p>And there are some hidden config if you want to customize the <code>bootstrap/cache</code> folder. This will useful when use want to ship application in some where you don't  have write permission in the application folder xD.</p>
+<p>You can set values for these keys in the <code>.env</code> file:</p>
+<ul>
+<li><code>APP_SERVICES_CACHE</code></li>
+<li><code>APP_PACKAGES_CACHE</code></li>
+<li><code>APP_CONFIG_CACHE</code></li>
+<li><code>APP_ROUTES_CACHE</code></li>
+<li><code>APP_EVENTS_CACHE</code></li>
+</ul>
+    </article>
+    </main>
+
+    <footer class="container">
+        <div>&copy; Nguyen Viet</div>
+        <a href="/wakatime" style="color: white">wakatime</a>
+    </footer>
+</body>
+</html>

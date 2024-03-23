@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Install PHP mcrypt extension on macOS | My awesome blog</title>
+    <meta name="description" content="Sometimes you upgrade the legacy project, which requires some old extension that is already deprecated like mcrypt.   This extension doesn&#039;t come with PHP by default">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..700;1,100..700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <header class="container">
+        <nav class="main-menu">
+            <a href="/">Home</a>
+            <a href="/about">About</a>
+        </nav>
+    </header>
+
+    <main class="container" style="padding: 4rem 0 0; width: 100%; height: 100%; flex-grow: 1">
+            <h1>Install PHP mcrypt extension on macOS</h1>
+    <time class="text-sm">August 22, 2022</time>
+
+    <article class="prose">
+        <p>Sometimes you upgrade the legacy project, which requires some old extension that is already deprecated like <code>mcrypt</code>.   This extension doesn't come with PHP by default, so we have to install it via <code>pecl</code></p>
+<pre><code class="language-bash">pecl install mcrypt</code></pre>
+<p>Unfortunately, it doesn't work on my computer, and keeps displaying this annoying error:</p>
+<pre><code>configure: error: mcrypt.h not found. Please reinstall libmcrypt.</code></pre>
+<p>So I found the solution on <a href="https://stackoverflow.com/a/67761346">StackOverflow</a> and decided to copy the command and write it here.</p>
+<p>You could  try this to save lots of time about having no idea what to do</p>
+<pre><code class="language-bash">pecl install mcrypt &lt;&lt;&lt;&quot;$(ls -d $(brew --prefix)/Cellar/mcrypt/* | tail -1)&quot;</code></pre>
+    </article>
+    </main>
+
+    <footer class="container">
+        <div>&copy; Nguyen Viet</div>
+        <a href="/wakatime" style="color: white">wakatime</a>
+    </footer>
+</body>
+</html>
