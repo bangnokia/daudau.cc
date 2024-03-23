@@ -23,12 +23,11 @@ jobs:
 
       - name: Install Line
         run: |
-          composer global config minimum-stability dev
-          composer global require bangnokia/lina:dev-main --prefer-dist
+          composer init --name=your-name/your-repo --require=bangnokia/lina:dev-main --stability=dev --no-interaction
 
       - name: Build
         run: |
-          php ~/.composer/vendor/bin/lina build
+          php ~/.composer/vendor/bangnokia/lina build
           rm ./public/.gitignore
 
       - name: Deploy
