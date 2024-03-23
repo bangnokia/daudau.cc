@@ -28,7 +28,7 @@ jobs:
 
       - name: Build
         run: |
-          php vendor/bin/lina build
+          php vendor/bin/lina build --vvv
           rm ./public/.gitignore
 
       - name: Deploy
