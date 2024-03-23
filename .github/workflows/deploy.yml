@@ -23,7 +23,6 @@ jobs:
 
       - name: Install Lina
         run: |
-          // init the composer
           composer init --name=yourname/yourproject --stability=dev --no-interaction
           composer require bangnokia/lina:dev-main
 
