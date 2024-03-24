@@ -4,8 +4,11 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fixing Filament app slowness when using Laravel Debugbar | My awesome blog</title>
+
+    <title>Fixing Filament app slowness when using Laravel Debugbar | Blog of Nguyen</title>
     <meta name="description" content="By default, Laravel Debugbar enables logging views, which consumes a significant amount of resources in the Filament app. Displaying all view names can potentially c">
+
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,7 +20,7 @@
 <body>
     <header class="container">
         <nav class="main-menu">
-            <a href="/">Home</a>
+            <a href="/">Blog</a>
             <a href="/about">About</a>
         </nav>
     </header>
@@ -28,13 +31,13 @@
 
     <article class="prose">
         <p>By default, <a href="https://github.com/barryvdh/laravel-debugbar">Laravel Debugbar</a> enables logging views, which consumes a significant amount of resources in the Filament app. Displaying all view names can potentially cause the Debugbar to crash itself, rather than the application. Therefore, it is advisable to disable this feature, unless you are specifically working on a custom field.</p>
-<h2 id="Publishing+the+Laravel+Debugbar+Configuration+File" name="Publishing+the+Laravel+Debugbar+Configuration+File">Publishing the Laravel Debugbar Configuration File</h2>
+<h2>Publishing the Laravel Debugbar Configuration File</h2>
 <p>To begin, execute the following command to publish the Laravel Debugbar config file:</p>
-<pre><code>php artisan vendor:publish --<span class="hl-property">provider</span>=&quot;Barryvdh\Debugbar\ServiceProvider&quot;</code></pre>
+<pre><code>php artisan vendor:publish --provider="Barryvdh\Debugbar\ServiceProvider"</code></pre>
 <p>Next, navigate to the <code>config/debugbar.php</code> file and disable views logging by making the following adjustment:</p>
-<pre><code class="language-php"><span class="hl-comment">// ...</span>
-'<span class="hl-value">views</span>' =&gt; <span class="hl-keyword">false</span>,
-<span class="hl-comment">// ...</span></code></pre>
+<pre><code class="language-php">// ...
+'views' =&gt; false,
+// ...</code></pre>
 <p>That concludes the process. Enjoy a smoother development experience with Filament.</p>
     </article>
     </main>
@@ -44,4 +47,5 @@
         <a href="/wakatime" style="color: white">wakatime</a>
     </footer>
 </body>
+
 </html>

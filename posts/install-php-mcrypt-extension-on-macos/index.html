@@ -4,8 +4,11 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Install PHP mcrypt extension on macOS | My awesome blog</title>
+
+    <title>Install PHP mcrypt extension on macOS | Blog of Nguyen</title>
     <meta name="description" content="Sometimes you upgrade the legacy project, which requires some old extension that is already deprecated like mcrypt.   This extension doesn&#039;t come with PHP by default">
+
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,7 +20,7 @@
 <body>
     <header class="container">
         <nav class="main-menu">
-            <a href="/">Home</a>
+            <a href="/">Blog</a>
             <a href="/about">About</a>
         </nav>
     </header>
@@ -33,7 +36,7 @@
 <pre><code>configure: error: mcrypt.h not found. Please reinstall libmcrypt.</code></pre>
 <p>So I found the solution on <a href="https://stackoverflow.com/a/67761346">StackOverflow</a> and decided to copy the command and write it here.</p>
 <p>You could  try this to save lots of time about having no idea what to do</p>
-<pre><code class="language-bash">pecl install mcrypt &lt;&lt;&lt;&quot;$(ls -d $(brew --prefix)/Cellar/mcrypt/* | tail -1)&quot;</code></pre>
+<pre><code class="language-bash">pecl install mcrypt &lt;&lt;&lt;"$(ls -d $(brew --prefix)/Cellar/mcrypt/* | tail -1)"</code></pre>
     </article>
     </main>
 
@@ -42,4 +45,5 @@
         <a href="/wakatime" style="color: white">wakatime</a>
     </footer>
 </body>
+
 </html>

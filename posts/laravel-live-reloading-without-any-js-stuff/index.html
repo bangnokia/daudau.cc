@@ -4,9 +4,12 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Laravel live reloading without any js stuff | My awesome blog</title>
+
+    <title>Laravel live reloading without any js stuff | Blog of Nguyen</title>
     <meta name="description" content="Do you know that we can implement live reload in Laravel without any npm package? No browser sync, no nodejs, just php.
 Self claim, I don&#039;t like NodeJS xD, and I don">
+
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,7 +21,7 @@ Self claim, I don&#039;t like NodeJS xD, and I don">
 <body>
     <header class="container">
         <nav class="main-menu">
-            <a href="/">Home</a>
+            <a href="/">Blog</a>
             <a href="/about">About</a>
         </nav>
     </header>
@@ -30,12 +33,12 @@ Self claim, I don&#039;t like NodeJS xD, and I don">
     <article class="prose">
         <p>Do you know that we can implement live reload in Laravel without any npm package? No <code>browser sync</code>, <code>no nodejs</code>, just <code>php</code>.</p>
 <p>Self claim, I don't like NodeJS xD, and I don't know NodeJS too xD. And if you read to here, you got clickbait xD, we actually need a bit of javascript. Sometimes working with laravel livewire, live reloading is really helpful, and I don't feel good if I have to install something like browser sync or some js stuff. So let's do it with PHP</p>
-<h2 id="How+live+reloading+works" name="How+live+reloading+works">How live reloading works</h2>
+<h2>How live reloading works</h2>
 <p><img src="https://i.imgur.com/vTX65xy.png" alt="live-reloading-sketch.png" /></p>
 <p>First, we need a <a href="https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API/Writing_WebSocket_servers">WebSocket server</a>, but we don't have to write it by ourselves, thankfully <a href="https://reactphp.org/">ReactPHP</a> and <a href="http://socketo.me/">Rachet</a>.</p>
 <p>And in the browser, somehow it needs to listen to the WebSocket server, and reload the browser when the server told it to do.</p>
 <p>Finally, we also need file watchers, it watches the files changing when we edit the project, then asks the WebSocket server to send a command to the WebSocket client in the browser force him to reload the URL.</p>
-<h2 id="Laravel+package+implementation" name="Laravel+package+implementation">Laravel package implementation</h2>
+<h2>Laravel package implementation</h2>
 <p>My purpose is to integrate it into the <code>php artisan serve</code> command, I think it's convenient and simple to use.</p>
 <p>So I overwrote the <a href="https://github.com/bangnokia/laravel-serve-livereload/blob/84d9689444652ca8ab687e74b5c7bf65e04696b0/src/Commands/ServeCommand.php">ServeCommand</a> class. This command now spawns 2 processes:</p>
 <ul>
@@ -44,16 +47,16 @@ Self claim, I don&#039;t like NodeJS xD, and I don">
 </ul>
 <p>The customization magic actually comes from <code>server:websockets</code> command. It's also spawned a file watcher, which watches files changing every 500ms and triggers the reload command to the WebSocket server, then sent to all the listener clients.</p>
 <p>And the file watcher also does a stupid task is writing a cache parameter</p>
-<pre><code class="language-php"><span class="hl-type">Cache</span>::<span class="hl-property">put</span>('<span class="hl-value">serve_websockets_running</span>', <span class="hl-keyword">true</span>, 5);</code></pre>
+<pre><code class="language-php">Cache::put('serve_websockets_running', true, 5);</code></pre>
 <p>This can help us detect is that the WebSocket server is running or not. I think 5 seconds is ok. So we can inject the script to the HTML response via laravel middleware. Just put it at the very beginning of HTML response, doesn't look good but it works.</p>
-<pre><code class="language-php"><span class="hl-keyword">public</span> <span class="hl-keyword">function</span> <span class="hl-property">injectScripts</span>(<span class="hl-variable">$content</span>)
+<pre><code class="language-php">public function injectScripts($content)
 {
-    <span class="hl-variable">$content</span> = (string) <span class="hl-property">view</span>('<span class="hl-value">serve_livereload::script</span>', [
-        '<span class="hl-value">host</span>' =&gt; '<span class="hl-value">127.0.0.1</span>',
-        '<span class="hl-value">port</span>' =&gt; <span class="hl-type">ServeWebSocketsCommand</span>::<span class="hl-property">port</span>(),
-    ]).<span class="hl-variable">$content</span>;
+    $content = (string) view('serve_livereload::script', [
+        'host' =&gt; '127.0.0.1',
+        'port' =&gt; ServeWebSocketsCommand::port(),
+    ]).$content;
 
-    <span class="hl-keyword">return</span> <span class="hl-variable">$content</span>;
+    return $content;
 }
 </code></pre>
 <p>And this is <a href="https://github.com/bangnokia/laravel-serve-livereload">laravel-server-livereload</a> package. Thank you for reading my explanation.</p>
@@ -65,4 +68,5 @@ Self claim, I don&#039;t like NodeJS xD, and I don">
         <a href="/wakatime" style="color: white">wakatime</a>
     </footer>
 </body>
+
 </html>
