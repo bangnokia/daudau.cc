@@ -23,14 +23,12 @@ jobs:
 
       - name: Install Lina
         run: |
-          composer init --name=yourname/yourproject --stability=dev --no-interaction
+          composer global config minimum-stability dev
           composer require bangnokia/lina:dev-main
 
       - name: Build
         run: |
-          ls -la ./content
-          php vendor/bin/lina build --verbose
-          rm ./public/.gitignore
+          lina build
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
