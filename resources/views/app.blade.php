@@ -11,7 +11,6 @@
     <meta property="og:image" content="https://cdn.statically.io/og/daudau blog.jpg" />
 
     <link rel="icon" href="/favicon.png" type="image/x-icon">
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..700;1,100..700&display=swap"
