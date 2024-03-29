@@ -21,6 +21,7 @@
     <header class="container">
         <nav class="main-menu">
             <a href="/">Blog</a>
+            <a href="/projects">Projects</a>
             <a href="/about">About</a>
         </nav>
     </header>

@@ -99,7 +99,7 @@ time {
 }
 .main-menu {
     display: flex;
-    gap: 1rem;
+    gap: 2rem;
     font-weight: 400;
 
     a {
