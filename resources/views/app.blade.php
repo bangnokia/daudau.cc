@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>{{ implode(' | ', [$data->title ?? '', 'Blog of Nguyen']) }}</title>
-    <meta name="description" content="{{ substr(strip_tags($data->content), 0, 165) }}">
+    <meta name="description" content="{{ $data->description ?: substr(strip_tags($data->content), 0, 165) }}">
 
     <link rel="icon" href="/favicon.png" type="image/x-icon">
 

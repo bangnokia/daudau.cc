@@ -1,7 +1,7 @@
 @extends('app')
 
 @php
-    $posts = collect(cf()->index('posts'))->sort(fn($a, $b) => $b->createdAt <=> $a->createdAt);
+    $posts = collect(lina()->index('posts'))->sort(fn($a, $b) => $b->createdAt <=> $a->createdAt);
 @endphp
 
 @section('content')
