@@ -30,7 +30,7 @@
     </main>
 
     <footer class="container">
-        <div>&copy; Nguyen Viet</div>
+        <div>&copy; {{ date('Y') }} Nguyen Viet</div>
         <a href="/wakatime" style="color: transparent">wakatime</a>
     </footer>
 
