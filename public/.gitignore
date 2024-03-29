@@ -3,4 +3,5 @@
 !.gitignore
 !favicon.png
 !logo.png
-!images
+!images/
+!images/*
