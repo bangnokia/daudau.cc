@@ -1,0 +1,38 @@
+name: github pages
+
+on:
+  push:
+    branches:
+      - lina # Set a branch to deploy
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          submodules: true
+          fetch-depth: 0
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: 8.3
+          extensions: curl, mbstring, zip, pcntl, iconv
+          coverage: none
+
+      - name: Install Lina
+        run: |
+          composer global config minimum-stability dev
+          composer global require bangnokia/lina:dev-main
+
+      - name: Build
+        run: |
+          lina build
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
+          #cname: your-domain.com  # your custom domain
