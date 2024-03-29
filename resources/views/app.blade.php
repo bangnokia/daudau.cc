@@ -35,6 +35,19 @@
         <div>&copy; Nguyen Viet</div>
         <a href="/wakatime" style="color: white">wakatime</a>
     </footer>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3Q4R375R24"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-3Q4R375R24');
+    </script>
 </body>
 
 </html>
