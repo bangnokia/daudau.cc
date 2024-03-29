@@ -7,6 +7,8 @@
 
     <title>{{ implode(' | ', [$data->title ?? '', 'Blog of Nguyen']) }}</title>
     <meta name="description" content="{{ $data->description ?: substr(strip_tags($data->content), 0, 165) }}">
+    <meta property="twitter:author" content="@bangnokia" />
+    <meta property="og:image" content="https://cdn.statically.io/og/daudau blog.jpg" />
 
     <link rel="icon" href="/favicon.png" type="image/x-icon">
 
