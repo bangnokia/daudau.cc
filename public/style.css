@@ -12,6 +12,7 @@ body {
     width: 100%;
     min-height: 100vh;
     background-color: #f9f9f9;
+    overflow-x: hidden;
 }
 
 h1 {
@@ -93,9 +94,10 @@ time {
     height: 100%;
 }
 .container {
+    width: 100%;
     max-width: 696px;
     margin: 0 auto;
-    padding: 0 1rem;
+    padding: 0 0.5rem;
 }
 .main-menu {
     display: flex;

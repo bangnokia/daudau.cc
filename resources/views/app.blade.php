@@ -13,27 +13,30 @@
     <link rel="icon" href="/favicon.png" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..700;1,100..700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="/style.css?v={{ time() }}">
 </head>
 
 <body>
-    <header class="container">
-        <nav class="main-menu">
-            <a href="/">Blog</a>
-            <a href="/projects">Projects</a>
-            <a href="/about">About</a>
-        </nav>
-    </header>
+    <div class="container">
+        <header>
+            <nav class="main-menu">
+                <a href="/">Blog</a>
+                <a href="/projects">Projects</a>
+                <a href="/about">About</a>
+            </nav>
+        </header>
 
-    <main class="container" style="padding: 4rem 0 0; width: 100%; height: 100%; flex-grow: 1">
-        @yield('content')
-    </main>
+        <main style="padding-top: 4rem;">
+            @yield('content')
+        </main>
 
-    <footer class="container">
-        <div>&copy; {{ date('Y') }} Nguyen Viet</div>
-        <a href="/wakatime" style="color: transparent">wakatime</a>
-    </footer>
+        <footer>
+            <div>&copy; {{ date('Y') }} Nguyen Viet</div>
+            <a href="/wakatime" style="color: transparent">wakatime</a>
+        </footer>
+    </div>
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-3Q4R375R24"></script>
