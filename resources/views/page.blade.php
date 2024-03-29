@@ -1,7 +1,7 @@
 @extends('app')
 
 @section('content')
-    <article class="container">
+    <article>
         {!! $data->content !!}
     </article>
 @endsection
