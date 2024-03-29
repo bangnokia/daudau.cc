@@ -4,7 +4,6 @@
 
 html {
     font-size: 18px;
-    /*margin-left: calc(100vw - 100%); !* don't delete this, you gonna thank me later *!*/
     margin: 0;
     padding: 0;
     box-sizing: border-box;
