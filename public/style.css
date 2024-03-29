@@ -42,7 +42,7 @@ pre {
     code {
         display: block;
         padding: 1rem;
-        background-color: teal;
+        background-color: #f4f4f4;
         border-radius: 0.5rem;
         overflow-x: auto;
     }
@@ -50,11 +50,11 @@ pre {
 
 p {
     code {
-        background-color: teal;
+        background-color: #f4f4f4;
         padding: 2px 6px;
         border-radius: 0.25rem;
         font-size: 0.875rem;
-        color: #4F95D1;
+        color: teal;
     }
 }
 
