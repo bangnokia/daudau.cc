@@ -11,9 +11,11 @@ body {
     flex-direction: column;
     width: 100%;
     min-height: 100vh;
+    background-color: #f9f9f9;
 }
 
 h1 {
+    color: teal;
     margin: 2rem 0 .75rem;
 }
 
@@ -78,6 +80,9 @@ footer {
     width: 100%;
     font-size: 0.875rem;
 }
+time {
+    color: #666;
+}
 #app {
     padding: 1rem 0;
 }
@@ -125,12 +130,28 @@ footer {
 .text-sm {
     font-size: 0.875rem;
 }
+.text-lg {
+    font-size: 1.125rem;
+}
 
 .prose {
     img {
         margin-top: 1rem;
         border-radius: 1rem;
         box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+    }
+}
+
+.tag {
+    font-size: 0.75rem;
+    color: #666;
+    background: #eee;
+    background-opacity: 0.5;
+    padding: 1px 8px;
+    border-radius: 0.25rem;
+
+    &:hover {
+        background: #ddd;
     }
 }
 

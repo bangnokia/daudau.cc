@@ -31,7 +31,7 @@
 
     <footer class="container">
         <div>&copy; Nguyen Viet</div>
-        <a href="/wakatime" style="color: white">wakatime</a>
+        <a href="/wakatime" style="color: transparent">wakatime</a>
     </footer>
 
     <!-- Google tag (gtag.js) -->
