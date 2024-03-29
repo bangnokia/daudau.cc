@@ -4,7 +4,7 @@
 
 html {
     font-size: 18px;
-    margin-left: calc(100vw - 100%); /* don't delete this, you gonna thank me later */
+    /*margin-left: calc(100vw - 100%); !* don't delete this, you gonna thank me later *!*/
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -78,7 +78,7 @@ img {
 }
 header {
     width : 100%;
-    padding: 1.5rem 0 !important;
+    padding: 1.5rem 0;
 }
 footer {
     border-top: 1px solid #eaeaea;
@@ -92,7 +92,7 @@ time {
     color: #666;
 }
 #app {
-    padding: 1rem 0;
+    padding: 0 0.5rem;
 }
 .w-full {
     width: 100%;
@@ -104,7 +104,6 @@ time {
     width: 100%;
     max-width: 696px;
     margin: 0 auto;
-    padding: 0 0.5rem;
 }
 .main-menu {
     display: flex;

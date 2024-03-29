@@ -7,49 +7,50 @@
 
     <title>{{ implode(' | ', [$data->title ?? '', 'Blog of Nguyen']) }}</title>
     <meta name="description" content="{{ $data->description ?: substr(strip_tags($data->content), 0, 165) }}">
-    <meta property="twitter:author" content="@bangnokia" />
-    <meta property="og:image" content="https://cdn.statically.io/og/{{ $data->title }}.jpg" />
+    <meta property="twitter:author" content="@bangnokia"/>
+    <meta property="og:image" content="https://cdn.statically.io/og/{{ $data->title }}.jpg"/>
 
     <link rel="icon" href="/favicon.png" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..700;1,100..700&display=swap"
-        rel="stylesheet">
+          rel="stylesheet">
     <link rel="stylesheet" href="/style.css?v={{ time() }}">
 </head>
 
 <body>
-    <div class="container">
-        <header>
-            <nav class="main-menu">
-                <a href="/">Blog</a>
-                <a href="/projects">Projects</a>
-                <a href="/about">About</a>
-            </nav>
-        </header>
+<div id="app">
+    <header class="container">
+        <nav class="main-menu">
+            <a href="/">Blog</a>
+            <a href="/projects">Projects</a>
+            <a href="/about">About</a>
+        </nav>
+    </header>
 
-        <main style="padding-top: 4rem;">
-            @yield('content')
-        </main>
+    <main class="container" style="padding-top: 4rem; flex-grow: 1; width: 100%; height: 100%">
+        @yield('content')
+    </main>
 
-        <footer>
-            <div>&copy; {{ date('Y') }} Nguyen Viet</div>
-            <a href="/wakatime" style="color: transparent">wakatime</a>
-        </footer>
-    </div>
+    <footer class="container">
+        <div>&copy; {{ date('Y') }} Nguyen Viet</div>
+        <a href="/wakatime" style="color: transparent">wakatime</a>
+    </footer>
+</div>
 
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3Q4R375R24"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3Q4R375R24"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
 
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
+    function gtag() {
+        dataLayer.push(arguments);
+    }
 
-        gtag('config', 'G-3Q4R375R24');
-    </script>
+    gtag('js', new Date());
+
+    gtag('config', 'G-3Q4R375R24');
+</script>
 </body>
 
 </html>
