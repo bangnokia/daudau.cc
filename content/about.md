@@ -1,5 +1,5 @@
 ---
-title: About
+title: About me
 layout: page
 description: Hi, I'm a developer from Vietnam and a Full Stack Overflow guy with a passion for web development. I love creating blazingly fast and easy-to-use things.
 ---

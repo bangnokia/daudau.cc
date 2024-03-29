@@ -1,5 +1,5 @@
 ---
-title: My little corner
+title: Nguyen's blog
 layout: home
 ---
 
