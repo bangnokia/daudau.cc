@@ -1,0 +1,15 @@
+{
+    "name": "bangnokia/daudau.cc",
+    "description": "My personal blog",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "bangnokia",
+            "email": "bangnokia@gmail.com"
+        }
+    ],
+    "require": {
+        "linaphp/lina": "^0.5.5"
+    }
+}
