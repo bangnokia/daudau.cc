@@ -19,7 +19,7 @@ You see, it's not valid html but CSS doesn't care about that, and me neither, it
 ## Installation
 I'm using `pnpm` in this tutorial, you can use `npm` or `yarn` if you want.
 
-### Add postcss integration,
+### Add postcss integration
 ```bash
 pnpm add -D unocss @unocss/postcss
 ```
