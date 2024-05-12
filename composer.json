@@ -10,6 +10,6 @@
         }
     ],
     "require": {
-        "linaphp/lina": "^0.5.5"
+        "linaphp/lina": "^0.6"
     }
 }

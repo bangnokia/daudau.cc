@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2886aa0f02a40fd5d715791329e4e98c",
+    "content-hash": "6f4d473cd99e62137e21421e8f63ecd0",
     "packages": [
         {
             "name": "brick/math",
@@ -2214,22 +2214,23 @@
         },
         {
             "name": "linaphp/lina",
-            "version": "v0.5.5",
+            "version": "v0.6.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/linaphp/lina.git",
-                "reference": "4caf2fdd0e02d10238fad6ad6ffe44aae4bf565b"
+                "reference": "dbed3321dd1733f7751b678bab8064ff2d0e476f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/linaphp/lina/zipball/4caf2fdd0e02d10238fad6ad6ffe44aae4bf565b",
-                "reference": "4caf2fdd0e02d10238fad6ad6ffe44aae4bf565b",
+                "url": "https://api.github.com/repos/linaphp/lina/zipball/dbed3321dd1733f7751b678bab8064ff2d0e476f",
+                "reference": "dbed3321dd1733f7751b678bab8064ff2d0e476f",
                 "shasum": ""
             },
             "require": {
                 "cboden/ratchet": "^0.4.4",
                 "erusev/parsedown": "^v1.7.2",
                 "erusev/parsedown-extra": "^0.8.1",
+                "ext-pcntl": "*",
                 "illuminate/view": "^v10.0",
                 "keinos/parsedown-toc": "^1.1",
                 "laravel-zero/framework": "^v10.3",
@@ -2276,9 +2277,9 @@
             ],
             "support": {
                 "issues": "https://github.com/linaphp/lina/issues",
-                "source": "https://github.com/linaphp/lina/tree/v0.5.5"
+                "source": "https://github.com/linaphp/lina/tree/v0.6.1"
             },
-            "time": "2024-05-09T10:34:53+00:00"
+            "time": "2024-05-12T18:11:46+00:00"
         },
         {
             "name": "linaphp/resource-watcher",
@@ -3042,20 +3043,20 @@
         },
         {
             "name": "psr/http-factory",
-            "version": "1.0.2",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-fig/http-factory.git",
-                "reference": "e616d01114759c4c489f93b099585439f795fe35"
+                "reference": "2b4765fddfe3b508ac62f829e852b1501d3f6e8a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-fig/http-factory/zipball/e616d01114759c4c489f93b099585439f795fe35",
-                "reference": "e616d01114759c4c489f93b099585439f795fe35",
+                "url": "https://api.github.com/repos/php-fig/http-factory/zipball/2b4765fddfe3b508ac62f829e852b1501d3f6e8a",
+                "reference": "2b4765fddfe3b508ac62f829e852b1501d3f6e8a",
                 "shasum": ""
             },
             "require": {
-                "php": ">=7.0.0",
+                "php": ">=7.1",
                 "psr/http-message": "^1.0 || ^2.0"
             },
             "type": "library",
@@ -3079,7 +3080,7 @@
                     "homepage": "https://www.php-fig.org/"
                 }
             ],
-            "description": "Common interfaces for PSR-7 HTTP message factories",
+            "description": "PSR-17: Common interfaces for PSR-7 HTTP message factories",
             "keywords": [
                 "factory",
                 "http",
@@ -3091,9 +3092,9 @@
                 "response"
             ],
             "support": {
-                "source": "https://github.com/php-fig/http-factory/tree/1.0.2"
+                "source": "https://github.com/php-fig/http-factory"
             },
-            "time": "2023-04-10T20:10:41+00:00"
+            "time": "2024-04-15T12:06:14+00:00"
         },
         {
             "name": "psr/http-message",
