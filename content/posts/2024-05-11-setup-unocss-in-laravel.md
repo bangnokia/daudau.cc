@@ -60,15 +60,40 @@ import { defineConfig, presetUno, presetAttributify } from 'unocss'
 
 export default defineConfig({
   content: {
-    filesystem: [
-      '**/*.{html,js,ts,jsx,tsx,vue,svelte,astro}',
-    ],
+     filesystem: [
+       './resources/views/**/*.blade.php',
+     ]
   },
   presets: [
-    presetUno(),
     // presetAttributify(), // if you like me
+    presetUno(),
   ],
 })
+```
+
+If you want to use some custom brand color like `primary` in your app, you can add it under `theme.colors`. It will be merged with the default theme.
+```js
+// uno.config.js
+//... other stuff
+presets: [...],
+theme: {
+  colors: {
+     'primary': {
+        '50': '#fff0f2',
+        '100': '#ffdde3',
+        '200': '#ffc1cb',
+        '300': '#ff95a6',
+        '400': '#ff5974',
+        '500': '#ff2649',
+        '600': '#fc062e',
+        '700': '#e90026',
+        '800': '#af0521',
+        '900': '#900c22',
+        '950': '#50000d',
+        DEFAULT: '#ff2649'
+    },
+  }
+}
 ```
 
 ### Finally, update your `resources/css/app.css`:
