@@ -1,5 +1,5 @@
 ---
-title: Setup UnoCSS in Laravel (The right way)
+title: Setup UnoCSS with Laravel (The right way)
 tags:
     - unocss
     - laravel
@@ -14,7 +14,7 @@ The coolest thing it [`Attributify`](https://unocss.dev/presets/attributify) pre
   Hello World
 </div>
 ```
-You see, it's not valid html but CSS doesn't care about that, and me neither, it's just fast!
+You see, it's not valid html but CSS doesn't care
 
 ## Installation
 I'm using `pnpm` in this tutorial, you can use `npm` or `yarn` if you want.
