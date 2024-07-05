@@ -4,7 +4,7 @@ layout: page
 description: Hi, I'm a developer from Vietnam and a Full Stack Overflow guy with a passion for web development. I love creating blazingly fast and easy-to-use things.
 ---
 
-# Hello, my English name is Billy Nguyen
+# Hello, I'm Billy Nguyen
 
 ![Tommy Nguyen](/images/me-angry.png)
 
