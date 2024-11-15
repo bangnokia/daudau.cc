@@ -32,7 +32,7 @@
     </main>
 
     <footer class="container">
-        <div>&copy; {{ date('Y') }} Nguyen Viet</div>
+        <div>&copy; {{ date('Y') }} Nguyen Viet. Built with <a href="https://github.com/bangnokia/lina" target="_blank">Lina</a></div>
         <a href="/wakatime" style="color: transparent">wakatime</a>
     </footer>
 </div>
