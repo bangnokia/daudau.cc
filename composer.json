@@ -11,5 +11,9 @@
     ],
     "require": {
         "linaphp/lina": "^0.6"
+    },
+    "scripts": {
+        "dev": "./vendor/bin/lina serve",
+        "build": "./vendor/bin/lina build"
     }
 }
