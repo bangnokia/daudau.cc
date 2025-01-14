@@ -52,7 +52,8 @@ Our largest server has specs:
 
 So you can see, we have 32 cores, 64GB of RAM, but we can only handle about 280 websites on this server. **962 tasks, wow** 😂
 
-### What Did We Do to Solve This Problem?
+**What Did We Do to Solve This Problem?**
+
 I have to say, we tried our best and could run the store normally at that time. We had to use caching to run the store smoothly. First, we used [laravel-responsecache](https://github.com/spatie/laravel-responsecache) from Spatie, but the request still touched the PHP-FPM process, so we had to use [laravel-pagecache](https://github.com/JosephSilber/page-cache) to serve the HTML content directly from Nginx. That really helped us to reduce the server load.
 
 From my side, I really don't like to use caching, because it's hard to debug and sometimes it doesn't work as expected. But we had to use it to keep the server running. The hard thing is not only the caching, the hard thing is we have to keep the cache up to date, and that's really hard to do. 🤣

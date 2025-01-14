@@ -7,6 +7,7 @@ html {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth; /* Add this line for smooth scrolling */
 }
 
 body {
@@ -162,6 +163,61 @@ ul {
   &:hover {
     background: #ddd;
   }
+}
+
+.content-with-outline {
+  display: flex;
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.main-content {
+  width: 100%;
+  flex: 1;
+}
+
+// Hide the aside outline on mobile devices
+@media (max-width: 768px) {
+  .aside-outline {
+    display: none;
+  }
+}
+
+.aside-outline {
+  position: fixed;
+  left: 0;
+  top: 120px;
+  width: 300px;
+}
+
+.aside-outline-content {
+  opacity: 0.5;
+  padding: 10px;
+  font-size: 0.825rem;
+  color: #666;
+  border-radius: 4px;
+  max-height: calc(100vh - 40px);
+  overflow-y: auto;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.outline-list {
+  list-style: none;
+  padding-left: 0;
+  color: gray;
+}
+
+.outline-list > li {
+  padding: 2px 0;
+}
+
+.nested-list {
+  margin-left: 1.5rem;
 }
 
 /* Highlight */
