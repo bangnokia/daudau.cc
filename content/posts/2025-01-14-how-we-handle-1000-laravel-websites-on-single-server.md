@@ -6,7 +6,7 @@ tags:
     - caddy
 ---
 
-*We scaled our server to handle from 280 websites to more than 1000 websites. Here's how we did it.* 🚀
+*Scaling from 280 to over 1000 Laravel websites on one server? Discover our resource optimizations, deployment tricks, and multi-tenant magic.* 🚀
 
 From the early days, we have been using Laravel to build websites for selling products online. To quickly go online to sell stuff, we use Laravel as a storefront for rapid development.
 
