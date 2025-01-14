@@ -178,18 +178,12 @@ ul {
   flex: 1;
 }
 
-// Hide the aside outline on mobile devices
-@media (max-width: 768px) {
-  .aside-outline {
-    display: none;
-  }
-}
-
 .aside-outline {
   position: fixed;
   left: 0;
   top: 120px;
   width: 300px;
+  display: none;
 }
 
 .aside-outline-content {
@@ -203,6 +197,14 @@ ul {
 
   &:hover {
     opacity: 1;
+  }
+}
+
+// Hide the aside outline on mobile devices
+/* Change from min-width to max-width to hide on mobile */
+@media screen and (min-width: 768px) {
+  .aside-outline {
+    display: block;
   }
 }
 
