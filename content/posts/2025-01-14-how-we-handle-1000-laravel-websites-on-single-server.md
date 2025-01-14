@@ -6,6 +6,8 @@ tags:
     - caddy
 ---
 
+*We scaled our server to handle from 280 websites to more than 1000 websites. Here's how we did it.* 🚀
+
 From the early days, we have been using Laravel to build websites for selling products online. To quickly go online to sell stuff, we use Laravel as a storefront for rapid development.
 
 We use [lunarphp](https://lunarphp.io/) to develop ecommerce functionality. It is a Laravel package that provides a lot of features for ecommerce websites.
