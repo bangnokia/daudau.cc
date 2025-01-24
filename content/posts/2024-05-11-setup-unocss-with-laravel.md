@@ -8,7 +8,7 @@ layout: post
 
 [UnoCSS](https://unocss.com/) is an **Instant On-demand Atomic CSS Engine** that helps you to reduce the CSS file size by generating only the CSS that you need.  UnoCSS also comes with *presets* which you can use TailwindCSS, Bootstrap, or Bulma in your project easily.
 
-The coolest thing it [`Attributify`](https://unocss.dev/presets/attributify) preset, what you can write you css classes like:
+The coolest thing is [`Attributify`](https://unocss.dev/presets/attributify) preset, where you can write your css classes like:
 ```html
 <div text-rose-500 uppercase bg-blue-200 p-4>
   Hello World
@@ -23,7 +23,7 @@ I'm using `pnpm` in this tutorial, you can use `npm` or `yarn` if you want.
 ```bash
 pnpm add -D unocss @unocss/postcss
 ```
-*Why I use [PostCSS](https://unocss.dev/integrations/postcss) plugin instead of [CLI](https://unocss.dev/integrations/cli]*, because I don't want o update my `package.json` file, from
+*Why do I use [PostCSS](https://unocss.dev/integrations/postcss) plugin instead of [CLI](https://unocss.dev/integrations/cli)*, because I don't want to update my `package.json` file, from
 ```json
 {
   "scripts": {
@@ -65,7 +65,7 @@ export default defineConfig({
      ]
   },
   presets: [
-    // presetAttributify(), // if you like me
+    // presetAttributify(), // enable this if you want attributify mode
     presetUno(),
   ],
 })
