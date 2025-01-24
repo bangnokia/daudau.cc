@@ -10,6 +10,7 @@
     <meta property="twitter:author" content="@bangnokia" />
     <meta property="og:image" content="https://cdn.statically.io/og/{{ $data->title }}.jpg" />
 
+    <link rel="icon" href="/favicon.png" type="image/x-icon"> <!-- Add this line for favicon -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
