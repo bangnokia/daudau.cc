@@ -51,5 +51,16 @@ use Illuminate\Support\Str;
             {!! preg_replace('~^.*<body>(.*)</body>.*$~is', '$1', $updatedContent) !!}
         </article>
     </div>
+
+    <!-- comments -->
+    <div>
+    <script src="https://utteranc.es/client.js"
+            repo="bangnokia/daudau.cc"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+    </div>
 </div>
 @endsection
