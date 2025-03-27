@@ -41,13 +41,16 @@ use Illuminate\Support\Str;
 
     <!-- comments -->
     <div class="comments-section">
-        <script src="https://utteranc.es/client.js"
-                repo="bangnokia/daudau.cc"
-                issue-term="pathname"
-                theme="github-light"
-                crossorigin="anonymous"
-                async>
-        </script>
+        <h3>Comments</h3>
+        <div class="comments-container">
+            <script src="https://utteranc.es/client.js"
+                    repo="bangnokia/daudau.cc"
+                    issue-term="pathname"
+                    theme="github-light"
+                    crossorigin="anonymous"
+                    async>
+            </script>
+        </div>
     </div>
 </div>
 @endsection

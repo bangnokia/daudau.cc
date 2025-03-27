@@ -279,3 +279,37 @@ ul {
   min-width: 100%;
   background-color: #ff000022;
 }
+
+/* Comments section styling */
+.comments-section {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid #eaeaea;
+}
+
+.comments-section h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+.comments-container {
+  padding: 0.5rem 0;
+  border-radius: 0.25rem;
+}
+
+/* Make the utterances iframe look better */
+.comments-container iframe {
+  width: 100%;
+}
+
+/* Dark mode considerations for comments */
+@media (prefers-color-scheme: dark) {
+  .comments-container {
+    background-color: #2a2a2a;
+  }
+  .comments-section h3 {
+    color: #eaeaea;
+  }
+}
