@@ -18,16 +18,16 @@
 
 /* Dark Theme (Vesper-inspired) */
 [data-theme="dark"] {
-  --bg-primary: #1e1e1e;
-  --bg-secondary: #252526;
-  --bg-tertiary: #303030;
+  --bg-primary: #101010;
+  --bg-secondary: #1a1a1a;
+  --bg-tertiary: #252525;
   --text-primary: #ffffff;
   --text-secondary: #bbbbbb;
   --accent-primary: #4ec9b0;
   --accent-secondary: #4ec9b0cc;
-  --border-color: #3e3e3e;
-  --code-bg: #2d2d2d;
-  --skeleton-bg: #444444;
+  --border-color: #333333;
+  --code-bg: #1e1e1e;
+  --skeleton-bg: #333333;
 }
 
 /* Theme toggle styles */
@@ -313,39 +313,78 @@ ul {
   margin-left: 1.5rem;
 }
 
-/* Highlight */
+/* Syntax Highlighting - Compatible with both light and dark modes */
+/* Light mode colors */
 .hl-keyword {
-  color: #4f95d1;
+  color: #0550ae;
 }
 
 .hl-property {
-  color: #46b98d;
+  color: #116329;
 }
 
 .hl-attribute {
   font-style: italic;
+  color: #953800;
 }
 
 .hl-type {
-  color: #d14f57;
+  color: #8250df;
 }
 
 .hl-generic {
-  color: #9d3af6;
+  color: #8250df;
 }
 
 .hl-value {
-  color: #000;
+  color: #0a3069;
 }
 
 .hl-variable {
-  color: #000;
+  color: #24292f;
 }
 
 .hl-comment {
-  color: #888888;
+  color: #6e7781;
+  font-style: italic;
 }
 
+/* Dark mode syntax colors */
+[data-theme="dark"] .hl-keyword {
+  color: #569cd6;
+}
+
+[data-theme="dark"] .hl-property {
+  color: #4ec9b0;
+}
+
+[data-theme="dark"] .hl-attribute {
+  font-style: italic;
+  color: #9cdcfe;
+}
+
+[data-theme="dark"] .hl-type {
+  color: #c586c0;
+}
+
+[data-theme="dark"] .hl-generic {
+  color: #dcdcaa;
+}
+
+[data-theme="dark"] .hl-value {
+  color: #ce9178;
+}
+
+[data-theme="dark"] .hl-variable {
+  color: #9cdcfe;
+}
+
+[data-theme="dark"] .hl-comment {
+  color: #6a9955;
+  font-style: italic;
+}
+
+/* Common styles for both themes */
 .hl-blur {
   filter: blur(2px);
 }
@@ -361,13 +400,13 @@ ul {
 .hl-addition {
   display: inline-block;
   min-width: 100%;
-  background-color: #00ff0033;
+  background-color: rgba(84, 174, 84, 0.2);
 }
 
 .hl-deletion {
   display: inline-block;
   min-width: 100%;
-  background-color: #ff000022;
+  background-color: rgba(220, 80, 80, 0.2);
 }
 
 /* Comments section styling */
