@@ -8,6 +8,7 @@ html {
   padding: 0;
   box-sizing: border-box;
   scroll-behavior: smooth; /* Add this line for smooth scrolling */
+  scrollbar-gutter: stable;
 }
 
 body {

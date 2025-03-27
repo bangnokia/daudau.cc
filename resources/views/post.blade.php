@@ -29,20 +29,7 @@ use Illuminate\Support\Str;
 
 @endphp
 
-<div class="content-with-outline">
-    <!-- Floating Outline Menu -->
-    <aside class="aside-outline">
-        <div class="aside-outline-content">
-            <ol class="outline-list">
-                @foreach($headings as $heading)
-                    <li class="{{ $heading['level'] === 'h3' ? 'nested-list' : '' }}">
-                        <a href="#{{ $heading['id'] }}" style="color: gray">{{ $heading['text'] }}</a>
-                    </li>
-                @endforeach
-            </ol>
-        </div>
-    </aside>
-
+<div>
     <div class="main-content">
         <h1>{{ $data->title }}</h1>
         <x-date>{{ $data->createdAt }}</x-date>
@@ -53,14 +40,14 @@ use Illuminate\Support\Str;
     </div>
 
     <!-- comments -->
-    <div>
-    <script src="https://utteranc.es/client.js"
-            repo="bangnokia/daudau.cc"
-            issue-term="pathname"
-            theme="github-light"
-            crossorigin="anonymous"
-            async>
-    </script>
+    <div class="comments-section">
+        <script src="https://utteranc.es/client.js"
+                repo="bangnokia/daudau.cc"
+                issue-term="pathname"
+                theme="github-light"
+                crossorigin="anonymous"
+                async>
+        </script>
     </div>
 </div>
 @endsection
