@@ -33,8 +33,6 @@
         </div>
 
         <script>
-            console.log('Comments component initialized');
-
             const skeleton = document.getElementById('comments-skeleton');
             const utterancesContainer = document.getElementById('utterances-container');
 
@@ -45,7 +43,6 @@
 
             // Function to hide skeleton
             const hideSkeletonAndCleanup = () => {
-                console.log('Comments loaded - hiding skeleton');
                 if (skeleton) skeleton.style.display = 'none';
 
                 // Clean up observers
@@ -56,21 +53,19 @@
                 if (fallbackTimeout) clearTimeout(fallbackTimeout);
             };
 
-            // 1. Use ResizeObserver to detect when utterances loads (most modern approach)
+            // 1. Use ResizeObserver to detect when utterances loads
             let resizeObserver;
             if (window.ResizeObserver && utterancesContainer) {
                 resizeObserver = new ResizeObserver(entries => {
                     for (let entry of entries) {
                         // When the container gets a height, comments are loaded
                         if (entry.target.offsetHeight > 10) {
-                            console.log('ResizeObserver: Utterances height changed to', entry.target.offsetHeight);
                             hideSkeletonAndCleanup();
                         }
                     }
                 });
 
                 resizeObserver.observe(utterancesContainer);
-                console.log('ResizeObserver started');
             }
 
             // 2. Fallback: MutationObserver to watch for the iframe being added
@@ -82,8 +77,6 @@
                             // Look for the utterances iframe
                             const iframe = utterancesContainer.querySelector('iframe');
                             if (iframe) {
-                                console.log('MutationObserver: Utterances iframe detected');
-
                                 // Wait a small amount of time for the iframe to initialize
                                 setTimeout(hideSkeletonAndCleanup, 300);
                             }
@@ -95,12 +88,10 @@
                     childList: true,
                     subtree: true
                 });
-                console.log('MutationObserver started');
             }
 
             // 3. Final fallback: timeout
             const fallbackTimeout = setTimeout(() => {
-                console.log('Fallback timeout triggered');
                 hideSkeletonAndCleanup();
             }, 5000);
         </script>
