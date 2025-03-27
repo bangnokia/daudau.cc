@@ -69,6 +69,7 @@
   display: none;
 }
 
+/* Base styles */
 * {
   box-sizing: inherit;
 }
@@ -78,7 +79,7 @@ html {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  scroll-behavior: smooth; /* Add this line for smooth scrolling */
+  scroll-behavior: smooth;
   scrollbar-gutter: stable;
 }
 
@@ -99,6 +100,7 @@ body {
   transition: background-color 0.3s, color 0.3s;
 }
 
+/* Typography */
 h1 {
   color: var(--accent-primary);
   margin: 2rem 0 0.75rem;
@@ -121,10 +123,23 @@ a:hover {
   text-decoration: underline;
 }
 
+p {
+  line-height: 1.75rem;
+}
+
+time {
+  color: var(--text-secondary);
+}
+
+/* Code blocks */
 code {
   font-family: "Geist Mono", "Dm Mono", "Roboto mono", monospace;
   letter-spacing: 0;
   font-size: 0.9rem;
+  background-color: var(--code-bg);
+  padding: 2px 6px;
+  border-radius: 0.25rem;
+  color: var(--accent-primary);
 }
 
 pre {
@@ -138,20 +153,24 @@ pre {
   }
 }
 
-code {
-  background-color: var(--code-bg);
-  padding: 2px 6px;
-  border-radius: 0.25rem;
-  color: var(--accent-primary);
-}
-
-p {
-  line-height: 1.75rem;
-}
-
+/* Media */
 img {
   max-width: 100%;
   height: auto;
+}
+
+/* Layout */
+#app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 0 0.5rem;
+}
+
+.container {
+  width: 100%;
+  max-width: 696px;
+  margin: 0 auto;
 }
 
 header {
@@ -168,37 +187,7 @@ footer {
   font-size: 0.875rem;
 }
 
-time {
-  color: var(--text-secondary);
-}
-
-ul {
-  li {
-    padding: 0.25rem 0;
-  }
-}
-
-#app {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  padding: 0 0.5rem;
-}
-
-.w-full {
-  width: 100%;
-}
-
-.h-full {
-  height: 100%;
-}
-
-.container {
-  width: 100%;
-  max-width: 696px;
-  margin: 0 auto;
-}
-
+/* Navigation */
 .main-menu {
   display: flex;
   gap: 2rem;
@@ -209,8 +198,34 @@ ul {
   }
 }
 
-.text-center {
-  text-align: center;
+/* Content */
+.main-content {
+  width: 100%;
+  flex: 1;
+}
+
+.prose {
+  img {
+    margin-top: 1rem;
+    border-radius: 1rem;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+  }
+}
+
+/* Lists */
+ul {
+  li {
+    padding: 0.25rem 0;
+  }
+}
+
+/* Utility classes - Keep these as they may be used in templates */
+.w-full {
+  width: 100%;
+}
+
+.h-full {
+  height: 100%;
 }
 
 .flex {
@@ -230,6 +245,10 @@ ul {
   display: block;
 }
 
+.text-center {
+  text-align: center;
+}
+
 .text-sm {
   font-size: 0.875rem;
 }
@@ -238,14 +257,7 @@ ul {
   font-size: 1.125rem;
 }
 
-.prose {
-  img {
-    margin-top: 1rem;
-    border-radius: 1rem;
-    box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
-  }
-}
-
+/* Tag styling for possible post tags */
 .tag {
   font-size: 0.75rem;
   color: var(--text-secondary);
@@ -259,60 +271,11 @@ ul {
   }
 }
 
-.content-with-outline {
-  display: flex;
-  position: relative;
-  max-width: 1200px;
-  margin: 0 auto;
-}
 
-.main-content {
-  width: 100%;
-  flex: 1;
-}
-
-.aside-outline {
-  position: fixed;
-  left: 0;
-  top: 120px;
-  width: 300px;
-  display: none;
-}
-
-.aside-outline-content {
-  opacity: 0.5;
-  padding: 10px;
-  font-size: 0.825rem;
-  color: #666;
-  border-radius: 4px;
-  max-height: calc(100vh - 40px);
-  overflow-y: auto;
-
-  &:hover {
-    opacity: 1;
-  }
-}
-
-// Hide the aside outline on mobile devices
-/* Change from min-width to max-width to hide on mobile */
 @media screen and (min-width: 768px) {
   .aside-outline {
     display: block;
   }
-}
-
-.outline-list {
-  list-style: none;
-  padding-left: 0;
-  color: var(--text-secondary);
-}
-
-.outline-list > li {
-  padding: 2px 0;
-}
-
-.nested-list {
-  margin-left: 1.5rem;
 }
 
 /* Syntax Highlighting - Compatible with both light and dark modes */
@@ -489,6 +452,3 @@ ul {
     opacity: 0.6;
   }
 }
-
-/* Remove the media queries that use prefers-color-scheme since we're now using data-theme */
-/* We'll set up the dark mode through the theme toggle instead */
