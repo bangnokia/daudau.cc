@@ -1,3 +1,6 @@
+/* Import Geist Mono font */
+@import url('https://fonts.googleapis.com/css2?family=Geist+Mono:wght@300;400;500;600&display=swap');
+
 * {
   box-sizing: inherit;
 }
@@ -14,7 +17,7 @@ html {
 body {
   margin: 0;
   padding: 0;
-  font-family: "Roboto Mono", monospace;
+  font-family: "Geist Mono", monospace;
   width: 100%;
   background-color: #f9f9f9;
   overflow-x: hidden;
@@ -44,8 +47,9 @@ a:hover {
 }
 
 code {
-  font-family: "Dm Mono", "Roboto mono", monospace;
+  font-family: "Geist Mono", "Dm Mono", "Roboto mono", monospace;
 }
+
 pre {
   code {
     display: block;
@@ -72,10 +76,12 @@ img {
   max-width: 100%;
   height: auto;
 }
+
 header {
   width: 100%;
   padding: 1.5rem 0;
 }
+
 footer {
   border-top: 1px solid #eaeaea;
   display: flex;
@@ -84,31 +90,38 @@ footer {
   width: 100%;
   font-size: 0.875rem;
 }
+
 time {
   color: #666;
 }
+
 ul {
   li {
     padding: 0.25rem 0;
   }
 }
+
 #app {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   padding: 0 0.5rem;
 }
+
 .w-full {
   width: 100%;
 }
+
 .h-full {
   height: 100%;
 }
+
 .container {
   width: 100%;
   max-width: 696px;
   margin: 0 auto;
 }
+
 .main-menu {
   display: flex;
   gap: 2rem;
@@ -139,9 +152,11 @@ ul {
 .block {
   display: block;
 }
+
 .text-sm {
   font-size: 0.875rem;
 }
+
 .text-lg {
   font-size: 1.125rem;
 }
