@@ -123,6 +123,8 @@ a:hover {
 
 code {
   font-family: "Geist Mono", "Dm Mono", "Roboto mono", monospace;
+  letter-spacing: 0;
+  font-size: 0.9rem;
 }
 
 pre {
