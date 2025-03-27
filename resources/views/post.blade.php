@@ -26,7 +26,6 @@ use Illuminate\Support\Str;
 
     // Save updated HTML
     $updatedContent = $dom->saveHTML($dom->documentElement);
-
 @endphp
 
 <div>
@@ -39,18 +38,7 @@ use Illuminate\Support\Str;
         </article>
     </div>
 
-    <!-- comments -->
-    <div class="comments-section">
-        <h3>Comments</h3>
-        <div class="comments-container">
-            <script src="https://utteranc.es/client.js"
-                    repo="bangnokia/daudau.cc"
-                    issue-term="pathname"
-                    theme="github-light"
-                    crossorigin="anonymous"
-                    async>
-            </script>
-        </div>
-    </div>
+    <!-- Include the comments component -->
+    <x-comments />
 </div>
 @endsection

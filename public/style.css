@@ -312,11 +312,77 @@ ul {
 .comments-container {
   padding: 0.5rem 0;
   border-radius: 0.25rem;
+  position: relative;
 }
 
 /* Make the utterances iframe look better */
 .comments-container iframe {
   width: 100%;
+}
+
+/* Skeleton loading animation for comments */
+#comments-skeleton {
+  margin: 1rem 0;
+  display: block;
+}
+
+.skeleton-comment {
+  display: flex;
+  margin-bottom: 1.5rem;
+  gap: 1rem;
+}
+
+.skeleton-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #e0e0e0;
+  flex-shrink: 0;
+}
+
+.skeleton-content {
+  flex-grow: 1;
+  width: 100%;
+}
+
+.skeleton-line {
+  height: 14px;
+  background-color: #e0e0e0;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  width: 100%;
+  animation: pulse 1.5s infinite ease-in-out;
+}
+
+.skeleton-line-short {
+  width: 20%;
+}
+
+.skeleton-line-medium {
+  width: 60%;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 0.6;
+  }
+}
+
+/* Dark mode considerations for comments and skeleton */
+@media (prefers-color-scheme: dark) {
+  .comments-section h3 {
+    color: #eaeaea;
+  }
+
+  .skeleton-avatar, .skeleton-line {
+    background-color: #444;
+  }
 }
 
 /* Dark mode considerations for comments */
