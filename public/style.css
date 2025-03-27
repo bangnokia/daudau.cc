@@ -1,6 +1,74 @@
 /* Import Geist Mono font */
 @import url('https://fonts.googleapis.com/css2?family=Geist+Mono:wght@300;400;500;600&display=swap');
 
+/* Color Variables - Based on Vesper Theme */
+:root {
+  /* Light Theme (Default) */
+  --bg-primary: #f9f9f9;
+  --bg-secondary: #f4f4f4;
+  --bg-tertiary: #e8e8e8;
+  --text-primary: #333333;
+  --text-secondary: #666666;
+  --accent-primary: teal;
+  --accent-secondary: #008080cc;
+  --border-color: #eaeaea;
+  --code-bg: #f4f4f4;
+  --skeleton-bg: #e0e0e0;
+}
+
+/* Dark Theme (Vesper-inspired) */
+[data-theme="dark"] {
+  --bg-primary: #1e1e1e;
+  --bg-secondary: #252526;
+  --bg-tertiary: #303030;
+  --text-primary: #ffffff;
+  --text-secondary: #bbbbbb;
+  --accent-primary: #4ec9b0;
+  --accent-secondary: #4ec9b0cc;
+  --border-color: #3e3e3e;
+  --code-bg: #2d2d2d;
+  --skeleton-bg: #444444;
+}
+
+/* Theme toggle styles */
+.theme-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-primary);
+  border-radius: 50%;
+  transition: background-color 0.3s;
+}
+
+.theme-toggle:hover {
+  background-color: var(--bg-tertiary);
+}
+
+.theme-toggle-icon {
+  transition: transform 0.5s ease;
+}
+
+.theme-toggle .sun {
+  display: none;
+}
+
+.theme-toggle .moon {
+  display: block;
+}
+
+.theme-toggle.dark-mode .sun {
+  display: block;
+}
+
+.theme-toggle.dark-mode .moon {
+  display: none;
+}
+
 * {
   box-sizing: inherit;
 }
@@ -14,18 +82,25 @@ html {
   scrollbar-gutter: stable;
 }
 
+/* Base body styles without transitions */
 body {
   margin: 0;
   padding: 0;
   font-family: "Geist Mono", monospace;
   width: 100%;
-  background-color: #f9f9f9;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
   overflow-x: hidden;
   letter-spacing: -0.5px;
 }
 
+/* Only apply transitions when toggling theme manually */
+[data-theme-transition="true"] body {
+  transition: background-color 0.3s, color 0.3s;
+}
+
 h1 {
-  color: teal;
+  color: var(--accent-primary);
   margin: 2rem 0 0.75rem;
 }
 
@@ -39,7 +114,7 @@ h3 {
 
 a {
   text-decoration: none;
-  color: teal;
+  color: var(--accent-primary);
 }
 
 a:hover {
@@ -54,7 +129,7 @@ pre {
   code {
     display: block;
     padding: 1rem;
-    background-color: #f4f4f4;
+    background-color: var(--code-bg);
     border-radius: 0.5rem;
     overflow-x: auto;
     line-height: 1.5rem;
@@ -62,10 +137,10 @@ pre {
 }
 
 code {
-  background-color: #f4f4f4;
+  background-color: var(--code-bg);
   padding: 2px 6px;
   border-radius: 0.25rem;
-  color: teal;
+  color: var(--accent-primary);
 }
 
 p {
@@ -83,7 +158,7 @@ header {
 }
 
 footer {
-  border-top: 1px solid #eaeaea;
+  border-top: 1px solid var(--border-color);
   display: flex;
   justify-content: space-between;
   padding: 1rem 0 !important;
@@ -92,7 +167,7 @@ footer {
 }
 
 time {
-  color: #666;
+  color: var(--text-secondary);
 }
 
 ul {
@@ -128,7 +203,7 @@ ul {
   font-weight: 400;
 
   a {
-    color: initial;
+    color: var(--text-primary);
   }
 }
 
@@ -171,14 +246,14 @@ ul {
 
 .tag {
   font-size: 0.75rem;
-  color: #666;
-  background: #eee;
+  color: var(--text-secondary);
+  background: var(--bg-tertiary);
   background-opacity: 0.5;
   padding: 1px 8px;
   border-radius: 0.25rem;
 
   &:hover {
-    background: #ddd;
+    background: var(--bg-secondary);
   }
 }
 
@@ -227,7 +302,7 @@ ul {
 .outline-list {
   list-style: none;
   padding-left: 0;
-  color: gray;
+  color: var(--text-secondary);
 }
 
 .outline-list > li {
@@ -299,14 +374,14 @@ ul {
 .comments-section {
   margin-top: 3rem;
   padding-top: 2rem;
-  border-top: 1px solid #eaeaea;
+  border-top: 1px solid var(--border-color);
 }
 
 .comments-section h3 {
   font-size: 1.25rem;
   font-weight: 600;
   margin-bottom: 1.5rem;
-  color: #333;
+  color: var(--text-primary);
 }
 
 .comments-container {
@@ -336,7 +411,7 @@ ul {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background-color: #e0e0e0;
+  background-color: var(--skeleton-bg);
   flex-shrink: 0;
 }
 
@@ -347,7 +422,7 @@ ul {
 
 .skeleton-line {
   height: 14px;
-  background-color: #e0e0e0;
+  background-color: var(--skeleton-bg);
   border-radius: 4px;
   margin-bottom: 10px;
   width: 100%;
@@ -374,23 +449,5 @@ ul {
   }
 }
 
-/* Dark mode considerations for comments and skeleton */
-@media (prefers-color-scheme: dark) {
-  .comments-section h3 {
-    color: #eaeaea;
-  }
-
-  .skeleton-avatar, .skeleton-line {
-    background-color: #444;
-  }
-}
-
-/* Dark mode considerations for comments */
-@media (prefers-color-scheme: dark) {
-  .comments-container {
-    background-color: #2a2a2a;
-  }
-  .comments-section h3 {
-    color: #eaeaea;
-  }
-}
+/* Remove the media queries that use prefers-color-scheme since we're now using data-theme */
+/* We'll set up the dark mode through the theme toggle instead */

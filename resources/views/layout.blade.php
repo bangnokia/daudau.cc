@@ -19,11 +19,14 @@
 <body>
     <div id="app">
         <header class="container">
-            <nav class="main-menu">
-                <a href="/">Blog</a>
-                <a href="/projects">Projects</a>
-                <a href="/about">About</a>
-            </nav>
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <nav class="main-menu">
+                    <a href="/">Blog</a>
+                    <a href="/projects">Projects</a>
+                    <a href="/about">About</a>
+                </nav>
+                <x-theme-toggle />
+            </div>
         </header>
 
         <main class="container" style="padding-top: 4rem; flex-grow: 1; width: 100%; height: 100%">
