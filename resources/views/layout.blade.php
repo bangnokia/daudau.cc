@@ -10,7 +10,16 @@
     <meta property="twitter:author" content="@bangnokia" />
     <meta property="og:image" content="https://cdn.statically.io/og/{{ $data->title }}.jpg" />
 
-    <link rel="icon" href="/favicon.png" type="image/x-icon"> <!-- Add this line for favicon -->
+    <!-- Prevent theme flash by applying theme immediately -->
+    <script>
+        (function() {
+            const savedTheme = localStorage.getItem('theme') ||
+                             (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            document.documentElement.setAttribute('data-theme', savedTheme);
+        })();
+    </script>
+
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="/style.css?v={{ time() }}">
