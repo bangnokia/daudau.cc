@@ -13,7 +13,10 @@
         "linaphp/lina": "^0.6"
     },
     "scripts": {
-        "dev": "./vendor/bin/lina serve",
+        "dev": [
+            "Composer\\Config::disableProcessTimeout",
+            "./vendor/bin/lina serve"
+        ],
         "build": "./vendor/bin/lina build"
     }
 }
