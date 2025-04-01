@@ -1,5 +1,5 @@
 ---
-title: "APIs & Images: How I Built Skymage to Escape the Pixel Nightmare"
+title: "How I built Skymage to escape the pixel optimization nightmare"
 layout: post
 tags:
     - skymage
