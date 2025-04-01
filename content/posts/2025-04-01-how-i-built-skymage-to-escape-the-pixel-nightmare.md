@@ -1,6 +1,9 @@
 ---
 title: "APIs & Images: How I Built Skymage to Escape the Pixel Nightmare"
-featured_image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80"
+layout: post
+tags:
+    - skymage
+    - image optimization
 ---
 
 Let me take you back to a dark time—2 a.m., my desk a battlefield of crumpled energy drink cans, and me, hunched over a laptop, staring at a folder of 47 unoptimized images. My client, in their infinite wisdom, had sent me files so big I could hear my server whimpering from across the room. Load times were crawling at a snail’s pace—think “watching paint dry” but with more swearing. I was one blurry JPEG away from losing it, resizing images by hand in some godforsaken editor, muttering, “There’s got to be a better way.” Spoiler: there wasn’t. So I made one. That’s how Skymage was born—out of sheer desperation and a refusal to let pixels ruin my life anymore.
