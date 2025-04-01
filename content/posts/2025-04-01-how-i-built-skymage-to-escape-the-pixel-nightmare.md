@@ -43,13 +43,15 @@ Start with that one file that's been haunting you—like my old foe, `https://da
 ### 2. Hit It with Params
 I designed Skymage to be brain-dead simple. Want it smaller? Add `?w=500`:
 
+```
 https://dau.skymage.net/v1/daudau.cc/images/sad-latte.jpg?w=500
-text
+```
 
 That’s it—no more resizing in some janky editor while sobbing. Need it leaner? `q=80`. Want it next-gen? `f=webp`. Stack them up:
 
+```
 https://dau.skymage.net/v1/daudau.cc/images/sad-latte.jpg?w=500&q=80&f=webp
-text
+```
 
 It’s like I took all my rage and turned it into a tool that says, “Chill, I’ve got this.”
 
@@ -75,8 +77,10 @@ Pop open dev tools, watch that 4MB disaster shrink to 200KB, and load in a blink
 ## The Breaking Point That Birthed Skymage
 
 Here’s the kicker: Skymage came from a real breakdown. I had a client—photographer, obsessed with “pristine quality”—who gave me 20 images, 6MB each. My site took 12 seconds to load. Twelve. Seconds. I was on the verge of faking a power outage to dodge the shame. Instead, I hacked together the first version of Skymage, threw this at it:
-text
+
+```
 https://dau.skymage.net/v1/daudau.cc/images/forest.jpg?w=1200&q=85&f=webp
+```
 
 From 6MB to 280KB, 12 seconds to 1.5. Client loved it, and I didn’t have to explain why I’d been googling “how to disappear” at 3 a.m.
 
