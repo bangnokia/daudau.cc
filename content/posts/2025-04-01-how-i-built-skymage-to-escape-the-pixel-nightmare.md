@@ -101,12 +101,12 @@ Here's something I didn't mention yet: I got tired of paying absurd prices for i
 Let me break down the brutal truth:
 
 - **Cloudinary**: Great features, but once you exceed their free tier, costs spiral quickly. Their "pay-as-you-go" can mean "surprise bills at the end of the month."
-- **Imgix**: Powerful, but with a minimum $25/month commitment. For small projects or personal sites? That's ridiculous.
+- **Imgix**: They do offer a free plan, which is nice for getting started. But once you hit serious volume, their pricing structure gets expensive fast—especially for growing companies with image-heavy sites.
 - **Uploadcare**: Solid service, but their pricing gets complex fast with storage + CDN + transformation fees.
 
 I built Skymage with a simple philosophy: image optimization shouldn't require a second mortgage. Here's the deal:
 
-- **Straightforward Pricing**: Pay for what you use, with no hidden fees or gotchas.
+- **Dead Simple Pricing**: You pay for bandwidth. That's it. No complex calculations, no separate charges for transformations, storage, or other hidden costs.
 - **Generous Free Tier**: Process thousands of images monthly without paying a cent.
 - **Scale Without Bankruptcy**: Our highest tier costs less than competitors' mid-range options.
 
