@@ -76,13 +76,13 @@ Pop open dev tools, watch that 4MB disaster shrink to 200KB, and load in a blink
 
 ## The Breaking Point That Birthed Skymage
 
-Here’s the kicker: Skymage came from a real breakdown. I had a client—photographer, obsessed with “pristine quality”—who gave me 20 images, 6MB each. My site took 12 seconds to load. Twelve. Seconds. I was on the verge of faking a power outage to dodge the shame. Instead, I hacked together the first version of Skymage, threw this at it:
+Here's the kicker: Skymage came from a real breakdown. I had a client—photographer, obsessed with "pristine quality"—who gave me 20 images, 6MB each. My site took 12 seconds to load. Twelve. Seconds. I was on the verge of faking a power outage to dodge the shame. Instead, I hacked together the first version of Skymage, threw this at it:
 
 ```
 https://dau.skymage.net/v1/daudau.cc/images/forest.jpg?w=1200&q=85&f=webp
 ```
 
-From 6MB to 280KB, 12 seconds to 1.5. Client loved it, and I didn’t have to explain why I’d been googling “how to disappear” at 3 a.m.
+From 6MB to 280KB, 12 seconds to 1.5. Client loved it, and I didn't have to explain why I'd been googling "how to disappear" at 3 a.m.
 
 ## Why It’s Worth It (Trust Me, I Learned the Hard Way)
 
