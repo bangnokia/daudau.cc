@@ -58,11 +58,13 @@ Stick it in your HTML:
 
 ```html
 <img src="https://dau.skymage.net/v1/daudau.cc/images/sad-latte.jpg?w=500&f=webp" alt="A latte I didn’t suffer for">
+```
 
 Or flex some JS:
-javascript
+```javascript
 const imgUrl = `https://dau.skymage.net/v1/daudau.cc/images/sad-latte.jpg?w=${window.innerWidth > 768 ? 800 : 400}&f=webp`;
 document.querySelector('img').src = imgUrl;
+```
 
 I built this so you could feel clever without the hours of pain I endured.
 
@@ -87,6 +89,24 @@ This isn’t just about tech—it’s personal:
 - **My Sanity**: I built this so I’d stop hating my job. Less pixel pain, more coding joy.
 
 I used to dread image tasks like they were tax season. Now? I’ve got a tool that fights back.
+
+## The Wallet Factor: Why I Made Skymage Stupidly Affordable
+
+Here's something I didn't mention yet: I got tired of paying absurd prices for image optimization. When I started building Skymage, I looked at competitors like Cloudinary, Imgix, and Uploadcare. Don't get me wrong—they're powerful services, but their pricing made me wince.
+
+Let me break down the brutal truth:
+
+- **Cloudinary**: Great features, but once you exceed their free tier, costs spiral quickly. Their "pay-as-you-go" can mean "surprise bills at the end of the month."
+- **Imgix**: Powerful, but with a minimum $25/month commitment. For small projects or personal sites? That's ridiculous.
+- **Uploadcare**: Solid service, but their pricing gets complex fast with storage + CDN + transformation fees.
+
+I built Skymage with a simple philosophy: image optimization shouldn't require a second mortgage. Here's the deal:
+
+- **Straightforward Pricing**: Pay for what you use, with no hidden fees or gotchas.
+- **Generous Free Tier**: Process thousands of images monthly without paying a cent.
+- **Scale Without Bankruptcy**: Our highest tier costs less than competitors' mid-range options.
+
+When a client baulked at Cloudinary's $99/month plan for their image-heavy site, I put them on Skymage for $19/month. They couldn't tell the difference—except in their bank account.
 
 ## Escape the Madness (I Did It for You)
 
