@@ -92,7 +92,7 @@ body {
   background-color: var(--bg-primary);
   color: var(--text-primary);
   overflow-x: hidden;
-  letter-spacing: -0.5px;
+  /* letter-spacing: -0.5px; */
 }
 
 /* Only apply transitions when toggling theme manually */

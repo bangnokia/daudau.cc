@@ -1,0 +1,5 @@
+User-agent: *
+Disallow:
+Sitemap: https://skymage.daudau.cc/sitemap.xml
+Sitemap: https://skymage.daudau.cc/docs/sitemap.xml
+Sitemap: https://skymage.daudau.cc/blog.xml
