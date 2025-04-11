@@ -1,5 +1,5 @@
 ---
-title: "I Don't Code Anymore — I Manage AI Chaos in vibe"
+title: "I Don't Code Anymore — I Manage AI Chaos in Vibe"
 layout: post
 tags:
     - ai
