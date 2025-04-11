@@ -83,7 +83,7 @@ And honestly? Productivity has never been higher.
 
 ## Current Project: Skymage
 
-Right now, the focus is [Skymage](https://skymage.daudau.cc), a specialized CDN for transforming and optimizing images on the fly. Born from real-world pain points:
+Right now, the focus is [Skymage Image CDN](https://skymage.daudau.cc), a specialized CDN for transforming and optimizing images on the fly. Born from real-world pain points:
 
 - Handling client's massive image libraries without server meltdowns
 - Escaping framework lock-in that other solutions impose
