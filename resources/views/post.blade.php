@@ -1,4 +1,15 @@
-@extends('layout')
+@php
+    // Extract the first image from the post content if any
+    $firstImageUrl = null;
+    if (isset($data->content)) {
+        preg_match('/<img.+src=[\'"](?P<src>.+?)[\'"].*>/i', $data->content, $matches);
+        if (!empty($matches['src'])) {
+            $firstImageUrl = $matches['src'];
+        }
+    }
+@endphp
+
+@extends('layout', ['ogImage' => $firstImageUrl])
 
 @section('content')
 <div>

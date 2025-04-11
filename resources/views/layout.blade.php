@@ -1,3 +1,16 @@
+@php
+    // Determine OG image source with priority:
+    // 1. Custom ogImage passed via array parameter
+    // 2. Fallback to statically.io with title
+
+    // Check if ogImage is passed via array parameter
+    $ogImage = $ogImage ?? null;
+
+    // Fallback to the current solution
+    if (!$ogImage) {
+        $ogImage = "https://cdn.statically.io/og/" . ($data->title ?? 'Blog of Nguyen') . ".jpg";
+    }
+@endphp
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,7 +21,7 @@
     <title>{{ implode(' | ', [$data->title ?? '', 'Blog of Nguyen']) }}</title>
     <meta name="description" content="{{ $data->description ?: substr(strip_tags($data->content), 0, 165) }}">
     <meta property="twitter:author" content="@bangnokia" />
-    <meta property="og:image" content="https://cdn.statically.io/og/{{ $data->title }}.jpg" />
+    <meta property="og:image" content="{{ $ogImage }}" />
 
     <!-- Prevent theme flash by applying theme immediately -->
     <script>
