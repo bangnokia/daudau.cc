@@ -3,7 +3,6 @@ title: I don't code anymore — I Mmnage AI chaos in Vibe
 layout: post
 tags:
     - ai
-    - productivity
 ---
 
 There was a time when I wrote code. A simpler time. Fingers dancing on the keyboard, tabs overflowing, caffeine fueling the push to hit yet another deadline. But that era is gone. Today, my IDE (VSCode) is cold. My fingers? Untouched by semicolons.
