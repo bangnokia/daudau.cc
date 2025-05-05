@@ -1,5 +1,5 @@
 ---
-title: I don't code anymore — I Manage AI chaos in Vibe
+title: I don't code anymore — I manage AI chaos in Vibe
 layout: post
 tags:
     - ai
