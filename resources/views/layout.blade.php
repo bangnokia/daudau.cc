@@ -8,7 +8,7 @@
 
     // Fallback to the current solution
     if (!$ogImage) {
-        $ogImage = "https://cdn.statically.io/og/" . ($data->title ?? 'Blog of Nguyen') . ".jpg";
+        $ogImage = "https://og.skymage.net?text=" . ($data->title ?? 'Blog of Nguyen');
     }
 @endphp
 <!DOCTYPE html>
