@@ -6,13 +6,15 @@ tags:
     - caddy
 ---
 
-*Discover how we scaled from 280 to over 1000 Laravel websites on a single server with resource optimizations, deployment tricks, and multi-tenant magic.* 🚀
+*Discover how we scaled from 280 to Although we've achieved significant resource savings and streamlined our deployment process, there are still areas we plan to improve:
+- **Monitoring**: We're exploring tools like Prometheus or Grafana to aggregate important metrics across all stores. This will help us identify bottlenecks quickly.
+- **Scaling Strategy**: If traffic spikes, we'll consider page caching. We won't use cloud solutions or auto-scaling—that would make us broke 😂.r 1000 Laravel websites on a single server with resource optimizations, deployment tricks, and multi-tenant magic.* 🚀
 
-From the early days, we have been using Laravel to build websites for selling products online. To quickly go online to sell stuff, we use Laravel as a storefront for rapid development.
+From the early days, we've been using Laravel to build ecommerce websites for selling products online. Laravel serves as our storefront for rapid development.
 
-We use [lunarphp](https://lunarphp.io/) to develop ecommerce functionality. It is a Laravel package that provides a lot of features for ecommerce websites.
+We use [lunarphp](https://lunarphp.io/) for ecommerce functionality. It's a Laravel package that provides comprehensive features for online stores.
 
-For each kind of product, we deploy a new website. So we have lots of stores running on a few servers.
+For each product type, we deploy a new website. So we have many stores running on a few servers.
 
 ## Our Tech Stack Before
 - Nginx as web server
@@ -25,20 +27,20 @@ For each kind of product, we deploy a new website. So we have lots of stores run
 - Ansible and Jenkins for CI/CD
 - GitHub for version control (of course) 🫠
 
-To create a new store, we just go to Jenkins and run the Ansible playbook. Everything is automated so we can focus on developing the store, and that's quite simple and easy.
+To create a new store, we run the Ansible playbook in Jenkins. Everything is automated so we can focus on developing the store—simple and efficient.
 
 ## Problems When Running Many Stores on a Single Server
-If you are just running one or a few Laravel websites on a single server, optimizing the server is not really a big deal. But as time goes by, we have more and more stores running on a single server, and we have to face some problems:
+If you're running just one or a few Laravel websites on a single server, optimization isn't a big concern. But as we scaled up with more stores on each server, we encountered several challenges:
 
-### Waste of Server Resources
-The resources for running a normal Laravel functional website are not really high. But when you have 1000 websites running on a single server, the server resources are not enough. Let me explain:
-- Each website requires at least 1 PHP-FPM pool (We use about 100MB per FPM process)
-- Each website has its own Nginx configuration (not a big deal)
+### Resource Waste
+The resources needed for a normal Laravel website aren't particularly high. But when you have 1000 websites on a single server, resources become insufficient. Here's why:
+- Each website requires at least 1 PHP-FPM pool (~100MB per FPM process)
+- Each website has its own Nginx configuration (manageable)
 - Each website requires a database connection (MySQL)
-- Each website requires a systemd service for running queue workers (horizon)
-- *Each server requires a cron job for running scheduled tasks (We really want this but we can't, they will make the CPU and RAM spike crazy 😅)*
+- Each website requires a systemd service for queue workers (horizon)
+- *Each server needs a cron job for scheduled tasks (We really wanted this but couldn't—they would make CPU and RAM spike like crazy 😅)*
 
-So even if most of the websites are not really active, they still consume the server resources. And that's really a big problem for us.
+Even if most websites aren't very active, they still consume server resources. This was a major problem for us.
 
 Our largest server has specs:
 - **OS**: Ubuntu 22.04.5 LTS x86_64
@@ -50,16 +52,16 @@ Our largest server has specs:
 
 ![server state before](/images/lunar-server-before.png)
 
-So you can see, we have 32 cores, 64GB of RAM, but we can only handle about 280 websites on this server. **962 tasks, wow** 😂
+So you can see, we have 32 cores and 64GB of RAM, but could only handle about 280 websites on this server. **962 tasks, wow** 😂
 
 **What Did We Do to Solve This Problem?**
 
-I have to say, we tried our best and could run the store normally at that time. We had to use caching to run the store smoothly. First, we used [laravel-responsecache](https://github.com/spatie/laravel-responsecache) from Spatie, but the request still touched the PHP-FPM process, so we had to use [laravel-pagecache](https://github.com/JosephSilber/page-cache) to serve the HTML content directly from Nginx. That really helped us to reduce the server load.
+I have to say, we tried our best to keep the stores running normally. We relied heavily on caching. First, we used [laravel-responsecache](https://github.com/spatie/laravel-responsecache) from Spatie, but requests still touched the PHP-FPM process. So we switched to [laravel-pagecache](https://github.com/JosephSilber/page-cache) to serve HTML content directly from Nginx. This really helped reduce server load.
 
-From my side, I really don't like to use caching, because it's hard to debug and sometimes it doesn't work as expected. But we had to use it to keep the server running. The hard thing is not only the caching, the hard thing is we have to keep the cache up to date, and that's really hard to do. 🤣
+Honestly, I don't like using caching because it's hard to debug and sometimes doesn't work as expected. But we had to use it to keep the server running. The challenge isn't just the caching itself—it's keeping the cache up to date, which is really difficult. 🤣
 
 ### Slow Development
-You did not read wrong, even though we have CI/CD, the deployment process is really slow. We have to wait for more than 1 hour to deploy every website on a server. That's really slow, right? 🫠 Our deployment scripts are just simple like
+You read that right—even with CI/CD, our deployment process was incredibly slow. We had to wait over an hour to deploy every website on a server. That's painfully slow, right? 🫠 Our deployment scripts were simple:
 
 ```bash
 git pull origin main
@@ -71,14 +73,14 @@ php artisan horizon:terminate
 ...
 ```
 
-Because the server doesn't have much free resources, the build process becomes very slow.
+Because the server lacked free resources, the build process became very slow.
 
-*If someone spams composer stats for downloading packages, that could be me 😂.*
+*If someone spammed composer stats for downloading packages, that was probably me 😂.*
 
 ### SSL Problems
-We use certbot to automatically renew the SSL certificate, but sometimes it doesn't work as expected. And we have to manually renew the certificate. That's really a pain, even SSHing into the server, it's still hard to do and we got lots of trouble. I really don't want to spend all day debugging and dealing with certbot anymore. Something like this [issue-8735](https://github.com/certbot/certbot/issues/8735).
+We used certbot to automatically renew SSL certificates, but sometimes it didn't work as expected, requiring manual renewal. This was a real pain—even SSHing into the server was difficult, and we encountered many issues. I really didn't want to spend all day debugging certbot anymore. Issues like [this one](https://github.com/certbot/certbot/issues/8735) were common.
 
-In our case, somehow certbot takes ownership of the `nginx` process and we have to kill nginx each time we renew the certificate. That's really weird and we have to deal with it.
+In our case, certbot somehow took ownership of the `nginx` process, forcing us to kill nginx each time we renewed certificates. Really weird, and we had to deal with it constantly.
 
 ## We Decided to Refactor Everything
 Rewrite it in Rust (just kidding 😂). We'll stay with Laravel for sure.
@@ -88,31 +90,31 @@ Our new tech stack:
 - PHP-FPM as PHP processor (We use PHP 8.2 until now)
 - SQLite
 
-### Change from Single Store to Multi-Tenant
-First of all, we have to develop a multi-tenant website. So on each server, we only deploy 1 website, and that website will handle all the requests for other websites. That's really a big change for us, but we have to do it.
-That will help us avoid all unnecessary resources for running a website. (horizon, FPM, cron, ...)
+### Switch from Single Store to Multi-Tenant
+First, we developed a multi-tenant website. Now each server deploys only 1 website that handles all requests for other sites. This was a major change for us, but necessary.
+This helps us avoid unnecessary resources for running individual websites (horizon, FPM, cron, etc.).
 
-We reimplemented our stores to be multi-tenant using the package [Tenancy for Laravel](https://github.com/archtechx/tenancy). That's really a great package, and it's really easy to customize.
+We reimplemented our stores as multi-tenant using [Tenancy for Laravel](https://github.com/archtechx/tenancy). It's an excellent package that's easy to customize.
 
 ![pull request version 2.x](/images/lunar-loc-change.png)
 
 **Beautiful Dashboard for Managing Stores**
 
-And the result is so great, now we have a beautiful dashboard for managing all the stores. We can easily create new stores, and manage the stores easily. The dashboard is built with [Filament](https://filamentphp.com/), and it's really great for us.
+The result is fantastic—now we have a beautiful dashboard for managing all stores. We can easily create new stores and manage them efficiently. The dashboard is built with [Filament](https://filamentphp.com/), which works great for us.
 
 ![manage-stores](/images/lunar-manage-stores.png)
 
-### Change Database from MySQL to SQLite
-We use SQLite for storing data for each store. Because mostly our stores only have a few hundred products, SQLite is really enough for us. And we can easily back up the data by just copying the file. By moving away from MySQL, we can save a lot of resources for running the server. So just spend it on PHP-FPM.
+### Switch Database from MySQL to SQLite
+We use SQLite for storing data for each store. Since most of our stores have only a few hundred products, SQLite is sufficient. We can easily back up data by copying the file. Moving away from MySQL saves significant server resources that we can allocate to PHP-FPM.
 
 To migrate from MySQL to SQLite, we use the [mysql2sqlite](https://github.com/mysql2sqlite/mysql2sqlite) script.
 
-### Change Web Server from Nginx to Caddy
-I know that Nginx has better performance than Caddy, but Caddy is really easy to use and configure. Btw our traffic is not really like 10000 requests per second, so Caddy is really enough for us. Also, Caddy has the killer feature that we really love, that's [On-Demand TLS](https://caddyserver.com/on-demand-tls).
+### Switch Web Server from Nginx to Caddy
+I know Nginx has better performance than Caddy, but Caddy is much easier to use and configure. Since our traffic isn't like 10,000 requests per second, Caddy is sufficient. Plus, Caddy has the killer feature we love: [On-Demand TLS](https://caddyserver.com/on-demand-tls).
 
 It's 2025 and SSL should not be a nightmare to maintain.
 
-Our Caddyfile is really simple like this: (I have to remove some sensitive information)
+Our Caddyfile is simple: (sensitive information removed)
 ```caddy
 {
     on_demand_tls {
@@ -139,21 +141,21 @@ https:// {
 ```
 
 **Migration Process**
-Thankfully, the migration process is really smooth. We use Ansible to migrate the server to the new version (I have no idea what Kubernetes is 😂). We do not use Docker either.
+Thankfully, the migration process was smooth. We used Ansible to migrate servers to the new version (I have no idea what Kubernetes is 😂). We don't use Docker either.
 
 **The Result**
 ![after migrate](/images/lunar-after.png)
 
-Tasks count reduced to 69 🙂. We just disabled all Horizon processes, MySQL processes, PHP-FPM processes. Now we can run scheduled tasks without worrying about resource overload. We also removed the page-cache package, because we don't need it anymore. We can run the store smoothly without caching, which simplifies maintenance and debugging.
+Task count reduced to 69 🙂. We disabled all Horizon processes, MySQL processes, and extra PHP-FPM processes. Now we can run scheduled tasks without worrying about resource overload. We also removed the page-cache package since we don't need it anymore. We can run stores smoothly without caching, which simplifies maintenance and debugging.
 
-### Improve Deployment Process
-Now we only deploy 1 website on a server, so the deployment process is really fast, even create a new stor in blink of an eye. We can focus on developing features, delivering fixes, and improving the store without worrying about the deployment process.
+### Improved Deployment Process
+Now we only deploy 1 website per server, making the deployment process lightning-fast—we can create new stores in the blink of an eye. We can focus on developing features, delivering fixes, and improving stores without worrying about slow deployments.
 
 ### Ongoing Improvements
 Although we have already achieved significant resource savings and streamlined our deployment process, there are still areas we plan to improve:
 - Monitoring: We're exploring tools like Prometheus or Grafana to aggregate important metrics across all stores. This will let us see exactly where any bottleneck might appear.
 - Scaling Strategy: If traffic spikes, we’ll consider page cache. We won't use cloud solution or auto sclaling, that will make us broke 😂.
 
-By focusing on these areas, we hope to keep our multi-store environment running smoothly and cost-effectively, while still providing the best experience for our users.
+By focusing on these areas, we hope to keep our multi-store environment running smoothly and cost-effectively while providing the best experience for our users.
 
-So I think PHP and Laravel are still great for building websites, even for a large number of websites. We just need to optimize the server and the code to make it run smoothly.
+I think PHP and Laravel are still excellent for building websites, even for large numbers of sites. We just need to optimize the server and code to run everything smoothly.
