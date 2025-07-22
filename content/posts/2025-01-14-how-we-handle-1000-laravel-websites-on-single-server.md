@@ -6,9 +6,7 @@ tags:
     - caddy
 ---
 
-*Discover how we scaled from 280 to Although we've achieved significant resource savings and streamlined our deployment process, there are still areas we plan to improve:
-- **Monitoring**: We're exploring tools like Prometheus or Grafana to aggregate important metrics across all stores. This will help us identify bottlenecks quickly.
-- **Scaling Strategy**: If traffic spikes, we'll consider page caching. We won't use cloud solutions or auto-scaling—that would make us broke 😂.r 1000 Laravel websites on a single server with resource optimizations, deployment tricks, and multi-tenant magic.* 🚀
+*Discover how we scaled from 280 to over 1000 Laravel websites on a single server with resource optimizations, deployment tricks, and multi-tenant magic.* 🚀
 
 From the early days, we've been using Laravel to build ecommerce websites for selling products online. Laravel serves as our storefront for rapid development.
 
