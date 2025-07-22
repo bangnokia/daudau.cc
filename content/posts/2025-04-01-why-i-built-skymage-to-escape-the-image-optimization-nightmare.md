@@ -1,14 +1,14 @@
 ---
-title: "How I built Skymage to escape the image optimization nightmare"
+title: "Why I built Skymage to escape the image optimization nightmare"
 layout: post
 tags:
     - skymage
     - image optimization
 ---
 
-If you've ever spent hours manually resizing images or watched your site crawl because of large files, you know the frustration. I got tired of the same workflow: export thumbnails, mobile versions, retina copies—all with messy file names like `img_sm_final_v3.jpg`.
+Your website loads in 8 seconds because you uploaded a 4MB hero image. Your mobile users are bouncing before the page finishes loading. You know you need to optimize those images, but the manual workflow is killing you—exporting multiple sizes, creating thumbnails, converting formats, all with messy file names like `img_sm_final_v3.jpg`.
 
-That's why I built Skymage—a simple image optimization API that handles the heavy lifting so you don't have to.
+That's why I built Skymage—a simple image optimization API that transforms any image URL into a fast-loading, perfectly-sized version for your website.
 
 ## The Image Problem
 
@@ -108,6 +108,18 @@ Skymage keeps it simple:
 - **Affordable Scaling**: Our highest tier costs less than competitors' mid-range plans
 
 When a client balked at Cloudinary's $99/month plan, I put them on Skymage for $19/month with the same results.
+
+## What's Next: Platform Integrations
+
+Right now, Skymage works great as a URL-based API, but I know many developers want even simpler integration. I'm planning to build plugins for popular platforms to make image optimization completely seamless:
+
+- **WordPress Plugin**: Auto-optimize images in posts, featured images, and media library uploads
+- **PrestaShop Module**: Handle product images, category banners, and theme assets automatically
+- **Drupal Module**: Integrate with the media system for automatic optimization
+
+The goal is simple: install a plugin, connect your Skymage account, and never think about image optimization again. Your CMS uploads work as usual, but behind the scenes, all images get optimized automatically.
+
+I'm still figuring out the technical details for each platform—their APIs, hooks, and best practices. If you've built plugins for any of these platforms before, or if there's a specific platform you'd love to see supported, reach out. I'd love to hear your thoughts on what would make these integrations most useful.
 
 ## Try It Out
 
