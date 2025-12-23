@@ -170,7 +170,7 @@
         // Create a custom animated icon using divIcon
         const customIcon = L.divIcon({
             className: 'animated-icon',
-            html: '<img src="/icon.png" alt="marker">',
+            html: '<img src="/images/wedding-icon.png" alt="marker">',
             iconSize: [48, 48],
             iconAnchor: [24, 48]
         });
@@ -178,7 +178,6 @@
         // Add the marker
         const marker = L.marker([lat, lng], { icon: customIcon }).addTo(map);
 
-        // Zoom to 19 when marker is clicked
         marker.on('click', function() {
             map.setView([lat, lng], 15);
         });
