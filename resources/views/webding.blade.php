@@ -161,10 +161,11 @@
             attributionControl: false
         }).setView([lat, lng], 10);
 
-        // Use a clean, modern Street mode (CartoDB Voyager)
-        L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
-            maxZoom: 19,
-            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
+        // Use Google Maps style tiles
+        L.tileLayer('https://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}', {
+            maxZoom: 20,
+            subdomains: ['mt0', 'mt1', 'mt2', 'mt3'],
+            attribution: '&copy; <a href="https://www.google.com/maps">Google Maps</a>'
         }).addTo(map);
 
         // Create a custom animated icon using divIcon
