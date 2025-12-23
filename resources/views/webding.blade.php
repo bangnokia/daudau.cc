@@ -411,8 +411,15 @@
         }
 
         // Add popups
-        husbandMarker.bindPopup("", { maxWidth: 200, closeButton: false });
-        wifeMarker.bindPopup("", { maxWidth: 200, closeButton: false });
+        husbandMarker.bindPopup("", { maxWidth: 200, closeButton: false, autoClose: false });
+        wifeMarker.bindPopup("", { maxWidth: 200, closeButton: false, autoClose: false });
+
+        // Click on map to close all popups
+         map.on('click', function() {
+             husbandMarker.closePopup();
+             wifeMarker.closePopup();
+             // We no longer close userMarker popup here to keep it visible
+         });
 
         // Initial links
         updatePopupLinks();
@@ -465,13 +472,19 @@
                             ${distWife}km to Nhà Tính
                         </div>
                     </div>
-                `, { closeButton: false })
+                `, { closeButton: false, autoClose: false, closeOnClick: false })
                 .openPopup();
 
             // IMPORTANT: Instead of just zooming into the user,
             // we fit the view to show the user AND both wedding houses
             const bounds = L.latLngBounds([userLatLng, husband, wife]);
             map.fitBounds(bounds, { padding: [70, 70], animate: true, duration: 1.5 });
+
+            // Automatically open popups after a short delay (once zoom is finished)
+            setTimeout(() => {
+                husbandMarker.openPopup();
+                wifeMarker.openPopup();
+            }, 1600);
         });
 
         map.on('locationerror', function(e) {
