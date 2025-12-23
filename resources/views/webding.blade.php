@@ -31,68 +31,6 @@
             z-index: 1;
         }
 
-        .overlay {
-            position: absolute;
-            top: 2rem;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 1000;
-            text-align: center;
-            width: 90%;
-            max-width: 600px;
-            pointer-events: none; /* Let clicks pass through to map if needed */
-        }
-
-        .overlay-content {
-            background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(10px);
-            padding: 1.5rem 2rem;
-            border-radius: 24px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            pointer-events: auto; /* Re-enable clicks for content */
-        }
-
-        h1 {
-            font-weight: 700;
-            font-size: 1.8rem;
-            margin: 0;
-            letter-spacing: -0.01em;
-        }
-
-        p {
-            color: var(--text);
-            opacity: 0.6;
-            margin: 0.5rem 0 0;
-            font-size: 1.1rem;
-        }
-
-        .actions {
-            position: absolute;
-            bottom: 2rem;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 1000;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 16px 40px;
-            background-color: #ffffff;
-            color: #1a1a1a;
-            text-decoration: none;
-            border-radius: 100px;
-            font-weight: 700;
-            font-size: 1rem;
-            transition: all 0.2s ease;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-            border: 1px solid rgba(0,0,0,0.05);
-        }
-
-        .btn:hover {
-            opacity: 0.9;
-            transform: translateY(-2px);
-        }
-
         /* Custom Emoji Marker Style */
         .emoji-marker {
             font-size: 32px;
@@ -119,51 +57,66 @@
             box-sizing: border-box;
         }
 
+        /* Popup Styles */
+        .leaflet-popup-content-wrapper {
+            border-radius: 16px;
+            padding: 8px;
+            background: #ffffff;
+            color: #1a1a1a;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .leaflet-popup-tip {
+            background: #ffffff;
+        }
+
+        .popup-btn {
+            display: block;
+            background: #ffffff;
+            color: #1a1a1a;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 100px;
+            font-weight: 700;
+            text-align: center;
+            font-size: 14px;
+            margin-top: 8px;
+            border: 1px solid rgba(0,0,0,0.1);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            transition: all 0.2s ease;
+        }
+
+        .popup-btn:hover {
+            background: #f9f9f9;
+            transform: translateY(-1px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.12);
+        }
+
         @keyframes float {
             0% { transform: translateY(0); }
             50% { transform: translateY(-12px); }
             100% { transform: translateY(0); }
         }
-
-        @media (max-width: 600px) {
-            h1 { font-size: 1.5rem; }
-            .overlay { top: 1rem; }
-            .overlay-content { padding: 1rem; }
-            .btn { padding: 14px 30px; font-size: 0.9rem; }
-        }
     </style>
 </head>
 <body>
-    <div class="overlay">
-        <div class="overlay-content">
-            <h1>Wedding Location</h1>
-            <p>We can't wait to see you there!</p>
-        </div>
-    </div>
-
     <div id="map" class="map-container"></div>
-
-    <div class="actions">
-        <a href="https://www.google.com/maps/search/?api=1&query=20.661789,106.337373" target="_blank" class="btn">
-            Get Directions
-        </a>
-    </div>
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
     <script>
-        // Coordinates from your original embed
-        const lat = 20.6619843;
-        const lng = 106.3368383;
+        // Coordinates
+        const husband = [20.6619843, 106.3368383];
+        const wife = [21.353508, 106.519327];
 
         // Initialize map
         const map = L.map('map', {
             zoomControl: false,
             attributionControl: false
-        }).setView([lat, lng], 10);
+        });
 
         // Use Google Maps style tiles
         L.tileLayer('https://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}', {
-            maxZoom: 20,
+            maxZoom: 25,
             subdomains: ['mt0', 'mt1', 'mt2', 'mt3'],
             attribution: '&copy; <a href="https://www.google.com/maps">Google Maps</a>'
         }).addTo(map);
@@ -176,12 +129,35 @@
             iconAnchor: [24, 48]
         });
 
-        // Add the marker
-        const marker = L.marker([lat, lng], { icon: customIcon }).addTo(map);
+        // Add markers
+        const husbandMarker = L.marker(husband, { icon: customIcon }).addTo(map);
+        const wifeMarker = L.marker(wife, { icon: customIcon }).addTo(map);
 
-        marker.on('click', function() {
-            map.setView([lat, lng], 15);
-        });
+        // Add popups
+        husbandMarker.bindPopup(`
+            <div style="text-align: center; padding: 5px;">
+                <div style="font-size: 16px; font-weight: 700; color: #1a1a1a; margin-bottom: 10px;">Nhà Bằng</div>
+                <a href="https://www.google.com/maps/search/?api=1&query=${husband[0]},${husband[1]}" target="_blank" class="popup-btn">Direction</a>
+            </div>
+        `, { maxWidth: 200, closeButton: false });
+
+        wifeMarker.bindPopup(`
+            <div style="text-align: center; padding: 5px;">
+                <div style="font-size: 16px; font-weight: 700; color: #1a1a1a; margin-bottom: 10px;">Nhà Tính</div>
+                <a href="https://www.google.com/maps/search/?api=1&query=${wife[0]},${wife[1]}" target="_blank" class="popup-btn">Direction</a>
+            </div>
+        `, { maxWidth: 200, closeButton: false });
+
+        // Center point between husband and wife
+        const centerLat = (husband[0] + wife[0]) / 2;
+        const centerLng = (husband[1] + wife[1]) / 2;
+
+        // Set initial view with a specific zoom level (e.g., 10)
+        map.setView([centerLat, centerLng], 10);
+
+        // Alternatively, uncomment to auto-fit both markers
+        // const bounds = L.latLngBounds([husband, wife]);
+        // map.fitBounds(bounds, { padding: [50, 50] });
     </script>
 </body>
 </html>
