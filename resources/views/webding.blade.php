@@ -154,7 +154,7 @@
             backdrop-filter: blur(10px);
             border: 1px solid rgba(0, 0, 0, 0.05);
             border-radius: 8px;
-            z-index: 2000;
+            z-index: 450; /* Above tiles (200) and lines (400), but below markers (600+) */
             display: flex;
             align-items: center;
             justify-content: center;
@@ -417,8 +417,8 @@
         // Initial links
         updatePopupLinks();
 
-        // Center point between husband and wife
-        const centerLat = (husband[0] + wife[0]) / 2;
+        // Center point between husband and wife, shifted up slightly to push markers down (avoid banner)
+        const centerLat = ((husband[0] + wife[0]) / 2) + 0.1;
         const centerLng = (husband[1] + wife[1]) / 2;
 
         // Set initial view with a specific zoom level (e.g., 10)
@@ -456,7 +456,7 @@
                 weight: 1
             }).addTo(map);
 
-            window.userMarker = L.marker(userLatLng).addTo(map)
+            window.userMarker = L.marker(userLatLng, { zIndexOffset: 1000 }).addTo(map)
                 .bindPopup(`
                     <div style="text-align: center; padding: 5px;">
                         <div style="font-weight: 700; margin-bottom: 5px;">You are here!</div>
