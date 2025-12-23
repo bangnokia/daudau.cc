@@ -140,9 +140,61 @@
             fill: #1a1a1a;
         }
 
+        /* Ads Banner Styles */
+        .ads-banner {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 970px;
+            height: 120px;
+            max-width: 90vw;
+            background: rgba(240, 240, 240, 0.85); /* Increased background opacity */
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            border-radius: 8px;
+            z-index: 2000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            overflow: hidden;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            opacity: 0.95; /* Increased overall banner opacity */
+        }
+
+        .ads-banner:hover {
+            transform: translateX(-50%) translateY(-1px);
+            background: rgba(235, 235, 235, 0.95);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+            opacity: 1;
+        }
+
+        .ads-content {
+            text-align: center;
+        }
+
+        .ads-subtitle {
+            font-size: 18px;
+            color: #555; /* Solid gray text for better readability */
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        @media (max-width: 1000px) {
+            .ads-banner {
+                width: 90vw;
+                height: 80px;
+            }
+            .ads-subtitle {
+                font-size: 14px;
+            }
+        }
+
         /* Love Line Improvements */
         .love-line-glow {
-            filter: drop-shadow(0 0 4px #20b2aa);
+            filter: drop-shadow(0 0 4px #708090);
         }
 
         @keyframes march {
@@ -157,6 +209,12 @@
     </style>
 </head>
 <body>
+    <a href="#" class="ads-banner">
+        <div class="ads-content">
+            <div class="ads-subtitle">970x120 - Contact Tinh Do</div>
+        </div>
+    </a>
+
     <div id="map" class="map-container"></div>
 
     <button class="gps-button" onclick="locateUser()" title="Find my location">
@@ -214,17 +272,24 @@
             attribution: '&copy; <a href="https://www.google.com/maps">Google Maps</a>'
         }).addTo(map);
 
-        // Create a custom animated icon using divIcon
-        const customIcon = L.divIcon({
+        // Create custom animated icons for husband and wife
+        const husbandIcon = L.divIcon({
             className: 'animated-icon',
-            html: '<img src="/images/wedding-icon.png" alt="marker">',
+            html: '<img src="/images/bang.png" alt="Bằng">',
+            iconSize: [48, 48],
+            iconAnchor: [24, 48]
+        });
+
+        const wifeIcon = L.divIcon({
+            className: 'animated-icon',
+            html: '<img src="/images/tinh.png" alt="Tính">',
             iconSize: [48, 48],
             iconAnchor: [24, 48]
         });
 
         // Add markers
-        const husbandMarker = L.marker(husband, { icon: customIcon }).addTo(map);
-        const wifeMarker = L.marker(wife, { icon: customIcon }).addTo(map);
+        const husbandMarker = L.marker(husband, { icon: husbandIcon }).addTo(map);
+        const wifeMarker = L.marker(wife, { icon: wifeIcon }).addTo(map);
 
         // Add Love Line (Curve with fallback to Polyline)
         try {
@@ -247,7 +312,7 @@
                         wife
                     ],
                     {
-                        color: '#20b2aa',
+                        color: '#708090',
                         weight: 4,
                         opacity: 0.8,
                         dashArray: '10, 10',
@@ -323,7 +388,7 @@
             } else {
                 // Fallback to simple dashed polyline if L.curve fails to load
                 L.polyline([husband, wife], {
-                    color: '#20b2aa',
+                    color: '#708090',
                     weight: 4,
                     opacity: 0.8,
                     dashArray: '10, 10',
