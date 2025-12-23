@@ -171,6 +171,35 @@
         // Coordinates
         const husband = [20.6619843, 106.3368383];
         const wife = [21.353508, 106.519327];
+        let userLocation = null;
+
+        // Function to generate Google Maps Direction Link
+        function getDirectionLink(destLat, destLng) {
+            if (userLocation) {
+                // If we have user location, use it as origin
+                return `https://www.google.com/maps/dir/?api=1&origin=${userLocation.lat},${userLocation.lng}&destination=${destLat},${destLng}&travelmode=driving`;
+            } else {
+                // Fallback to simple search/destination
+                return `https://www.google.com/maps/search/?api=1&query=${destLat},${destLng}`;
+            }
+        }
+
+        // Function to update all popup buttons with new links
+        function updatePopupLinks() {
+            husbandMarker.setPopupContent(`
+                <div style="text-align: center; padding: 5px;">
+                    <div style="font-size: 16px; font-weight: 700; color: #1a1a1a; margin-bottom: 10px;">Nhà Bằng</div>
+                    <a href="${getDirectionLink(husband[0], husband[1])}" target="_blank" class="popup-btn">Direction</a>
+                </div>
+            `);
+
+            wifeMarker.setPopupContent(`
+                <div style="text-align: center; padding: 5px;">
+                    <div style="font-size: 16px; font-weight: 700; color: #1a1a1a; margin-bottom: 10px;">Nhà Tính</div>
+                    <a href="${getDirectionLink(wife[0], wife[1])}" target="_blank" class="popup-btn">Direction</a>
+                </div>
+            `);
+        }
 
         // Initialize map
         const map = L.map('map', {
@@ -306,19 +335,11 @@
         }
 
         // Add popups
-        husbandMarker.bindPopup(`
-            <div style="text-align: center; padding: 5px;">
-                <div style="font-size: 16px; font-weight: 700; color: #1a1a1a; margin-bottom: 10px;">Nhà Bằng</div>
-                <a href="https://www.google.com/maps/search/?api=1&query=${husband[0]},${husband[1]}" target="_blank" class="popup-btn">Direction</a>
-            </div>
-        `, { maxWidth: 200, closeButton: false });
+        husbandMarker.bindPopup("", { maxWidth: 200, closeButton: false });
+        wifeMarker.bindPopup("", { maxWidth: 200, closeButton: false });
 
-        wifeMarker.bindPopup(`
-            <div style="text-align: center; padding: 5px;">
-                <div style="font-size: 16px; font-weight: 700; color: #1a1a1a; margin-bottom: 10px;">Nhà Tính</div>
-                <a href="https://www.google.com/maps/search/?api=1&query=${wife[0]},${wife[1]}" target="_blank" class="popup-btn">Direction</a>
-            </div>
-        `, { maxWidth: 200, closeButton: false });
+        // Initial links
+        updatePopupLinks();
 
         // Center point between husband and wife
         const centerLat = (husband[0] + wife[0]) / 2;
@@ -337,7 +358,11 @@
         }
 
         map.on('locationfound', function(e) {
+            userLocation = e.latlng;
             const userLatLng = e.latlng;
+
+            // Update links in popups to use the found user location
+            updatePopupLinks();
 
             // Clear existing user markers if any
             if (window.userMarker) map.removeLayer(window.userMarker);
