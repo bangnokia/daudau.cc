@@ -84,25 +84,32 @@
         }
 
         .popup-btn {
-            display: block;
-            background: #ffffff;
-            color: #1a1a1a;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+            background: transparent;
+            color: #1a73e8; /* Google Blue */
             text-decoration: none;
-            padding: 10px 20px;
-            border-radius: 100px;
+            padding: 4px 8px;
+            border-radius: 4px;
             font-weight: 700;
             text-align: center;
             font-size: 14px;
-            margin-top: 8px;
-            border: 1px solid rgba(0,0,0,0.1);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            margin-top: 4px;
+            border: none;
             transition: all 0.2s ease;
         }
 
         .popup-btn:hover {
-            background: #f9f9f9;
-            transform: translateY(-1px);
-            box-shadow: 0 6px 15px rgba(0,0,0,0.12);
+            background: rgba(26, 115, 232, 0.08);
+            text-decoration: underline;
+        }
+
+        .popup-btn svg {
+            width: 16px;
+            height: 16px;
+            fill: currentColor;
         }
 
         @keyframes float {
@@ -248,17 +255,25 @@
 
         // Function to update all popup buttons with new links
         function updatePopupLinks() {
+            const directionIcon = `<svg viewBox="0 0 24 24"><path d="M21.71 11.29l-9-9a.996.996 0 00-1.41 0l-9 9a.996.996 0 000 1.41l9 9c.39.39 1.02.39 1.41 0l9-9a.996.996 0 000-1.41zM14 14.5V12h-4v3H8v-4c0-.55.45-1 1-1h5V7.5l3.5 3.5-3.5 3.5z"/></svg>`;
+
             husbandMarker.setPopupContent(`
                 <div style="text-align: center; padding: 5px;">
-                    <div style="font-size: 16px; font-weight: 700; color: #1a1a1a; margin-bottom: 10px;">Nhà chú rể</div>
-                    <a href="${getDirectionLink(husband[0], husband[1])}" target="_blank" class="popup-btn">Direction</a>
+                    <div style="font-size: 16px; font-weight: 700; color: #1a1a1a; margin-bottom: 2px;">Nhà chú rể</div>
+                    <a href="${getDirectionLink(husband[0], husband[1])}" target="_blank" class="popup-btn">
+                        ${directionIcon}
+                        <span>Chỉ đường</span>
+                    </a>
                 </div>
             `);
 
             wifeMarker.setPopupContent(`
                 <div style="text-align: center; padding: 5px;">
-                    <div style="font-size: 16px; font-weight: 700; color: #1a1a1a; margin-bottom: 10px;">Nhà cô dâu</div>
-                    <a href="${getDirectionLink(wife[0], wife[1])}" target="_blank" class="popup-btn">Direction</a>
+                    <div style="font-size: 16px; font-weight: 700; color: #1a1a1a; margin-bottom: 2px;">Nhà cô dâu</div>
+                    <a href="${getDirectionLink(wife[0], wife[1])}" target="_blank" class="popup-btn">
+                        ${directionIcon}
+                        <span>Chỉ đường</span>
+                    </a>
                 </div>
             `);
         }
