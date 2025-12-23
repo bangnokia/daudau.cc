@@ -25,6 +25,7 @@
         }
 
         .map-container {
+            position: relative;
             width: 100vw;
             height: 100vh;
             background: #f0f0f0;
@@ -291,8 +292,15 @@
         });
 
         // Add markers
-        const husbandMarker = L.marker(husband, { icon: husbandIcon }).addTo(map);
-        const wifeMarker = L.marker(wife, { icon: wifeIcon }).addTo(map);
+        const husbandMarker = L.marker(husband, {
+            icon: husbandIcon,
+            zIndexOffset: 1000 // Ensure markers are above the banner
+        }).addTo(map);
+
+        const wifeMarker = L.marker(wife, {
+            icon: wifeIcon,
+            zIndexOffset: 1000 // Ensure markers are above the banner
+        }).addTo(map);
 
         // Add Love Line (Curve with fallback to Polyline)
         try {
