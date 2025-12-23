@@ -176,7 +176,12 @@
         });
 
         // Add the marker
-        L.marker([lat, lng], { icon: customIcon }).addTo(map);
+        const marker = L.marker([lat, lng], { icon: customIcon }).addTo(map);
+
+        // Zoom to 19 when marker is clicked
+        marker.on('click', function() {
+            map.setView([lat, lng], 15);
+        });
     </script>
 </body>
 </html>
