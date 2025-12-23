@@ -152,8 +152,8 @@
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
     <script>
         // Coordinates from your original embed
-        const lat = 20.661789;
-        const lng = 106.337373;
+        const lat = 20.6619843;
+        const lng = 106.3368383;
 
         // Initialize map
         const map = L.map('map', {
