@@ -140,8 +140,8 @@
             fill: #1a1a1a;
         }
 
-        /* Ads Banner Styles */
-        .ads-banner {
+        /* Partner Banner Styles (Renamed from ads to avoid ad-blockers) */
+        .partner-banner {
             position: absolute;
             top: 20px;
             left: 50%;
@@ -149,7 +149,7 @@
             width: 970px;
             height: 120px;
             max-width: 90vw;
-            background: rgba(240, 240, 240, 0.85); /* Increased background opacity */
+            background: rgba(240, 240, 240, 0.85);
             backdrop-filter: blur(10px);
             border: 1px solid rgba(0, 0, 0, 0.05);
             border-radius: 8px;
@@ -161,33 +161,33 @@
             overflow: hidden;
             text-decoration: none;
             transition: all 0.3s ease;
-            opacity: 0.95; /* Increased overall banner opacity */
+            opacity: 0.95;
         }
 
-        .ads-banner:hover {
+        .partner-banner:hover {
             transform: translateX(-50%) translateY(-1px);
             background: rgba(235, 235, 235, 0.95);
             box-shadow: 0 6px 20px rgba(0,0,0,0.1);
             opacity: 1;
         }
 
-        .ads-content {
+        .partner-content {
             text-align: center;
         }
 
-        .ads-subtitle {
+        .partner-info {
             font-size: 18px;
-            color: #555; /* Solid gray text for better readability */
+            color: #555;
             font-weight: 700;
             letter-spacing: 1px;
         }
 
         @media (max-width: 1000px) {
-            .ads-banner {
+            .partner-banner {
                 width: 90vw;
                 height: 80px;
             }
-            .ads-subtitle {
+            .partner-info {
                 font-size: 14px;
             }
         }
@@ -209,9 +209,9 @@
     </style>
 </head>
 <body>
-    <a href="#" class="ads-banner">
-        <div class="ads-content">
-            <div class="ads-subtitle">970x120 - Contact Tinh Do</div>
+    <a href="#" class="partner-banner">
+        <div class="partner-content">
+            <div class="partner-info">970x120 - Contact Tinh Do</div>
         </div>
     </a>
 
