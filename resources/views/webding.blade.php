@@ -184,11 +184,13 @@
 
         @media (max-width: 1000px) {
             .partner-banner {
-                width: 90vw;
-                height: 80px;
+                width: 85vw;
+                height: 50px; /* Much smaller height on mobile */
+                top: 10px;    /* Move closer to the top edge */
             }
             .partner-info {
-                font-size: 14px;
+                font-size: 13px;
+                letter-spacing: 0.5px;
             }
         }
 
@@ -209,13 +211,14 @@
     </style>
 </head>
 <body>
-    <a href="#" class="partner-banner">
-        <div class="partner-content">
-            <div class="partner-info">970x120 - Contact Tinh Do</div>
-        </div>
-    </a>
-
-    <div id="map" class="map-container"></div>
+    <div id="map" class="map-container">
+        <!-- Banner is now inside map to respect Leaflet z-index layers -->
+        <a href="#" class="partner-banner">
+            <div class="partner-content">
+                <div class="partner-info">970x120 - Contact Tinh Do</div>
+            </div>
+        </a>
+    </div>
 
     <button class="gps-button" onclick="locateUser()" title="Find my location">
         <svg viewBox="0 0 24 24">
