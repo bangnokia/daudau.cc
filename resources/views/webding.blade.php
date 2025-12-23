@@ -194,7 +194,7 @@
 
         /* Love Line Improvements */
         .love-line-glow {
-            filter: drop-shadow(0 0 4px #708090);
+            filter: drop-shadow(0 0 4px #007bff);
         }
 
         @keyframes march {
@@ -312,7 +312,7 @@
                         wife
                     ],
                     {
-                        color: '#708090',
+                        color: '#007bff',
                         weight: 4,
                         opacity: 0.8,
                         dashArray: '10, 10',
@@ -388,7 +388,7 @@
             } else {
                 // Fallback to simple dashed polyline if L.curve fails to load
                 L.polyline([husband, wife], {
-                    color: '#708090',
+                    color: '#007bff',
                     weight: 4,
                     opacity: 0.8,
                     dashArray: '10, 10',
