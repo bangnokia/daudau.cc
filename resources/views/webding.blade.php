@@ -246,14 +246,14 @@
         function updatePopupLinks() {
             husbandMarker.setPopupContent(`
                 <div style="text-align: center; padding: 5px;">
-                    <div style="font-size: 16px; font-weight: 700; color: #1a1a1a; margin-bottom: 10px;">Nhà Bằng</div>
+                    <div style="font-size: 16px; font-weight: 700; color: #1a1a1a; margin-bottom: 10px;">Nhà chú rể</div>
                     <a href="${getDirectionLink(husband[0], husband[1])}" target="_blank" class="popup-btn">Direction</a>
                 </div>
             `);
 
             wifeMarker.setPopupContent(`
                 <div style="text-align: center; padding: 5px;">
-                    <div style="font-size: 16px; font-weight: 700; color: #1a1a1a; margin-bottom: 10px;">Nhà Tính</div>
+                    <div style="font-size: 16px; font-weight: 700; color: #1a1a1a; margin-bottom: 10px;">Nhà cô dâu</div>
                     <a href="${getDirectionLink(wife[0], wife[1])}" target="_blank" class="popup-btn">Direction</a>
                 </div>
             `);
@@ -313,7 +313,7 @@
                     ],
                     {
                         color: '#007bff',
-                        weight: 4,
+                        weight: 2,
                         opacity: 0.8,
                         dashArray: '10, 10',
                         fill: false,
