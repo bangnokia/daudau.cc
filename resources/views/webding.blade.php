@@ -223,7 +223,7 @@
         <!-- Banner is now inside map to respect Leaflet z-index layers -->
         <a href="#" class="partner-banner">
             <div class="partner-content">
-                <div class="partner-info">970x120 - Contact Tinh Do</div>
+                <div class="partner-info">970x120 - Contact Tính Đỗ</div>
             </div>
         </a>
     </div>
