@@ -157,26 +157,81 @@
             width: 970px;
             height: 120px;
             max-width: 90vw;
-            background: rgba(240, 240, 240, 0.85);
+            background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
-            border: 1px solid rgba(0, 0, 0, 0.05);
-            border-radius: 8px;
+            border-radius: 12px;
             z-index: 450; /* Above tiles (200) and lines (400), but below markers (600+) */
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            overflow: hidden;
             text-decoration: none;
             transition: all 0.3s ease;
-            opacity: 0.95;
+            overflow: visible;
+        }
+
+        .partner-banner::before {
+            content: '';
+            position: absolute;
+            top: -3px;
+            left: -3px;
+            right: -3px;
+            bottom: -3px;
+            background: linear-gradient(90deg,
+                #0ff 0%,      /* Cyan - Luke's blue */
+                #00f 15%,     /* Blue */
+                #0f0 30%,     /* Green - Yoda's green */
+                #ff0 45%,     /* Yellow - Temple Guard */
+                #f0f 60%,     /* Purple - Mace Windu */
+                #f00 75%,     /* Red - Sith */
+                #ff4500 90%,  /* Orange - Ahsoka's orange */
+                #0ff 100%     /* Back to Cyan */
+            );
+            background-size: 400% 100%;
+            border-radius: 14px;
+            z-index: -1;
+            animation: lightsaber-border 3s linear infinite;
+        }
+
+        .partner-banner::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.98);
+            border-radius: 12px;
+            z-index: -1;
+        }
+
+        @keyframes lightsaber-border {
+            0% {
+                background-position: 0% 50%;
+                filter: drop-shadow(0 0 8px #0ff) drop-shadow(0 0 15px #0ff);
+            }
+            25% {
+                filter: drop-shadow(0 0 8px #0f0) drop-shadow(0 0 15px #0f0);
+            }
+            50% {
+                background-position: 100% 50%;
+                filter: drop-shadow(0 0 8px #f0f) drop-shadow(0 0 15px #f0f);
+            }
+            75% {
+                filter: drop-shadow(0 0 8px #f00) drop-shadow(0 0 15px #f00);
+            }
+            100% {
+                background-position: 200% 50%;
+                filter: drop-shadow(0 0 8px #0ff) drop-shadow(0 0 15px #0ff);
+            }
         }
 
         .partner-banner:hover {
-            transform: translateX(-50%) translateY(-1px);
-            background: rgba(235, 235, 235, 0.95);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
-            opacity: 1;
+            transform: translateX(-50%) translateY(-2px);
+        }
+
+        .partner-banner:hover::before {
+            animation-duration: 1.5s;
+            filter: drop-shadow(0 0 12px #0ff) drop-shadow(0 0 25px #0ff);
         }
 
         .partner-content {
