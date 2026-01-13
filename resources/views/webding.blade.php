@@ -160,8 +160,8 @@
             top: 20px;
             left: 50%;
             transform: translateX(-50%);
-            width: 970px;
-            height: 80px;
+            width: 728px;
+            height: 90px;
             max-width: 90vw;
             background: #ffffff;
             border: 1px solid #f0f0f0;
@@ -225,7 +225,7 @@
         <!-- Banner is now inside map to respect Leaflet z-index layers -->
         <a href="#" class="partner-banner">
             <div class="partner-content">
-                <div class="partner-info">970x120 - Contact Tính Đỗ</div>
+                <div class="partner-info">728x90 - Contact Tính Đỗ</div>
             </div>
         </a>
     </div>
