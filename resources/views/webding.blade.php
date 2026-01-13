@@ -99,7 +99,7 @@
             text-decoration: none;
             padding: 4px 8px;
             border-radius: 4px;
-            font-weight: 700;
+            font-weight: 400;
             text-align: center;
             font-size: 14px;
             margin-top: 4px;
@@ -261,7 +261,7 @@
 
             husbandMarker.setPopupContent(`
                 <div style="text-align: center; padding: 5px;">
-                    <div style="font-size: 16px; font-weight: 700; color: #1a1a1a; margin-bottom: 2px;">Nhà chú rể</div>
+                    <div style="font-size: 16px; font-weight: 400; color: #1a1a1a; margin-bottom: 2px;">Nhà chú rể</div>
                     <a href="${getDirectionLink(husband[0], husband[1])}" target="_blank" class="popup-btn">
                         ${directionIcon}
                         <span>Chỉ đường</span>
@@ -271,7 +271,7 @@
 
             wifeMarker.setPopupContent(`
                 <div style="text-align: center; padding: 5px;">
-                    <div style="font-size: 16px; font-weight: 700; color: #1a1a1a; margin-bottom: 2px;">Nhà cô dâu</div>
+                    <div style="font-size: 16px; font-weight: 400; color: #1a1a1a; margin-bottom: 2px;">Nhà cô dâu</div>
                     <a href="${getDirectionLink(wife[0], wife[1])}" target="_blank" class="popup-btn">
                         ${directionIcon}
                         <span>Chỉ đường</span>
