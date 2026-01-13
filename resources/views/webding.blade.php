@@ -79,7 +79,7 @@
         /* Popup Styles */
         .leaflet-popup-content-wrapper {
             border-radius: 16px;
-            padding: 8px;
+            padding: 2px;
             background: #ffffff;
             color: #1a1a1a;
             box-shadow: 0 10px 30px rgba(0,0,0,0.15);
