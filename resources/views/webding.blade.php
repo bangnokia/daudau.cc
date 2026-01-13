@@ -154,90 +154,30 @@
             fill: #1a1a1a;
         }
 
-        /* Partner Banner Styles (Renamed from ads to avoid ad-blockers) */
+        /* Partner Banner Styles */
         .partner-banner {
             position: absolute;
             top: 20px;
             left: 50%;
             transform: translateX(-50%);
             width: 970px;
-            height: 120px;
+            height: 80px;
             max-width: 90vw;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border-radius: 12px;
-            z-index: 450; /* Above tiles (200) and lines (400), but below markers (600+) */
+            background: #ffffff;
+            border: 1px solid #f0f0f0;
+            border-radius: 4px;
+            z-index: 450;
             display: flex;
             align-items: center;
             justify-content: center;
             text-decoration: none;
-            transition: all 0.3s ease;
-            overflow: visible;
-        }
-
-        .partner-banner::before {
-            content: '';
-            position: absolute;
-            top: -3px;
-            left: -3px;
-            right: -3px;
-            bottom: -3px;
-            background: linear-gradient(90deg,
-                #0ff 0%,      /* Cyan - Luke's blue */
-                #00f 15%,     /* Blue */
-                #0f0 30%,     /* Green - Yoda's green */
-                #ff0 45%,     /* Yellow - Temple Guard */
-                #f0f 60%,     /* Purple - Mace Windu */
-                #f00 75%,     /* Red - Sith */
-                #ff4500 90%,  /* Orange - Ahsoka's orange */
-                #0ff 100%     /* Back to Cyan */
-            );
-            background-size: 400% 100%;
-            border-radius: 14px;
-            z-index: -1;
-            animation: lightsaber-border 3s linear infinite;
-        }
-
-        .partner-banner::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(255, 255, 255, 0.98);
-            border-radius: 12px;
-            z-index: -1;
-        }
-
-        @keyframes lightsaber-border {
-            0% {
-                background-position: 0% 50%;
-                filter: drop-shadow(0 0 8px #0ff) drop-shadow(0 0 15px #0ff);
-            }
-            25% {
-                filter: drop-shadow(0 0 8px #0f0) drop-shadow(0 0 15px #0f0);
-            }
-            50% {
-                background-position: 100% 50%;
-                filter: drop-shadow(0 0 8px #f0f) drop-shadow(0 0 15px #f0f);
-            }
-            75% {
-                filter: drop-shadow(0 0 8px #f00) drop-shadow(0 0 15px #f00);
-            }
-            100% {
-                background-position: 200% 50%;
-                filter: drop-shadow(0 0 8px #0ff) drop-shadow(0 0 15px #0ff);
-            }
+            transition: all 0.2s ease;
         }
 
         .partner-banner:hover {
-            transform: translateX(-50%) translateY(-2px);
-        }
-
-        .partner-banner:hover::before {
-            animation-duration: 1.5s;
-            filter: drop-shadow(0 0 12px #0ff) drop-shadow(0 0 25px #0ff);
+            transform: translateX(-50%);
+            background: #fafafa;
+            border-color: #e0e0e0;
         }
 
         .partner-content {
@@ -245,21 +185,22 @@
         }
 
         .partner-info {
-            font-size: 18px;
-            color: #555;
-            font-weight: 700;
-            letter-spacing: 1px;
+            font-size: 12px;
+            color: #aaaaaa;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 3px;
         }
 
         @media (max-width: 1000px) {
             .partner-banner {
                 width: 85vw;
-                height: 50px; /* Much smaller height on mobile */
-                top: 10px;    /* Move closer to the top edge */
+                height: 40px;
+                top: 10px;
             }
             .partner-info {
-                font-size: 13px;
-                letter-spacing: 0.5px;
+                font-size: 10px;
+                letter-spacing: 1.5px;
             }
         }
 
