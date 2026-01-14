@@ -148,6 +148,97 @@
             background: #f9f9f9;
         }
 
+        .qr-button {
+            bottom: 90px;
+        }
+
+        /* Modal Styles */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 3000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            max-width: 95%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .modal-overlay.active .modal-content {
+            transform: scale(1);
+        }
+
+        .qr-container {
+            display: flex;
+            flex-direction: row;
+            gap: 2rem;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap; /* Allow wrapping if needed */
+        }
+
+        .modal-content img {
+            width: 100%;
+            height: auto;
+            object-fit: contain; /* Ensure full image is visible */
+            display: block;
+            flex: 1; /* Distribute space evenly */
+            min-width: 200px; /* Minimum size */
+        }
+
+        @media (max-width: 768px) {
+            .qr-container {
+                flex-direction: column;
+            }
+            .modal-content img {
+                width: 100%; /* Full width on mobile */
+                height: auto;
+                min-width: 0;
+            }
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: white;
+            border-radius: 50%;
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            border: none;
+            color: #1a1a1a;
+            transition: transform 0.2s ease;
+        }
+
+        .modal-close:hover {
+            transform: scale(1.1);
+        }
+
         .gps-button svg {
             width: 24px;
             height: 24px;
@@ -230,11 +321,30 @@
         </a>
     </div>
 
+    <button class="gps-button qr-button" onclick="openQR()" title="Show QR Code">
+        <svg viewBox="0 0 24 24">
+            <path d="M3 3h6v6H3V3zm2 2v2h2V5H5zm8-2h6v6h-6V3zm2 2v2h2V5h-2zM3 13h6v6H3v-6zm2 2v2h2v-2H5zm13-2h-2v2h2v-2zm-2 2h-2v2h2v-2zm2-2h2v2h-2v-2zm0 2h-2v2h2v-2zm-2 2h-2v2h2v-2zm2 2h2v2h-2v-2zM13 3h-2v2h2V3zm-2 2h-2v2h2V5zm0 2h2v2h-2V7zm2-2h2v2h-2V5z"/>
+        </svg>
+    </button>
+
     <button class="gps-button" onclick="locateUser()" title="Find my location">
         <svg viewBox="0 0 24 24">
             <path d="M12 8c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm8.94 3c-.46-4.17-3.77-7.48-7.94-7.94V1h-2v2.06C6.83 3.52 3.52 6.83 3.06 11H1v2h2.06c.46 4.17 3.77 7.48 7.94 7.94V23h2v-2.06c4.17-.46 7.48-3.77 7.94-7.94H23v-2h-2.06zM12 19c-3.87 0-7-3.13-7-7s3.13-7 7-7 7 3.13 7 7-3.13 7-7 7z"/>
         </svg>
     </button>
+
+    <!-- QR Modal -->
+    <div id="qrModal" class="modal-overlay" onclick="closeQR(event)">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeQR(event)">
+                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+            <div class="qr-container">
+                <img src="/images/qr-bang.png" alt="QR Code Bang">
+                <img src="/images/qr-tinh.png" alt="QR Code Tinh">
+            </div>
+        </div>
+    </div>
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
     <script src="https://cdn.jsdelivr.net/npm/leaflet-curve@1.0.0/leaflet.curve.min.js"></script>
@@ -507,6 +617,27 @@
         map.on('locationerror', function(e) {
             alert("Could not find your location: " + e.message);
         });
+
+        // QR Modal Functions
+        function openQR() {
+            const modal = document.getElementById('qrModal');
+            modal.style.display = 'flex';
+            // Small delay to allow display:flex to apply before adding active class for transition
+            setTimeout(() => {
+                modal.classList.add('active');
+            }, 10);
+        }
+
+        function closeQR(event) {
+            // Close if clicked on overlay or close button, but not if clicked inside content (unless it's the close button bubbling)
+            if (event.target === event.currentTarget || event.target.closest('.modal-close')) {
+                const modal = document.getElementById('qrModal');
+                modal.classList.remove('active');
+                setTimeout(() => {
+                    modal.style.display = 'none';
+                }, 300); // Wait for transition
+            }
+        }
     </script>
 </body>
 </html>
