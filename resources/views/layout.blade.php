@@ -65,6 +65,7 @@
     <script>
         (function() {
             const mainSelector = 'main.container';
+            const cache = new Map();
             
             function isInternalLink(link) {
                 return link.hostname === window.location.hostname && 
@@ -73,12 +74,20 @@
                        link.target !== '_blank';
             }
 
+            async function fetchPage(url) {
+                if (cache.has(url)) return cache.get(url);
+                
+                const response = await fetch(url);
+                if (!response.ok) throw new Error('Network response was not ok');
+                
+                const html = await response.text();
+                cache.set(url, html);
+                return html;
+            }
+
             async function navigate(url) {
                 try {
-                    const response = await fetch(url);
-                    if (!response.ok) throw new Error('Network response was not ok');
-                    
-                    const html = await response.text();
+                    const html = await fetchPage(url);
                     const parser = new DOMParser();
                     const doc = parser.parseFromString(html, 'text/html');
                     
@@ -107,6 +116,13 @@
                     const url = link.href;
                     history.pushState(null, '', url);
                     navigate(url);
+                }
+            });
+
+            document.addEventListener('mouseover', function(e) {
+                const link = e.target.closest('a');
+                if (link && isInternalLink(link) && !cache.has(link.href)) {
+                    fetchPage(link.href);
                 }
             });
 
