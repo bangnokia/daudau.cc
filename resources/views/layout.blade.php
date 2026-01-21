@@ -61,6 +61,61 @@
         </footer>
     </div>
 
+    <!-- SPA-like navigation -->
+    <script>
+        (function() {
+            const mainSelector = 'main.container';
+            
+            function isInternalLink(link) {
+                return link.hostname === window.location.hostname && 
+                       !link.href.includes('#') &&
+                       !link.hasAttribute('download') &&
+                       link.target !== '_blank';
+            }
+
+            async function navigate(url) {
+                try {
+                    const response = await fetch(url);
+                    if (!response.ok) throw new Error('Network response was not ok');
+                    
+                    const html = await response.text();
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(html, 'text/html');
+                    
+                    const newMain = doc.querySelector(mainSelector);
+                    const currentMain = document.querySelector(mainSelector);
+                    
+                    if (newMain && currentMain) {
+                        currentMain.innerHTML = newMain.innerHTML;
+                        document.title = doc.title;
+                        window.scrollTo(0, 0);
+                        
+                        // Track page view in GA
+                        if (typeof gtag === 'function') {
+                            gtag('config', 'G-3Q4R375R24', { page_path: new URL(url).pathname });
+                        }
+                    }
+                } catch (error) {
+                    window.location.href = url;
+                }
+            }
+
+            document.addEventListener('click', function(e) {
+                const link = e.target.closest('a');
+                if (link && isInternalLink(link)) {
+                    e.preventDefault();
+                    const url = link.href;
+                    history.pushState(null, '', url);
+                    navigate(url);
+                }
+            });
+
+            window.addEventListener('popstate', function() {
+                navigate(window.location.href);
+            });
+        })();
+    </script>
+
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-3Q4R375R24"></script>
     <script>
