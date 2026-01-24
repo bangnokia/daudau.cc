@@ -348,6 +348,7 @@
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
     <script src="https://cdn.jsdelivr.net/npm/leaflet-curve@1.0.0/leaflet.curve.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     <script>
         // Coordinates
         const husband = [20.6619843, 106.3368383];
@@ -638,6 +639,52 @@
                 }, 300); // Wait for transition
             }
         }
+
+        // Confetti Effect - Wedding Celebration
+        function triggerConfetti() {
+            const duration = 5000;
+            const animationEnd = Date.now() + duration;
+            const colors = ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#ff00ff', '#00ffff', '#ffffff'];
+
+            (function frame() {
+                confetti({
+                    particleCount: 3,
+                    angle: 60,
+                    spread: 55,
+                    origin: { x: 0 },
+                    colors: colors,
+                    zIndex: 9999
+                });
+                confetti({
+                    particleCount: 3,
+                    angle: 120,
+                    spread: 55,
+                    origin: { x: 1 },
+                    colors: colors,
+                    zIndex: 9999
+                });
+
+                if (Date.now() < animationEnd) {
+                    requestAnimationFrame(frame);
+                }
+            }());
+
+            // Also do a big burst from the center
+            setTimeout(() => {
+                confetti({
+                    particleCount: 100,
+                    spread: 100,
+                    origin: { y: 0.6 },
+                    colors: colors,
+                    zIndex: 9999
+                });
+            }, 500);
+        }
+
+        // Trigger confetti on page load
+        window.addEventListener('load', function() {
+            setTimeout(triggerConfetti, 1000);
+        });
     </script>
 </body>
 </html>
