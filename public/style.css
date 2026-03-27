@@ -370,7 +370,8 @@ footer {
   font-weight: 400;
 
   a {
-    color: var(--text-primary);
+    color: #ffffff;
+    text-transform: uppercase;
   }
 }
 
