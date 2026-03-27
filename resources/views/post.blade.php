@@ -17,7 +17,7 @@
         <h1>{{ $data->title }}</h1>
         <x-date>{{ $data->createdAt }}</x-date>
 
-        <article class="prose" class="mt-6">
+        <article class="prose" style="margin-top: 2rem;">
             {!! $data->content !!}
         </article>
     </div>
