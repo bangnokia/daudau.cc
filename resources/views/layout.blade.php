@@ -89,6 +89,24 @@
                 return html;
             }
 
+            function executeScriptsIn(container) {
+                const scripts = container.querySelectorAll('script');
+
+                scripts.forEach(oldScript => {
+                    const newScript = document.createElement('script');
+
+                    for (const attr of oldScript.attributes) {
+                        newScript.setAttribute(attr.name, attr.value);
+                    }
+
+                    if (oldScript.textContent) {
+                        newScript.textContent = oldScript.textContent;
+                    }
+
+                    oldScript.replaceWith(newScript);
+                });
+            }
+
             async function navigate(url) {
                 try {
                     const html = await fetchPage(url);
@@ -100,6 +118,7 @@
 
                     if (newMain && currentMain) {
                         currentMain.innerHTML = newMain.innerHTML;
+                        executeScriptsIn(currentMain);
                         document.title = doc.title;
                         window.scrollTo(0, 0);
 
