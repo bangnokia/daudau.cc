@@ -6,7 +6,7 @@ description: Hi, I'm a developer from Vietnam and a Full Stack Overflow guy with
 
 # Hello, I'm Billy Nguyen
 
-![Tommy Nguyen](/images/me-angry.png)
+<img src="/images/me-angry.png" alt="Tommy Nguyen" class="about-avatar">
 
 I'm a developer from Vietnam and a Full Stack Overflow guy with a passion for web development.
 

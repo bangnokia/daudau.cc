@@ -401,6 +401,22 @@ footer {
   }
 }
 
+.about-avatar {
+  float: right;
+  width: min(240px, 42vw);
+  margin: 0 0 1rem 1rem;
+  border-radius: 0.75rem;
+}
+
+@media (max-width: 768px) {
+  .about-avatar {
+    float: none;
+    display: block;
+    margin: 0 auto 1rem;
+    width: min(260px, 85vw);
+  }
+}
+
 /* Lists */
 ul {
   li {

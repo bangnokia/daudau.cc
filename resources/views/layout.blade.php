@@ -8,7 +8,7 @@
 
     // Fallback to the current solution
     if (!$ogImage) {
-        $ogImage = "https://og.skymage.net?text=" . ($data->title ?? 'Blog of Nguyen');
+        $ogImage = 'https://og.skymage.net?text=' . ($data->title ?? 'Blog of Nguyen');
     }
 @endphp
 <!DOCTYPE html>
@@ -27,7 +27,7 @@
     <script>
         (function() {
             const savedTheme = localStorage.getItem('theme') ||
-                             (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+                (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
             document.documentElement.setAttribute('data-theme', savedTheme);
         })();
     </script>
@@ -41,9 +41,15 @@
         <header class="container">
             <div style="display: flex; justify-content: space-between; align-items: center;">
                 <nav class="main-menu">
-                    <a href="/">[ Blog ]</a>
-                    <a href="/projects">[ Projects ]</a>
-                    <a href="/about">[ About ]</a>
+                    <div>
+                        [<a href="/">Blog</a>]
+                    </div>
+                    <div>
+                        [<a href="/projects">Projects</a>]
+                    </div>
+                    <div>
+                        [<a href="/about">About</a>]
+                    </div>
                 </nav>
                 <x-theme-toggle />
             </div>
@@ -64,20 +70,20 @@
         (function() {
             const mainSelector = 'main.container';
             const cache = new Map();
-            
+
             function isInternalLink(link) {
-                return link.hostname === window.location.hostname && 
-                       !link.href.includes('#') &&
-                       !link.hasAttribute('download') &&
-                       link.target !== '_blank';
+                return link.hostname === window.location.hostname &&
+                    !link.href.includes('#') &&
+                    !link.hasAttribute('download') &&
+                    link.target !== '_blank';
             }
 
             async function fetchPage(url) {
                 if (cache.has(url)) return cache.get(url);
-                
+
                 const response = await fetch(url);
                 if (!response.ok) throw new Error('Network response was not ok');
-                
+
                 const html = await response.text();
                 cache.set(url, html);
                 return html;
@@ -88,18 +94,20 @@
                     const html = await fetchPage(url);
                     const parser = new DOMParser();
                     const doc = parser.parseFromString(html, 'text/html');
-                    
+
                     const newMain = doc.querySelector(mainSelector);
                     const currentMain = document.querySelector(mainSelector);
-                    
+
                     if (newMain && currentMain) {
                         currentMain.innerHTML = newMain.innerHTML;
                         document.title = doc.title;
                         window.scrollTo(0, 0);
-                        
+
                         // Track page view in GA
                         if (typeof gtag === 'function') {
-                            gtag('config', 'G-3Q4R375R24', { page_path: new URL(url).pathname });
+                            gtag('config', 'G-3Q4R375R24', {
+                                page_path: new URL(url).pathname
+                            });
                         }
                     }
                 } catch (error) {
