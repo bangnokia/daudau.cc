@@ -4,11 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wedding Location</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
     <style>
+        @font-face {
+            font-family: "IoskeleyMono";
+            src: url("/fonts/ioskeley/IoskeleyMono-Regular.woff2") format("woff2");
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: "IoskeleyMono";
+            src: url("/fonts/ioskeley/IoskeleyMono-Italic.woff2") format("woff2");
+            font-style: italic;
+            font-weight: 400;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: "IoskeleyMono";
+            src: url("/fonts/ioskeley/IoskeleyMono-Bold.woff2") format("woff2");
+            font-style: normal;
+            font-weight: 700;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: "IoskeleyMono";
+            src: url("/fonts/ioskeley/IoskeleyMono-BoldItalic.woff2") format("woff2");
+            font-style: italic;
+            font-weight: 700;
+            font-display: swap;
+        }
+
         :root {
             --bg: #ffffff;
             --text: #1a1a1a;
@@ -18,7 +47,7 @@
         body {
             margin: 0;
             padding: 0;
-            font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: "IoskeleyMono", monospace;
             background-color: var(--bg);
             color: var(--text);
             height: 100vh;
@@ -27,7 +56,7 @@
         }
 
         div, p {
-            font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: "IoskeleyMono", monospace;
         }
 
         .map-container {

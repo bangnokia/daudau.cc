@@ -33,8 +33,6 @@
     </script>
 
     <link rel="icon" href="/favicon.png" type="image/x-icon">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="/style.css?v={{ time() }}">
 </head>
 
@@ -43,9 +41,9 @@
         <header class="container">
             <div style="display: flex; justify-content: space-between; align-items: center;">
                 <nav class="main-menu">
-                    <a href="/">Blog</a>
-                    <a href="/projects">Projects</a>
-                    <a href="/about">About</a>
+                    <a href="/">[ Blog ]</a>
+                    <a href="/projects">[ Projects ]</a>
+                    <a href="/about">[ About ]</a>
                 </nav>
                 <x-theme-toggle />
             </div>
