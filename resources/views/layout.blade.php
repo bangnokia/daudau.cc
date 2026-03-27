@@ -42,13 +42,13 @@
             <div style="display: flex; justify-content: space-between; align-items: center;">
                 <nav class="main-menu">
                     <div>
-                        [<a href="/">Blog</a>]
+                        [<a class="text-sm" href="/">Blog</a>]
                     </div>
                     <div>
-                        [<a href="/projects">Projects</a>]
+                        [<a class="text-sm" href="/projects">Projects</a>]
                     </div>
                     <div>
-                        [<a href="/about">About</a>]
+                        [<a class="text-sm" href="/about">About</a>]
                     </div>
                 </nav>
                 <x-theme-toggle />
