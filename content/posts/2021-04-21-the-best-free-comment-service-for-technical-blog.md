@@ -1,20 +1,20 @@
 ---
 layout: post
-title: The best "Free" comment service for technical blog
+title: The best "Free" comment service for a technical blog
 tags:
   - disqus
 ---
-I'm sure you have to find some free comment services which support widget to embed in our websites. For example this blog, it's includes on static html files, and have to write it's own comments function, that's too overhead!
+I'm sure you have tried to find free comment services that support embeddable widgets for your websites. For example, this blog is built from static HTML files, so writing its own comments function would be too much overhead!
 
-I have been try [disqus](https://disqus.com), but it doesn't free anymore, the ads from free tier too big and anoying, and this blog too small, so it's not for me.
+I have tried [Disqus](https://disqus.com), but it isn't really free anymore. The ads on the free tier are too big and annoying, and this blog is too small, so it is not for me.
 
 **Utterances the savior**
 
-I'm randomly found [Utterances](https://github.com/utterance/utterances) when suffering on the internet. And the first impression, that's genius!
+I randomly found [Utterances](https://github.com/utterance/utterances) while suffering on the internet. My first impression was: that's genius!
 
-- Login with github to comment (you should have github account if you're a developer).
-- Store comments on github (using issues tab of repository).
-- Markdown, reaction supported.
+- Log in with GitHub to comment (you should have a GitHub account if you're a developer).
+- Store comments on GitHub (using the Issues tab of the repository).
+- Markdown and reactions supported.
 - Totally free.
 
-But you can not comment as anonymous, but I think that's acceptable. So if you are writing technical blog, I recommend you should give Utterances a try, that was epic!
+You cannot comment anonymously, but I think that's acceptable. So if you are writing a technical blog, I recommend giving Utterances a try. It is epic!
