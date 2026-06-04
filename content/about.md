@@ -8,7 +8,7 @@ description: Hi, I'm a developer from Vietnam and a Full Stack Overflow guy with
 
 <img src="/images/me-angry.png" alt="Tommy Nguyen" class="about-avatar">
 
-I'm a developer from Vietnam and a Full Stack Overflow guy with a passion for web development.
+I'm a developer from Vietnam and a Full Stack AIflow guy with a passion for web development.
 
 I love creating blazingly fast and easy-to-use things.
 
