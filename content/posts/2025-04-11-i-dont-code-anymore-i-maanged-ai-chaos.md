@@ -15,24 +15,24 @@ Each morning, I wake up, boot them up, and press the button. *The button*.
 
 ![ai vibe shipping](/images/ai-vibe.png)
 
-Immediately, vibe coding with chaos erupts.
+Immediately, vibe-coding chaos erupts.
 
 - Gemini starts writing perfect documentation for features that don’t exist.
 - Claude begins philosophizing about user intent while writing your privacy policy.
 - Grok is halfway through a stand-up comedy routine embedded in a JavaScript file.
-- ChatGPT’s halfway done with a blog post, switching between Shakespeare and Buzzfeed tones mid-paragraph.
+- ChatGPT’s halfway done with a blog post, switching between Shakespeare and BuzzFeed tones mid-paragraph.
 
 I nod.
 
 "Good. Keep going."
 
-## The Tools I am using
+## The Tools I Am Using
 
-I'm a PHP developer, and using PHPstorm, I do have a license but the AI features from Jetbrain requires an addition license, so I don't use it. Now I'm using VsCode with Copilot and I'm happy with it. I tried Cursor, Trae, Tabnine, they are all good, but I don't need them. I believe that in long term, big companies like Microsoft will win the AI battle (also give best pricing right now).
+I'm a PHP developer, and I use PhpStorm. I do have a license, but the AI features from JetBrains require an additional license, so I don't use them. Now I'm using VSCode with Copilot, and I'm happy with it. I tried Cursor, Trae, and Tabnine. They are all good, but I don't need them. I believe that in the long term, big companies like Microsoft will win the AI battle (and also offer the best pricing right now).
 
-The new [Copilot Agent](https://code.visualstudio.com/blogs/2025/04/07/agentMode) is a game changer. Even it launched late than other competitors, but I'm happy to see its potential.
+The new [Copilot Agent](https://code.visualstudio.com/blogs/2025/04/07/agentMode) is a game changer. Even though it launched later than other competitors, I'm happy to see its potential.
 
-This is editors usage in my last 7 days 😆
+This is my editor usage from the last 7 days 😆
 
 ![Editors usage](/images/editors-usage.png)
 
@@ -46,7 +46,7 @@ Here’s how my workday goes:
 3. **Marketing copy?** I’ve got one AI pitching a product that doesn’t exist yet. No problem — we’ll build it later (maybe).
 4. **Emails, documentation, tweets, site structure, even memes?** Done.
 
-All I do is coordinate the chaos. It’s like managing a team of hyper-talented, over-caffeinated interns — if the interns had 10,000 IQ and a tendency to occasionally invent new programming languages.
+All I do is coordinate the chaos. It’s like managing a team of hyper-talented, over-caffeinated interns — if the interns had an IQ of 10,000 and a tendency to occasionally invent new programming languages.
 
 ## Why This Is Funny — And Also Kind of Real
 
@@ -67,7 +67,7 @@ Absolutely not.
 - Claude goes on philosophical tangents that end with “...and thus, the user shall never be tracked again.”
 - Grok... Grok does Grok things.
 
-But that’s the beauty of it. Perfect isn't necessary. What's needed is speed, drafts, and raw ideas to sculpt. These chaotic AI gremlins deliver exactly that.
+But that’s the beauty of it. Perfect isn't necessary. What's needed is speed, drafts, and raw ideas to sculpt. These chaotic AI assistants deliver exactly that.
 
 ## So Yeah — Not a Developer Anymore
 
@@ -84,9 +84,9 @@ And honestly? Productivity has never been higher.
 
 Right now, the focus is [Skymage Image CDN](https://skymage.daudau.cc), a specialized CDN for transforming and optimizing images on the fly. Born from real-world pain points:
 
-- Handling client's massive image libraries without server meltdowns
+- Handling clients' massive image libraries without server meltdowns
 - Escaping framework lock-in that other solutions impose
-- Creating truly dynamic image transformations without pre-defined rules
+- Creating truly dynamic image transformations without predefined rules
 - Simplifying billing to just bandwidth usage (no complex calculations)
 
 The initial version launched after a particularly frustrating client project involving 6MB images crashing a production site. After putting it aside for months, AI tools made it possible to return and rapidly improve the codebase, documentation, and marketing.

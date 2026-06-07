@@ -1,5 +1,5 @@
 ---
-title: Fix error when Nginx truncate HTML response
+title: Fix an error when Nginx truncates HTML responses
 tags:
     - nginx
     - laravel

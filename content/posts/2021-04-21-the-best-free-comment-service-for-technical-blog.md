@@ -8,7 +8,7 @@ I'm sure you have tried to find free comment services that support embeddable wi
 
 I have tried [Disqus](https://disqus.com), but it isn't really free anymore. The ads on the free tier are too big and annoying, and this blog is too small, so it is not for me.
 
-**Utterances the savior**
+**Utterances, the savior**
 
 I randomly found [Utterances](https://github.com/utterance/utterances) while suffering on the internet. My first impression was: that's genius!
 

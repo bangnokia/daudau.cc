@@ -6,7 +6,7 @@ tags:
     - image optimization
 ---
 
-Your website loads in 8 seconds because you uploaded a 4MB hero image. Your mobile users are bouncing before the page finishes loading. You know you need to optimize those images, but the manual workflow is killing you—exporting multiple sizes, creating thumbnails, converting formats, all with messy file names like `img_sm_final_v3.jpg`.
+Your website loads in 8 seconds because you uploaded a 4MB hero image. Your mobile users are bouncing before the page finishes loading. You know you need to optimize those images, but the manual workflow is killing you: exporting multiple sizes, creating thumbnails, converting formats, all with messy file names like `img_sm_final_v3.jpg`.
 
 That's why I built Skymage—a simple image optimization API that transforms any image URL into a fast-loading, perfectly-sized version for your website.
 
@@ -19,7 +19,7 @@ I tried existing solutions first. Spatie's Laravel MediaLibrary is solid—I use
 - **Server Constraints**: It processes images on your own server, which can bring your app to its knees when handling large batches.
 - **Framework Lock-in**: It's Laravel-specific. Great if you're in that ecosystem, useless if you're not.
 - **Storage Complexity**: You still need to manage cloud storage configuration and CDN integration separately.
-- **Limited On-the-Fly Options**: Most transformations need to be pre-defined, not dynamically generated based on real-time needs.
+- **Limited On-the-Fly Options**: Most transformations need to be predefined, not dynamically generated based on real-time needs.
 
 The Spatie team built something great, but I needed more flexibility and something that wouldn't overload my server when processing many images at once. That's why I created [Skymage](https://skymage.dev).
 
@@ -79,13 +79,13 @@ Here's what sparked the idea: I had a photographer client who sent me 20 images,
 https://dau.skymage.net/v1/daudau.cc/images/forest.jpg?w=1200&q=85&f=webp
 ```
 
-Reduced from 6MB to 280KB, load time from 12 seconds to 1.5. The client was happy, and the site performed well.
+Reduced from 6MB to 280KB, and load time from 12 seconds to 1.5 seconds. The client was happy, and the site performed well.
 
 ## Why It Matters
 
 Image optimization isn't just technical—it affects real metrics:
 
-- **User Experience**: Slow sites lose visitors. People expect pages to load under 2 seconds
+- **User Experience**: Slow sites lose visitors. People expect pages to load in under 2 seconds
 - **SEO**: Google's Core Web Vitals directly impact search rankings
 - **Development Time**: Less time optimizing images means more time building features
 
@@ -103,7 +103,7 @@ The pricing reality:
 
 Skymage keeps it simple:
 
-- **Simple Pricing**: Pay for bandwidth, that's it
+- **Simple Pricing**: Pay for bandwidth. That's it
 - **Generous Free Tier**: Process thousands of images monthly for free
 - **Affordable Scaling**: Our highest tier costs less than competitors' mid-range plans
 

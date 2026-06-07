@@ -1,16 +1,16 @@
 ---
-title: Add user to sudo group without password when switching on Ubuntu
+title: Add a user to the sudo group without a password when switching on Ubuntu
 tags:
     - ubuntu
 layout: post
 ---
 
-This is a quick note on how to add a user to the sudo group without password when switching on Ubuntu.
-Because it really annoys me when I have to type the password every time I switch to the root user (almost I can not remember the password).
+This is a quick note on how to add a user to the sudo group without a password when switching on Ubuntu.
+It really annoys me when I have to type the password every time I switch to the root user (I almost cannot remember the password).
 
-When you need to add a user to the sudo group without password when switching, you can follow these steps:
+If you need to add a user to the sudo group without a password when switching, you can follow these steps:
 
-1. Open the sudoers file with the command: (You need the root permission to do this)
+1. Open the sudoers file with the command: (You need root permission to do this)
 
 ```bash
 sudo visudo
@@ -23,5 +23,4 @@ username ALL=(ALL) NOPASSWD: ALL
 ```
 
 Replace `username` with your username.
-
 

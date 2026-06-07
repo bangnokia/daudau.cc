@@ -1,5 +1,5 @@
 ---
-title: Setup Contabo Object Storage s3 compatible in Laravel application
+title: Set up Contabo Object Storage (S3 compatible) in a Laravel application
 tags:
     - laravel
     - contabo
@@ -8,23 +8,23 @@ layout: post
 ---
 
 ## Introduction
-I think mostly people gonna use s3, but the aws pricing is not feel comfortable for me, so I found [contabo object storage](https://contabo.com/en/object-storage/), it's **s3 compatible** and the pricing is very cheap, so i decided to use it for my Laravel application. At the time of writing, the pricing is $2.99 per month for 250GB.
+I think most people are gonna use S3, but AWS pricing doesn't feel right for me, so I found [Contabo Object Storage](https://contabo.com/en/object-storage/). It's **S3 compatible** and the pricing is very cheap, so I decided to use it for my Laravel application. At the time of writing, the pricing is $2.99 per month for 250GB.
 ![contabo object storage pricing comparison](/images/contabo-object-storage-price-compare.png)
 
 ## Setup in Contabo
 ### Create bucket and get credentials
-First you need to create a bucket, you can do it in the [contabo object storage panel](https://my.contabo.com/object_storage)
+First, you need to create a bucket. You can do it in the [Contabo Object Storage panel](https://my.contabo.com/object_storage).
 
 Also, make your bucket public, so you can access it from your application.
 ![contabo public bucket](/images/contabo-public-bucket.png)
 
-Afterward, visit `Account -> Security & Access`, you will get the credentials like this:
-![cotabo object storage credentials](/images/contabo-bucket-credentials.png)
+Afterward, visit `Account -> Security & Access`; you will get the credentials like this:
+![contabo object storage credentials](/images/contabo-bucket-credentials.png)
 
 
 
 ## Setup in Laravel
-### Install package in Laravel
+### Install the package in Laravel
 First, you need to install the package:
 ```bash
 composer require league/flysystem-aws-s3-v3 "^3.0" --with-all-dependencies
@@ -45,8 +45,8 @@ In the `config/filesystems.php`, modify the following code if you want, but I wi
 ],
 ```
 
-### Config our `.env` file using Contabo credentials
-Please note that `AWS_USE_PATH_STYLE_ENDPOINT=true` must be true, otherwise it will not work.
+### Configure our `.env` file using Contabo credentials
+Please note that `AWS_USE_PATH_STYLE_ENDPOINT` must be set to `true`; otherwise, it will not work.
 
 ```dotenv
 AWS_ACCESS_KEY_ID=9ef6e69598c547336aa1d4004b2267ad
@@ -58,11 +58,11 @@ AWS_URL=https://usc1.contabostorage.com/4069dd56f17142fbbbf34e43ce1902a0:test # 
 AWS_USE_PATH_STYLE_ENDPOINT=true
 ```
 
-That's it, now you can use the `Storage` facade to upload your file to Contabo object storage. For example:
+That's it. Now you can use the `Storage` facade to upload your files to Contabo Object Storage. For example:
 ```php
 Storage::disk('s3')->put('test.txt', 'Hello World');
 ```
 
 ## Conclusion
-I think Contabo object storage is a good choice for s3 compatible storage, it's cheap and easy to use.
+I think Contabo Object Storage is a good choice for S3-compatible storage. It's cheap and easy to use.
 If you have a tight budget like me, you can try it. 🚀

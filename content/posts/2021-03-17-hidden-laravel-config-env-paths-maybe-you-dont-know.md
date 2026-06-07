@@ -1,23 +1,23 @@
 ---
 layout: post
-title: Hidden laravel config env paths maybe you don't know
+title: Hidden Laravel config env paths you might not know
 tags:
     - laravel
 ---
-There are some interesting env config keys of Laravel didn't mention in official documentation about storage path and cache path. May be you will never need to custom them in you entire developer life, but i think just know their existence, it's fun!
+Laravel has some interesting env config keys for storage and cache paths that aren't mentioned in the official documentation. Maybe you'll never need to customize them in your entire developer life, but I think knowing they exist is fun!
 
-By default in your Laravel application, you ussually have those folders:
+By default in your Laravel application, you usually have these folders:
 
 - `bootstrap/cache`: *stores your application cached files such as routes, configs, events*
 - `storage/`:  *stores compiled views, cache, session files, logs and upload files, etc*
 
-About storage folder when deployment, i acctually just create an folder outside of the application and make a symbol link to the app, so we dont erase out uploaded files every time we deploy, and i think you doo too.
+For the storage folder in deployment, I actually create a folder outside the application and symlink it to the app, so we don't erase uploaded files every time we deploy. I think you do too.
 
-But acctually if you look at code at [Illuminate/Foundation/Application.php](https://github.com/laravel/framework/blob/72ea328b456ea570f8823c69f511583aa6234170/src/Illuminate/Foundation/Application.php) you can see there are some hidden env configs maybe useful sometimes.
+But actually, if you look at the code in [Illuminate/Foundation/Application.php](https://github.com/laravel/framework/blob/72ea328b456ea570f8823c69f511583aa6234170/src/Illuminate/Foundation/Application.php), you can see there are some hidden env configs that may be useful sometimes.
 
 ## Customize storage path
 
-You can modify default storage path  by calling `$app->useStoragePath($yourPath)` in the `bootstrap/app.php`.
+You can modify the default storage path by calling `$app->useStoragePath($yourPath)` in `bootstrap/app.php`.
 
 ```php
 public function useStoragePath($path)
@@ -32,7 +32,7 @@ public function useStoragePath($path)
 
 ## Customize framework cache paths
 
-Now take a look at this `normalizeCachePath` function, if our value starts with any absolute prefixes `/` or `\`, so it will use absolute path, other wise relative path.
+Now take a look at this `normalizeCachePath` function. If the value starts with an absolute prefix like `/` or `\`, it will use an absolute path; otherwise, it will use a relative path.
 
 ```php
 protected function normalizeCachePath($key, $default)
@@ -47,7 +47,7 @@ protected function normalizeCachePath($key, $default)
 }
 ```
 
-And there are some hidden config if you want to customize the `bootstrap/cache` folder. This will useful when use want to ship application in some where you don't  have write permission in the application folder xD.
+And there are some hidden configs if you want to customize the `bootstrap/cache` folder. This is useful when you want to ship an application somewhere you don't have write permission in the application folder xD.
 
 You can set values for these keys in the `.env` file:
 
