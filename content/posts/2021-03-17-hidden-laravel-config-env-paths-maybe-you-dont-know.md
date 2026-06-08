@@ -6,14 +6,14 @@ tags:
 ---
 Laravel has some interesting env config keys for storage and cache paths that aren't mentioned in the official documentation. Maybe you'll never need to customize them in your entire developer life, but I think knowing they exist is fun!
 
-By default in your Laravel application, you usually have these folders:
+By default, in your Laravel application, you usually have these folders:
 
 - `bootstrap/cache`: *stores your application cached files such as routes, configs, events*
 - `storage/`:  *stores compiled views, cache, session files, logs and upload files, etc*
 
 For the storage folder in deployment, I actually create a folder outside the application and symlink it to the app, so we don't erase uploaded files every time we deploy. I think you do too.
 
-But actually, if you look at the code in [Illuminate/Foundation/Application.php](https://github.com/laravel/framework/blob/72ea328b456ea570f8823c69f511583aa6234170/src/Illuminate/Foundation/Application.php), you can see there are some hidden env configs that may be useful sometimes.
+But actually, if you look at the code in [Illuminate/Foundation/Application.php](https://github.com/laravel/framework/blob/72ea328b456ea570f8823c69f511583aa6234170/src/Illuminate/Foundation/Application.php), you can see there are some hidden env configs that may be useful.
 
 ## Customize storage path
 

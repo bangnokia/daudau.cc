@@ -9,7 +9,7 @@ tags:
 
 By default, [Laravel Debugbar](https://github.com/barryvdh/laravel-debugbar) enables view logging, which consumes a significant amount of resources in a Filament app. Displaying all view names can even cause Debugbar itself to crash rather than the application. Therefore, it is advisable to disable this feature unless you are specifically working on a custom field.
 
-## Publishing the Laravel Debugbar Configuration File
+## Publishing the Laravel Debugbar configuration file
 To begin, execute the following command to publish the Laravel Debugbar config file:
 
 ```

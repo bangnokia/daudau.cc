@@ -7,7 +7,7 @@ tags:
 ---
 ## Do you know Tinkerwell app?
 
-If you are a Laravel developer, you may know a piece of software called [Tinkerwell](https://tinkerwell.app/) made by Marcel Pociot, the fast ~~boy~~ developer from [Beyond Code](https://beyondco.de/), which helps you tinker with any PHP application on your local machine or a remote server via SSH.
+If you are a Laravel developer, you may know a piece of software called [Tinkerwell](https://tinkerwell.app/) made by Marcel Pociot, the fast ~~boy~~ developer from [Beyond Code](https://beyondco.de/). It helps you tinker with any PHP application on your local machine or a remote server via SSH.
 
 My first impression was: this is epic! What the hell, how does it work? **You should [buy](https://tinkerwell.app/#pricing) it**.
 
@@ -15,11 +15,11 @@ My first impression was: this is epic! What the hell, how does it work? **You sh
 
 > I haven't bought Tinkerwell or used it before (because US pricing isn't sweet in my country xD); all the explanations in this blog post come from investigating public resources for Tinkerwell and laravel-web-tinker.
 
-My first thought was that it must be based on the `artisan tinker` command. So after digging into the Laravel Tinker component, I saw it's just a specific wrapper around [PsySH](https://github.com/bobthecow/psysh) - a runtime developer console, interactive debugger, and REPL for PHP. From there, the light turned on for us.
+My first thought was that it must be based on the `artisan tinker` command. So after digging into the Laravel Tinker component, I saw it's just a specific wrapper around [PsySH](https://github.com/bobthecow/psysh) - a runtime developer console, interactive debugger, and REPL for PHP. From there, the light turned on.
 
 ### Bootstrap a PHP application
 
-First, we need to include the correct entry file of the application, which gives you access to all the functions of the project. For more details, you should take a look at the [configuration](https://github.com/bobthecow/psysh/wiki/Configuration) of PsySH.
+First, we need to include the correct entry file of the application, which gives us access to all the functions of the project. For more details, you should take a look at the [configuration](https://github.com/bobthecow/psysh/wiki/Configuration) of PsySH.
 
 For example, if a project is based on Composer, it is `vendor/autoload.php`. For Laravel, it is `bootstrap/app.php`; for WordPress, it is `wp-load.php`, etc.
 
@@ -64,7 +64,7 @@ IMHO, if we can open a background process, keep the SSH session connected, and s
 
 I already made an Electron app like Tinkerwell with basic functions, and it works **for me**. It's called [Pinker](https://github.com/bangnokia/pinker).
 
-Pinker itself is a Laravel app. Why? Because shipping a default Laravel project is convenient for quickly prototyping pieces of code, so I wrote it in Laravel. The Electron part helps spawn `php artisan serve` and opens the local URL. Thankfully, Laravel Livewire made it feel like a SPA easily, and I don't like to write much JavaScript stuff.
+Pinker itself is a Laravel app. Why? Because shipping a default Laravel project is convenient for quickly prototyping pieces of code, so I wrote it in Laravel. The Electron part helps spawn `php artisan serve` and opens the local URL. Thankfully, Laravel Livewire made it feel like a SPA easily, and I don't like writing much JavaScript stuff.
 
 So maybe you can try it or make your own version if you are a *hardcore* and *poor* guy. My worst experience with Electron is that the file size after building is ridiculously big (around ~90MB).
 

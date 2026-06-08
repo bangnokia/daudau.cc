@@ -12,11 +12,11 @@ I'm a developer from Vietnam and a Full Stack AIflow guy with a passion for web 
 
 I love creating blazingly fast and easy-to-use things.
 
-I work with Laravel and occasionally VueJS, ReactJS, and even Svelte.
+I work with Laravel and occasionally Vue.js, React, and even Svelte.
 
 In my free time, learning other languages is my hobby. I know a little about Rust and even a little bit about Chinese xD.
 
-You can get in touch with me via [bang@daudau.cc](mailto:bang@daudau.cc), [Github](https://github.com/bangnokia), or [X](https://x.com/bangnokia).
+You can get in touch with me via [bang@daudau.cc](mailto:bang@daudau.cc), [GitHub](https://github.com/bangnokia), or [X](https://x.com/bangnokia).
 
-I'd like to play Dota 2 and Left 4 Dead 2.
+I like playing Dota 2 and Left 4 Dead 2.
 If you like that, we can play together on [Steam](https://steamcommunity.com/id/bangnokia).

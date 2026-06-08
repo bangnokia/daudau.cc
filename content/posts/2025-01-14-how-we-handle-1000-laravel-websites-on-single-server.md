@@ -1,5 +1,5 @@
 ---
-title: How we handle 1000 Laravel websites on a single server
+title: How we handle 1,000 Laravel websites on a single server
 layout: post
 tags:
     - laravel
@@ -8,11 +8,11 @@ tags:
 
 *Discover how we scaled from 280 to over 1,000 Laravel websites on a single server with resource optimizations, deployment tricks, and multi-tenant magic.* 🚀
 
-Since the early days, we've been using Laravel to build ecommerce websites that sell products online. Laravel serves as our storefront for rapid development.
+Since the early days, we've been using Laravel to build ecommerce websites that sell products online. Laravel is our storefront for rapid development.
 
 We use [LunarPHP](https://lunarphp.io/) for ecommerce functionality. It's a Laravel package that provides comprehensive features for online stores.
 
-For each product type, we deploy a new website. So we have many stores running on a few servers.
+For each product type, we deploy a new website. So we have many stores running across a few servers.
 
 ## Our Tech Stack Before
 - Nginx as the web server
@@ -78,7 +78,7 @@ Because the server lacked free resources, the build process became very slow.
 ### SSL Problems
 We used certbot to automatically renew SSL certificates, but sometimes it didn't work as expected, requiring manual renewal. This was a real pain—even SSHing into the server was difficult, and we encountered many issues. I really didn't want to spend all day debugging certbot anymore. Issues like [this one](https://github.com/certbot/certbot/issues/8735) were common.
 
-In our case, certbot somehow took ownership of the `nginx` process, forcing us to kill nginx each time we renewed certificates. Really weird, and we had to deal with it constantly.
+In our case, Certbot somehow took ownership of the `nginx` process, forcing us to kill Nginx each time we renewed certificates. Really weird, and we had to deal with it constantly.
 
 ## We Decided to Refactor Everything
 Rewrite it in Rust (just kidding 😂). We'll stay with Laravel for sure.
@@ -90,7 +90,7 @@ Our new tech stack:
 
 ### Switch from Single Store to Multi-Tenant
 First, we developed a multi-tenant website. Now each server deploys only one website that handles all requests for other sites. This was a major change for us, but necessary.
-This helps us avoid unnecessary resources from running individual websites (horizon, FPM, cron, etc.).
+This helps us avoid wasting resources on individual websites (horizon, FPM, cron, etc.).
 
 We reimplemented our stores as multi-tenant using [Tenancy for Laravel](https://github.com/archtechx/tenancy). It's an excellent package that's easy to customize.
 
@@ -107,12 +107,12 @@ We use SQLite to store data for each store. Since most of our stores have only a
 
 To migrate from MySQL to SQLite, we use the [mysql2sqlite](https://github.com/mysql2sqlite/mysql2sqlite) script.
 
-### Switch Web Server from Nginx to Caddy
+### Switch web server from Nginx to Caddy
 I know Nginx has better performance than Caddy, but Caddy is much easier to use and configure. Since we don't get 10,000 requests per second, Caddy is sufficient. Plus, Caddy has the killer feature we love: [On-Demand TLS](https://caddyserver.com/on-demand-tls).
 
 It's 2025 and SSL should not be a nightmare to maintain.
 
-Our Caddyfile is simple: (sensitive information removed)
+Our Caddyfile is simple (sensitive information removed):
 ```caddy
 {
     on_demand_tls {
@@ -150,7 +150,7 @@ The task count was reduced to 69 🙂. We disabled all Horizon processes, MySQL 
 Now we only deploy one website per server, making the deployment process lightning-fast—we can create new stores in the blink of an eye. We can focus on developing features, delivering fixes, and improving the stores without worrying about slow deployments.
 
 ### Ongoing Improvements
-Although we have already achieved significant resource savings and streamlined our deployment process, there are still areas we plan to improve:
+Although we have already saved significant resources and streamlined our deployment process, there are still areas we plan to improve:
 - Monitoring: We're exploring tools like Prometheus or Grafana to aggregate important metrics across all stores. This will let us see exactly where any bottleneck might appear.
 - Scaling Strategy: If traffic spikes, we'll consider page caching. We won't use cloud solutions or auto scaling; that would make us broke 😂.
 

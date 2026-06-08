@@ -18,4 +18,4 @@ This command actually saves my life and saves me from copying every file into th
 tar -vczf changed.tar $(git diff-tree -r --no-commit-id --name-only --diff-filter=ACMRT main dev)
 ```
 
-I'm not the author of this command, I copied it from [here](https://gist.github.com/hnq90/7078e0d432cd29cff2daf03207708948) xD.
+I'm not the author of this command; I copied it from [here](https://gist.github.com/hnq90/7078e0d432cd29cff2daf03207708948) xD.

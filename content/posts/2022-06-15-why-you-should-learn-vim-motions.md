@@ -5,11 +5,11 @@ tags:
   - vim
   - neovim
 ---
-*Disclaimer: This post is not about convincing you to give up your lovely IDEs like VSCode or PHPStorm*
+*Disclaimer: This post is not about convincing you to give up your lovely IDEs like VSCode or PhpStorm*
 
 ## The Vim journey is damn painful and exciting
 
-I'm pretty sure lots of you have heard about Vim, a kind of alien text editor that is hard to learn, and nobody wants to open it. That's why lots of people search ["how to exit vim"](https://www.google.com/search?client=firefox-b-d&q=how+to+exit+vim) (including me) on Google.
+I'm pretty sure lots of you have heard about Vim, a kind of alien text editor that is hard to learn and nobody wants to open. That's why lots of people search ["how to exit vim"](https://www.google.com/search?client=firefox-b-d&q=how+to+exit+vim) (including me) on Google.
 
 ![google search](https://i.imgur.com/8jh22TS.png)
 
@@ -19,7 +19,7 @@ Every Vim user has their own config file because you have to install lots of plu
 
 ## I don't use Neovim anymore
 
-My daily job is web development, and I also do lots of frontend stuff (Tailwind CSS, React, ...) in the macOS environment. Nowadays, PHP is growing so damn fast, and there isn't a good enough PHP language server. I also don't have time to configure my Neovim (of course I had to work hard because of low salary 🥲) to make it comparable to PHPStorm, so I installed [IdeaVim](https://plugins.jetbrains.com/plugin/164-ideavim), and that's all I need. For frontend stuff, I use VSCode with the [vscodevim](https://marketplace.visualstudio.com/publishers/vscodevim) extension.
+My daily job is web development, and I also do lots of frontend stuff (Tailwind CSS, React, ...) in the macOS environment. Nowadays, PHP is growing so damn fast, and there isn't a good enough PHP language server. I also don't have time to configure my Neovim (of course I had to work hard because of low salary 🥲) to make it comparable to PhpStorm, so I installed [IdeaVim](https://plugins.jetbrains.com/plugin/164-ideavim), and that's all I need. For frontend stuff, I use VSCode with the [vscodevim](https://marketplace.visualstudio.com/publishers/vscodevim) extension.
 
 I think macOS and Vim motions are the best combo, tho. Most keybindings on macOS use `Cmd` and Vim uses `Ctrl`, so it won't have many conflicts like on Windows and Linux.
 

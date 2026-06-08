@@ -6,7 +6,7 @@ tags:
     - image optimization
 ---
 
-Your website loads in 8 seconds because you uploaded a 4MB hero image. Your mobile users are bouncing before the page finishes loading. You know you need to optimize those images, but the manual workflow is killing you: exporting multiple sizes, creating thumbnails, converting formats, all with messy file names like `img_sm_final_v3.jpg`.
+Your website loads in 8 seconds because you uploaded a 4MB hero image. Your mobile users bounce before the page finishes loading. You know you need to optimize those images, but the manual workflow is killing you: exporting multiple sizes, creating thumbnails, converting formats, all with messy file names like `img_sm_final_v3.jpg`.
 
 That's why I built Skymage—a simple image optimization API that transforms any image URL into a fast-loading, perfectly-sized version for your website.
 
@@ -79,7 +79,7 @@ Here's what sparked the idea: I had a photographer client who sent me 20 images,
 https://dau.skymage.net/v1/daudau.cc/images/forest.jpg?w=1200&q=85&f=webp
 ```
 
-Reduced from 6MB to 280KB, and load time from 12 seconds to 1.5 seconds. The client was happy, and the site performed well.
+It reduced the image from 6MB to 280KB, and the load time from 12 seconds to 1.5 seconds. The client was happy, and the site performed well.
 
 ## Why It Matters
 

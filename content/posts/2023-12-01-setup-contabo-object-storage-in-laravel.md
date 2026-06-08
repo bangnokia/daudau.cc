@@ -30,7 +30,7 @@ First, you need to install the package:
 composer require league/flysystem-aws-s3-v3 "^3.0" --with-all-dependencies
 ```
 
-In the `config/filesystems.php`, modify the following code if you want, but I will keep this as default:
+In `config/filesystems.php`, modify the following code if you want, but I will keep it as the default:
 ```php
 's3' => [
     'driver' => 's3',
@@ -45,7 +45,7 @@ In the `config/filesystems.php`, modify the following code if you want, but I wi
 ],
 ```
 
-### Configure our `.env` file using Contabo credentials
+### Configure the `.env` file using Contabo credentials
 Please note that `AWS_USE_PATH_STYLE_ENDPOINT` must be set to `true`; otherwise, it will not work.
 
 ```dotenv

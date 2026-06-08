@@ -39,7 +39,7 @@ into something like
   }
 }
 ```
-And when using the CLI, it also generates an `uno.css` file (which we should add to `.gitignore`) and we have to import it into our main `app.css` file, which is not cool.
+And when using the CLI, it also generates an `uno.css` file (which we should add to `.gitignore`), and we have to import it into our main `app.css` file, which is not cool.
 
 ### Create your PostCSS config file `postcss.config.js`:
 ```js
@@ -71,7 +71,7 @@ export default defineConfig({
 })
 ```
 
-If you want to use custom brand colors like `primary` in your app, you can add them under `theme.colors`. They will be merged with the default theme.
+If you want to use a custom brand color like `primary` in your app, you can add it under `theme.colors`. It will be merged with the default theme.
 ```js
 // uno.config.js
 //... other stuff

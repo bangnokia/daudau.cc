@@ -6,7 +6,7 @@ tags:
     - reactphp
     - live reload
 ---
-Did you know we can implement live reload in Laravel without any npm package? No `browser-sync`, no `nodejs`, just `php`.
+Did you know we can implement live reload in Laravel without any npm package? No `browser-sync`, no Node.js, just PHP.
 
 Small confession: I don't like Node.js xD, and I don't know Node.js either xD. And if you've read this far, you got clickbaited xD; we actually need a bit of JavaScript. Sometimes when working with Laravel Livewire, live reloading is really helpful, and I don't feel good if I have to install something like BrowserSync or other JS stuff. So let's do it with PHP.
 
@@ -37,7 +37,7 @@ The file watcher also does a silly task: writing a cache value.
 Cache::put('serve_websockets_running', true, 5);
 ```
 
-This helps us detect whether the WebSocket server is running. I think 5 seconds is okay. So we can inject the script into the HTML response via Laravel middleware. It just puts the script at the very beginning of the HTML response. It doesn't look good, but it works.
+This helps us detect whether the WebSocket server is running. I think 5 seconds is okay. So we can inject the script into the HTML response via Laravel middleware. It just puts the script at the very beginning of the HTML response. It doesn't look nice, but it works.
 
 ```php
 public function injectScripts($content)
