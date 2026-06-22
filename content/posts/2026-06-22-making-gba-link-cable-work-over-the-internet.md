@@ -14,7 +14,7 @@ But for me, it felt unreal.
 
 The Game Boy Advance link cable was designed for a short physical cable. A few centimeters of copper. Very small timing windows. Hardware registers. Synchronous serial transfer. Two, three, or four handhelds sitting next to each other.
 
-And somehow we were trying to make it work over the internet, inside Rebit, inside a browser, with WebAssembly, WebRTC, WebSocket relays, user saves, room codes, and unreliable human Wi-Fi.
+And somehow we were trying to make it work over the internet, inside [Rebit](https://rebit.cc), inside a browser, with WebAssembly, WebRTC, WebSocket relays, user saves, room codes, and unreliable human Wi-Fi.
 
 This is the story of how we made GBA Link Cable possible on Rebit.
 
