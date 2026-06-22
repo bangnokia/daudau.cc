@@ -122,7 +122,7 @@ For normal gameplay, a core exposes one game instance. For Link Cable, we need:
 - Deterministic RTC injection
 - Runtime player detach
 
-So `mgba_dual` is built as a standalone Emscripten runtime. It still produces files named `mgba_dual_libretro.js` and `mgba_dual_libretro.wasm` for compatibility with our asset pipeline, but internally it is not a normal libretro core.
+So `mgba_dual` is built as a standalone Emscripten runtime. It still fits our existing core asset pipeline, but internally it is not a normal libretro core.
 
 The build exports a `createMGBAModule` factory and C APIs like:
 
@@ -339,57 +339,6 @@ This is one of those product details that sounds small but makes the feature fee
 A real cable can be unplugged.
 
 Our fake internet cable needed to survive that too.
-
-## The Build Pipeline
-
-The build project has a special `mgba_dual` target.
-
-It clones the Rebit mGBA fork, builds `rebit/emscripten` with Emscripten, and copies the output into the Rebit public cores directory:
-
-```bash
-cd build-cores
-./setup-cores.sh mgba_dual
-make build-core CORE=mgba_dual
-```
-
-The output is:
-
-```text
-mgba_dual_libretro.js
-mgba_dual_libretro.wasm
-```
-
-Even though the filename says `libretro`, the runtime is our standalone mGBA multiplayer module.
-
-We also had to use cache keys aggressively. When the WASM changed but the browser or service worker kept an old file, the JavaScript API and WASM exports could disagree. That kind of bug is painful because the code looks correct, but the user's browser is running yesterday's core.
-
-So every core change needs a cache bump.
-
-## The Commit History Tells The Story
-
-Looking back, the history is almost a diary of the problems:
-
-- May 2: split-view mGBA dual playground and bundled artifacts
-- May 16: standalone Rebit Emscripten runtime for mGBA multiplayer
-- May 17: first GBA Link Cable multiplayer integration in Rebit
-- May 19: guest buffer tuning and cache busting
-- May 24: deterministic RTC and desync recovery experiments
-- May 27: pending transfer handling and local relay tooling
-- June 5: better data exchange and room roster
-- June 7-8: player departure and detach support
-- June 9: four-player GBA Link Cable promotion
-
-That is how these features usually happen.
-
-Not one giant genius commit. More like a long argument with reality.
-
-Every time the game froze, we learned where the abstraction was wrong.
-
-Every time a save diverged, we found another hidden input.
-
-Every time the browser cached the wrong WASM, we added another guard.
-
-Every time a third or fourth player joined, we discovered one more place where the code secretly believed the world only had two people.
 
 ## What I Like About This Solution
 
