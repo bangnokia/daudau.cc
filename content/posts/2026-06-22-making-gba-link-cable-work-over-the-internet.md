@@ -2,10 +2,8 @@
 title: Making GBA Link Cable work over the internet
 layout: post
 tags:
-    - rebit
-    - emulation
-    - webassembly
-    - multiplayer
+    - gba
+    - link cable
 ---
 
 I still remember the first time I saw two Game Boy Advance screens talking to each other inside a browser.
