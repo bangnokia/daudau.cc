@@ -30,7 +30,7 @@ We have 2 problems to solve:
 - Bootstrap a project on the local machine.
 - Bootstrap a project on the remote server???
 
-Including files on local machines is easy, but how can we include them on the remote server? The only action we can do is execute some commands via SSH.
+Including files on local machines is easy, but how can we include them on the remote server? The only action we can take is to execute some commands via SSH.
 
 Let's try to make a small binary file. We're going to upload it to the server, and of course, the file size must be as small as possible. So I made a simple wrapper for PsySH and named it [psycho](https://github.com/bangnokia/psycho), built using [box](https://github.com/box-project/box), and the file size is around ~600KB - ok fine :(. It also uses drivers to detect and properly bootstrap **many** kinds of PHP projects (actually 2).
 
@@ -40,7 +40,7 @@ The API is simple:
 php psycho.phar --target=/project/root/path --code=somephpcode
 ```
 
-![a cute cat do programming](https://i.imgur.com/DE9TIBw.png)
+![a cute cat doing programming](https://i.imgur.com/DE9TIBw.png)
 
 A cute cat does programming.
 
