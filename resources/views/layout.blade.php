@@ -119,6 +119,16 @@
                         currentMain.innerHTML = newMain.innerHTML;
                         executeScriptsIn(currentMain);
                         document.title = doc.title;
+
+                        ['meta[name="description"]', 'meta[property="og:image"]'].forEach(selector => {
+                            const incoming = doc.head.querySelector(selector);
+                            const current = document.head.querySelector(selector);
+
+                            if (incoming && current) {
+                                current.setAttribute('content', incoming.getAttribute('content') || '');
+                            }
+                        });
+
                         window.scrollTo(0, 0);
 
                         // Track page view in GA

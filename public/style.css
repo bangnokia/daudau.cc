@@ -479,8 +479,7 @@ ul {
 .tag {
   font-size: 0.75rem;
   color: var(--text-secondary);
-  background: var(--bg-tertiary);
-  background-opacity: 0.5;
+  background: color-mix(in srgb, var(--bg-tertiary) 50%, transparent);
   padding: 1px 8px;
   border-radius: 0.25rem;
 
