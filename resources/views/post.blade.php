@@ -15,7 +15,10 @@
 <div>
     <div class="main-content">
         <h1>{{ $data->title }}</h1>
-        <x-date>{{ $data->createdAt }}</x-date>
+        <div class="post-meta">
+            <x-date>{{ $data->createdAt }}</x-date>
+            <x-tags :tags="$data->tags" />
+        </div>
 
         <article class="prose" style="margin-top: 2rem;">
             {!! $data->content !!}

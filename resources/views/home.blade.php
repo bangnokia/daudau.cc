@@ -6,20 +6,20 @@
 
 @section('content')
     <div>
-        <ul style="display: flex; flex-direction: column; gap: 1rem; list-style: none; padding: 0">
+        <ul class="home-post-list">
             @foreach($posts as $post)
-                <li>
+                <li class="home-post-item">
                     @php
                         $postUrl = $post->url();
                         if (!str_starts_with($postUrl, 'http://') && !str_starts_with($postUrl, 'https://') && !str_starts_with($postUrl, '/')) {
                             $postUrl = '/' . $postUrl;
                         }
                     @endphp
-                    <div class="text-sm">
+                    <div class="post-meta">
                         <x-date>{{ $post->createdAt }}</x-date>
                         <x-tags :tags="$post->tags" />
                     </div>
-                    <a href="{{ $postUrl }}" class="block home-post-link" style="padding: 0.25rem 0;">
+                    <a href="{{ $postUrl }}" class="block home-post-link">
                         {{ $post->title }}
                     </a>
                 </li>
