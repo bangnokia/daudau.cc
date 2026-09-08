@@ -6,7 +6,7 @@ tags:
 ---
 Sometimes I do freelance jobs, and I have some clients who don't use `git`. They send me the source code and database, then I need to send all the modified files back to them.
 
-As a developer, when I receive the source code, I create an initial commit and switch to another branch to work on it. So I can upload it to my personal GitHub and easily track changed files via pull request.
+As a developer, when I receive the source code, I create an initial commit and switch to another branch to work on it. So I can upload it to my personal GitHub and easily track changed files via a pull request.
 
 ![](https://i.imgur.com/9NbGO0g.png)
 

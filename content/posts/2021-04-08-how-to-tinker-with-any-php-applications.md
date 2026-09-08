@@ -5,7 +5,7 @@ tags:
   - laravel
   - tinker
 ---
-## Do you know Tinkerwell app?
+## Do you know the Tinkerwell app?
 
 If you are a Laravel developer, you may know a piece of software called [Tinkerwell](https://tinkerwell.app/) made by Marcel Pociot, the fast ~~boy~~ developer from [Beyond Code](https://beyondco.de/). It helps you tinker with any PHP application on your local machine or a remote server via SSH.
 
@@ -32,7 +32,7 @@ We have 2 problems to solve:
 
 Including files on local machines is easy, but how can we include them on the remote server? The only action we can take is to execute some commands via SSH.
 
-Let's try to make a small binary file. We're going to upload it to the server, and of course, the file size must be as small as possible. So I made a simple wrapper for PsySH and named it [psycho](https://github.com/bangnokia/psycho), built using [box](https://github.com/box-project/box), and the file size is around ~600KB - ok fine :(. It also uses drivers to detect and properly bootstrap **many** kinds of PHP projects (actually 2).
+Let's try to make a small binary file. We're going to upload it to the server, and of course, the file size must be as small as possible. So I made a simple wrapper for PsySH and named it [psycho](https://github.com/bangnokia/psycho), built using [box](https://github.com/box-project/box), and the file size is around 600KB - ok fine :(. It also uses drivers to detect and properly bootstrap **many** kinds of PHP projects (actually 2).
 
 The API is simple:
 
@@ -50,7 +50,7 @@ My naming for classes in this package is stupid, and you should not use it.
 
 We need to install PHP on our machine.
 
-On the local machine, we spawn a process and execute the `psycho.phar`.
+On the local machine, we spawn a process and execute `psycho.phar`.
 
 On the remote server, we can upload `psycho.phar` to the `/tmp/` directory and execute the command via SSH:
 
@@ -64,9 +64,9 @@ IMHO, if we can open a background process, keep the SSH session connected, and s
 
 I already made an Electron app like Tinkerwell with basic functions, and it works **for me**. It's called [Pinker](https://github.com/bangnokia/pinker).
 
-Pinker itself is a Laravel app. Why? Because shipping a default Laravel project is convenient for quickly prototyping pieces of code, so I wrote it in Laravel. The Electron part helps spawn `php artisan serve` and opens the local URL. Thankfully, Laravel Livewire made it feel like a SPA easily, and I don't like writing much JavaScript stuff.
+Pinker itself is a Laravel app. Why? Because shipping a default Laravel project is convenient for quickly prototyping pieces of code, so I wrote it in Laravel. The Electron part helps spawn `php artisan serve` and open the local URL. Thankfully, Laravel Livewire made it feel like a SPA easily, and I don't like writing much JavaScript stuff.
 
-So maybe you can try it or make your own version if you are a *hardcore* and *poor* guy. My worst experience with Electron is that the file size after building is ridiculously big (around ~90MB).
+So maybe you can try it or make your own version if you are a *hardcore* and *poor* guy. My worst experience with Electron is that the file size after building is ridiculously big (around 90MB).
 
 ## Conclusion
 

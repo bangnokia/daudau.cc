@@ -50,7 +50,7 @@ Our largest server has these specs:
 
 ![server state before](/images/lunar-server-before.png)
 
-So you can see, we have 32 cores and 64GB of RAM, but we could only handle about 280 websites on this server. **962 tasks, wow** 😂
+As you can see, we have 32 cores and 64GB of RAM, but we could only handle about 280 websites on this server. **962 tasks, wow** 😂
 
 **What Did We Do to Solve This Problem?**
 
@@ -142,7 +142,7 @@ https:// {
 Thankfully, the migration process was smooth. We used Ansible to migrate servers to the new version (I have no idea what Kubernetes is 😂). We don't use Docker either.
 
 **The Result**
-![after migrate](/images/lunar-after.png)
+![after migration](/images/lunar-after.png)
 
 The task count was reduced to 69 🙂. We disabled all Horizon processes, MySQL processes, and extra PHP-FPM processes. Now we can run scheduled tasks without worrying about resource overload. We also removed the page-cache package since we don't need it anymore. We can run the stores smoothly without caching, which simplifies maintenance and debugging.
 

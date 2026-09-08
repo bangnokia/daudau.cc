@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Install PHP mcrypt extension on macOS
+title: Install the PHP mcrypt extension on macOS
 tags:
   - php
   - macos

@@ -31,10 +31,10 @@ You don't have to use Vim as your daily code editor. You just need to know Vim m
 
 You're a coder, so most of the time you're writing code. When moving in Vim, you basically press `h`, `j`, `k`, `l`, and don't have to lift your right hand to press the arrow keys. Having to press arrow keys sucks. Using Vim, most of the time you jump between points in the editor instead of going line by line like traditional editors or scrolling with your mouse :( (how to do it, you need to find out yourself).
 
-When you `ssh` into your Linux server and modify some configuration files, you can use `nano` and spam your arrow keys to move around your file. That's terrible. Vim is a savior with lots of no-brain keyboard shortcuts to save your time: `G`, `gg`, `C-f`, `C-b`, `dd`, `%`, `w`, `b`, ... You see, they are random bullshit keybindings, but they work 🤣.
+When you `ssh` into your Linux server and modify some configuration files, you can use `nano` and spam your arrow keys to move around your file. That's terrible. Vim is a savior with lots of no-brain keyboard shortcuts to save you time: `G`, `gg`, `C-f`, `C-b`, `dd`, `%`, `w`, `b`, ... You see, they are random bullshit keybindings, but they work 🤣.
 
 Anyway, you can SSH into your production server and edit source code using Vim. That's real-time deployment 🔥.
 
 If you know Vim, you can code in the terminal like a pro hacker with a black background; your female colleagues will love you.
 
-So my combo is using some basic Vim motions in my editors. That's enough for me: I can quickly get support for the latest language and framework features (linting, validation, ...) via extensions and feel comfortable away from the mouse. Mark my words, the more you use Vim, the more you love it.
+So my combo is to use some basic Vim motions in my editors. That's enough for me: I can quickly get support for the latest language and framework features (linting, validation, ...) via extensions and feel comfortable away from the mouse. Mark my words, the more you use Vim, the more you love it.

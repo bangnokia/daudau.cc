@@ -24,7 +24,7 @@ Finally, we also need a file watcher. It watches for file changes while we edit 
 
 My goal is to integrate it into the `php artisan serve` command. I think it's convenient and simple to use.
 
-So I overwrote the [ServeCommand](https://github.com/bangnokia/laravel-serve-livereload/blob/84d9689444652ca8ab687e74b5c7bf65e04696b0/src/Commands/ServeCommand.php) class. This command now spawns 2 processes:
+So I overrode the [ServeCommand](https://github.com/bangnokia/laravel-serve-livereload/blob/84d9689444652ca8ab687e74b5c7bf65e04696b0/src/Commands/ServeCommand.php) class. This command now spawns 2 processes:
 
 - The default `artisan serve` from Laravel, which now becomes `artisan serve:http`.
 - The WebSocket server `artisan serve:websockets`.
@@ -52,4 +52,4 @@ public function injectScripts($content)
 
 ```
 
-And this is my [laravel-server-livereload](https://github.com/bangnokia/laravel-serve-livereload) package. Thank you for reading my explanation.
+And this is my [laravel-serve-livereload](https://github.com/bangnokia/laravel-serve-livereload) package. Thank you for reading my explanation.
