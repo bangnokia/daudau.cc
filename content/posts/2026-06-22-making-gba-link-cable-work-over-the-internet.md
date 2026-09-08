@@ -1,24 +1,18 @@
 ---
-title: Making GBA Link Cable work over the internet
+title: Making the GBA Link Cable Work over the Internet
 layout: post
 tags:
     - gba
     - link cable
 ---
 
-I still remember the first time I saw two Game Boy Advance screens talking to each other inside a browser.
+The first time two Game Boy Advance games opened their link menu together inside a browser, nothing dramatic happened. Just two tiny 240x160 screens doing what they would have done over a physical cable.
 
-It did not look dramatic. No huge animation. No fireworks. Just two tiny 240x160 canvases, both running the same game, both stepping frame by frame, and then the game opened its own link menu like this was normal.
+But these were running inside [Rebit](https://rebit.cc), where the players could be on different networks.
 
-But for me, it felt unreal.
+The trick was to run every linked GBA in every browser, then send player inputs over the internet. mGBA handled the cable locally. Keeping those copies in sync was the hard part.
 
-The Game Boy Advance link cable was designed for a short physical cable. A few centimeters of copper. Very small timing windows. Hardware registers. Synchronous serial transfer. Two, three, or four handhelds sitting next to each other.
-
-And somehow we were trying to make it work over the internet, inside [Rebit](https://rebit.cc), inside a browser, with WebAssembly, WebRTC, WebSocket relays, user saves, room codes, and unreliable human Wi-Fi.
-
-This is the story of how we made GBA Link Cable possible on Rebit.
-
-Not perfect. Not magic. But real enough that you can open a room, invite players, and use the game's own trade, battle, or multiplayer menu from the web.
+This is how we built it, from a two-player demo to a beta that supports up to four players using the game's own link menu.
 
 ## Why This Was Hard
 
@@ -30,13 +24,7 @@ GBA Link Cable is different.
 
 The multiplayer logic is inside the game, but the communication goes through the GBA serial I/O hardware, usually called SIO. The game writes to registers like `SIOCNT`, `RCNT`, and `SIOMLT_SEND`. The hardware waits for other GBAs. A transfer starts. Data from every player is exchanged. Interrupts fire. The game advances.
 
-If one side is a little late, the game can wait forever.
-
-If one side sees a different clock, the state diverges.
-
-If one side gets a transfer start in the wrong order, the trade menu breaks.
-
-If one side saves during a link transition while the other side is still draining a transfer, congratulations, you now have a desync that might corrupt the most important moment of the session.
+Timing and ordering matter. A late transfer can leave a game waiting; a different clock or an out-of-order transfer can make the simulations diverge. When that happens during a trade or save, player progress is at risk.
 
 This is why the naive idea does not work:
 
@@ -58,11 +46,7 @@ For a 2-player room, each browser runs two mGBA cores.
 
 For a 4-player room, each browser runs four mGBA cores.
 
-That sounds expensive, and it is. But it gives us something incredibly valuable: every browser has the whole link cable world in one deterministic process.
-
-The host does not stream video. The guest does not wait for remote SIO packets. The server does not emulate the game.
-
-Every client runs:
+That costs more CPU and memory, but it puts all the emulated cable communication inside one local simulation. In a four-player room, every client runs:
 
 ```text
 Player 1 core
@@ -72,16 +56,14 @@ Player 4 core
 GBA SIO lockstep coordinator
 ```
 
-Then the network only has to move the things that change per player:
+The network carries starting data and session messages:
 
-- Which ROM and SRAM each player starts with
+- Each player's ROM and save data
 - Which buttons each player presses each frame
 - When the host starts, pauses, or stops the session
 - State hashes for desync detection
 
-This is much more like deterministic netplay than packet tunneling.
-
-The trick is that the deterministic world includes not just the game CPU, but also the GBA link cable behavior.
+The host does not stream video, and the server does not emulate the game. This is deterministic netplay where the replicated state includes every GBA and the cable connecting them.
 
 ## Why mGBA
 
@@ -107,8 +89,6 @@ The name is a little outdated now because it started as two players, but the run
 
 ## Not A Normal Libretro Core
 
-This part is important.
-
 Rebit already uses WebAssembly libretro cores for normal emulation, but GBA Link Cable needed more control than a normal libretro core gives us.
 
 For normal gameplay, a core exposes one game instance. For Link Cable, we need:
@@ -117,7 +97,7 @@ For normal gameplay, a core exposes one game instance. For Link Cable, we need:
 - A shared SIO lockstep coordinator
 - Per-player input masks
 - Per-player framebuffers
-- Per-player SRAM export
+- Per-player save data export
 - State hash and state export APIs
 - Deterministic RTC injection
 - Runtime player detach
@@ -146,15 +126,15 @@ The first real version was simple in shape:
 #define DEMO_PLAYERS 2
 ```
 
-Two mGBA cores. Two ROMs. Two SRAM files. Two framebuffers. One lockstep coordinator.
+Two mGBA cores. Two ROMs. Two save files. Two framebuffers. One lockstep coordinator.
 
-When a player started a Link Cable room, Rebit prepared the local game file and latest in-game save. The players exchanged metadata first: ROM size, SRAM size, hashes, and room protocol version. Then they transferred the needed bytes in chunks.
+When a player started a Link Cable room, Rebit prepared the local game file and latest in-game save. The players exchanged metadata first: ROM size, save size, hashes, and room protocol version. Then they transferred the needed bytes in chunks.
 
 After both browsers had both players' starting data, each browser called into the WASM runtime:
 
 ```text
-load player 1 ROM/SRAM
-load player 2 ROM/SRAM
+load player 1 ROM/save data
+load player 2 ROM/save data
 attach both cores to the SIO coordinator
 reset both cores with the same RTC seed
 start frame loop
@@ -179,7 +159,7 @@ Then the host advanced the local simulation and sent a `tick` message:
 
 The guest queued those ticks, applied the exact same key masks, and advanced its own local copy of both GBA cores.
 
-If both browsers started from the same ROM/SRAM and received the same frame inputs in the same order, they should produce the same state.
+If both browsers started from the same ROMs and saves and received the same frame inputs in the same order, they should produce the same state.
 
 That "should" is where the real work started.
 
@@ -190,21 +170,23 @@ The first working demo is exciting. The second hour is humbling.
 When building this, we learned that deterministic emulation is not just "same input, same output". It is:
 
 - Same ROM
-- Same SRAM
+- Same save data
 - Same emulator build
 - Same config
 - Same RTC
 - Same link timing
-- Same frame pacing
+- Same emulated execution order
 - Same transfer drain behavior
 - Same player assignment
 - Same state after reset
 
-The RTC issue was a good example.
+Browsers do not have to finish each frame at the same wall-clock time. They have to perform the same emulated work for that frame.
+
+The real-time clock (RTC) issue was a good example of a hidden input.
 
 Some GBA games read time. If Player 1's browser and Player 2's browser disagree about the current date or second, the game state can diverge before anyone presses a button.
 
-So we made RTC deterministic. The host creates an RTC epoch seed and every player applies the same value through the mGBA runtime before reset. The core also has a deterministic RTC compile definition so the browser wall clock does not silently become a hidden network input.
+The host creates an RTC epoch seed and every player applies the same value through the mGBA runtime before reset. Matching that starting value is only part of the requirement: subsequent clock reads must also agree across peers. The core has a deterministic RTC compile definition to keep the browser wall clock from silently becoming a hidden network input.
 
 That was one of those bugs that feels silly after you fix it, but it is exactly the kind of thing that destroys netplay.
 
@@ -214,15 +196,15 @@ Another hard problem was queued link transfers.
 
 In some games, the cores can appear to finish a visible frame while link cable work is still pending internally. If we stop running as soon as "every player advanced one frame", the UI looks fine but the SIO coordinator still has work to do.
 
-Pokemon-style trade/save boundaries are especially sensitive to this.
+Pokémon-style trade/save boundaries are especially sensitive to this.
 
-The fix was to teach the frame runner that link transfers are part of the frame's truth, not background noise.
+The frame runner therefore has to account for pending link transfers before returning control to JavaScript.
 
 The runtime now checks whether the coordinator has an active or pending transfer. If a player has already advanced but can help drain the transfer queue, we keep running it for a bounded number of assist passes.
 
 That is why `mgba_demo_run_frame` is more complicated than a simple:
 
-```c
+```text
 for each player:
     runLoop()
 ```
@@ -239,15 +221,15 @@ Then peers exchange the hashes.
 
 If the host and guest disagree, the session is not trustworthy anymore.
 
-At one point we experimented with recovery: exporting states, sending binary chunks, importing them on the other side, and resuming. The code history still shows that stage. It was an attractive idea because nobody likes seeing a desync message.
+We experimented with recovery: exporting states, sending binary chunks, importing them on the other side, and resuming.
 
 But link cable sessions are dangerous because players may be trading, battling, or saving. Hiding a bad state can be worse than stopping.
 
 So the product decision became conservative:
 
-**Detect desyncs early and fail loudly before users trust a broken trade or save.**
+**Stop when we detect a desync, and tell players the session is no longer trustworthy.**
 
-That is not as flashy as automatic recovery, but it is the right tradeoff for a feature that can affect user progress.
+Periodic hashes are a detection mechanism, not a guarantee that every trade or save is safe. Divergence can occur between checks. Stopping limits further damage; it does not prove that everything before the warning was correct.
 
 ## Why The Host Sends Ticks Instead Of Letting Everyone Run Freely
 
@@ -261,13 +243,9 @@ This gives us backpressure:
 - If packets arrive with jitter, the guest buffers a small number of ticks.
 - If tick order breaks, the session fails instead of guessing.
 
-The tradeoff is latency.
+This moves the network wait out of individual cable transfers and into input delivery and frame scheduling. It does not remove latency: a guest's input still has to reach the host, and the resulting tick has to reach the guests.
 
-A little buffering makes the session more stable, but it also makes controls feel slightly less immediate. We tuned the guest buffer down after testing because Link Cable games already have menus and transitions where correctness matters more than twitch responsiveness.
-
-For battles and trades, a few frames of input delay is acceptable.
-
-A desynced save is not.
+A little buffering makes the session more stable, but it also makes controls feel less immediate. We tuned the guest buffer down after testing. Trades and menu-driven battles can tolerate more delay than fast action games, so the experience still depends on the game and connection.
 
 ## Classic Transport And Edge Transport
 
@@ -290,13 +268,7 @@ For a beta feature, having both paths matters.
 
 ## Why Four Players Became Possible
 
-The fun part is that once the two-player architecture worked, four players became possible for a very specific reason:
-
-We were not trying to send physical cable signals over the internet.
-
-We were replicating the entire linked GBA room inside every browser.
-
-The GBA multiplayer protocol already supports up to four players in multi mode. mGBA's lockstep coordinator understands multiple attached players. Our first Rebit wrapper was artificially fixed at two because that was the minimum useful proof.
+The GBA multiplayer protocol supports up to four players in multiplayer mode, and mGBA's lockstep coordinator understands multiple attached players. Our first Rebit wrapper was fixed at two because that was the minimum useful proof. Expanding it did not require a new networking model.
 
 The upgrade was still a lot of work, but it was not a conceptual rewrite.
 
@@ -306,23 +278,17 @@ We changed the runtime from fixed two-player assumptions to active player counts
 minimum players: 2
 maximum players: 4
 players array: 4 slots
-ROM/SRAM inputs: 4 pairs
+ROM/save inputs: 4 pairs
 input ticks: array of player key masks
 state hashes: array of player hashes
 room roles: host, player2, player3, player4
 ```
 
-The new API became `mgba_demo_load_game_multi`, which accepts ROM/SRAM blocks for up to four players and a `playerCount`.
+The new API became `mgba_demo_load_game_multi`, which accepts ROM and save data blocks for up to four players and a `playerCount`.
 
 On the app side, that meant room assignment, UI, chat roster, save export, input routing, and departure handling all had to understand Player 3 and Player 4.
 
-The cost also scaled.
-
-In a four-player room, every browser may run four mGBA cores. That means more CPU, more memory, more audio/video buffers, more hashes, and more startup data. We made peace with that because the alternative - remote SIO over the internet - would have been much more fragile.
-
-The architecture bought us correctness. The tradeoff was local compute.
-
-That is a trade I am happy with.
+The cost also scaled: four cores mean more CPU, memory, audio/video buffers, hashes, and startup data in every browser. Keeping cable timing local makes synchronization more manageable, but the weakest device in the room still matters.
 
 ## Player Detach Was Another Surprise
 
@@ -334,25 +300,7 @@ The simple answer is "end the session". The better answer is "unplug the link ca
 
 That required a detach export in the WASM API and careful handling inside the lockstep coordinator. We had to detach the missing player's SIO driver, wake remaining players, rebuild local runtime assumptions, and avoid killing the whole session if a player disappears after the game already loaded.
 
-This is one of those product details that sounds small but makes the feature feel alive.
-
-A real cable can be unplugged.
-
-Our fake internet cable needed to survive that too.
-
-## What I Like About This Solution
-
-The best part is that the browser is not just a thin client.
-
-It is running real emulation. It is participating in the deterministic simulation. It owns the game state.
-
-The network is important, but it is not pretending to be a hardware cable at cycle-level latency. It is just carrying enough information for every browser to recreate the same local universe.
-
-That is the part that still feels beautiful to me.
-
-We did not defeat latency by making the internet faster.
-
-We avoided asking latency the wrong question.
+Whether the game can continue still depends on how it handles a disconnected cable.
 
 ## What Still Needs Work
 
@@ -376,31 +324,7 @@ The more we can explain, the faster we can make compatibility better.
 
 I build a lot of web products, but this one felt different.
 
-Most web features are CRUD, payments, uploads, dashboards, forms, queues, caches. Useful stuff. Important stuff. But this was different.
-
-This was taking a handheld console feature from 2001 and convincing it to survive modern browsers, NAT, mobile Wi-Fi, WebAssembly memory, service worker caching, and internet latency.
-
-It should not have worked.
-
-But the first time two browser tabs reached the in-game link menu together, it felt like opening a door.
-
-Then two players became stable.
-
-Then we fought desyncs.
-
-Then we fixed RTC.
-
-Then transfer drains.
-
-Then saves.
-
-Then detach.
-
-Then four players.
-
-And suddenly the impossible thing was not impossible anymore. It was just engineering: ugly in the middle, fragile at the edges, but real.
-
-That is the part I love most.
+There is something satisfying about taking a handheld console feature from 2001 and making it work in a browser. The first link menu was exciting, but the work that followed—tracking down clock differences, draining transfers, handling disconnects—is what made it useful.
 
 Sometimes the web still has room for ridiculous ideas.
 
