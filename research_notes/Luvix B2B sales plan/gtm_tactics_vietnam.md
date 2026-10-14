@@ -202,3 +202,58 @@ Most typical SME AI tools (chatbots, content, analytics) would likely fall in lo
 - Exact SME or startup exemptions and grace periods in the final PDP Law and Decree 356 could not be verified because full-text fetches failed.
 - The status of AI Law implementing decrees as of Oct 2026, including the list of high-risk systems, is unconfirmed. A "Decree 142/2026" was mentioned in one search result, but its content is unknown.
 - Company registration steps and costs and standard contract templates were not researched in depth.
+
+## 7. Founder-led enterprise sales in Vietnam (scope addition): winning large Vietnamese companies, pilots and POCs, deal sizes, sales cycles, and scaling to tens or hundreds of billions VND
+
+### Takeaway
+Typical Vietnamese AI project sizes cluster around 1-3 billion VND, so a single enterprise deal could by itself match Luvix's entire 1B VND target. That makes founder-led, relationship-driven enterprise selling the fastest path for an owner with a senior executive network. The caveat is that most Vietnamese enterprises are still experimenting with AI: one survey found 97% still in the pilot or experimentation stage. Deals therefore tend to start as paid or unpaid POCs and need a deliberate POC-to-production conversion plan.
+
+Vietnamese B2B software companies that reached large scale did so by:
+- landing marquee logos in banking, retail and F&B (Base.vn);
+- building very large SME bases (MISA, KiotViet, Sapo, Haravan);
+- or attaching to a large parent and ecosystem (Base.vn was acquired by FPT; FPT.AI sits inside FPT).
+
+Public, sourced data on enterprise sales cycles, procurement steps and POC pricing in Vietnam is very thin. Most of the evidence below is indirect.
+
+### Cited Findings
+- Deal sizes and enterprise AI spending:
+  - According to the Vietnam AI Annual Report 2025 (Institute of Information Technology, VNU Hanoi), as summarized in the press, most AI project sizes among solution providers fall in the 1-3 billion VND range. — [Mekong ASEAN](https://mekongasean.vn/von-dau-tu-vao-doanh-nghiep-ai-viet-nam-tang-8-lan-47205.html); report provenance confirmed by [VJST](https://a.vjst.vn/Images/Tapchi/2026/1A/26-1A-2A-2026.pdf)
+  - Among AI-adopting organizations in the same reporting, 43% had not invested and 30% invested under 50 million VND. This shows a polarized market: many small or zero budgets alongside 1-3B VND projects. Reported in a Vietnamese press summary; exact wording and source attribution should be verified against the original report. — [Mekong ASEAN](https://mekongasean.vn/von-dau-tu-vao-doanh-nghiep-ai-viet-nam-tang-8-lan-47205.html); [Doanh nghiệp Hội nhập](https://doanhnghiephoinhap.vn/dong-von-dau-tu-vao-ai-tai-viet-nam-tang-gap-8-lan-125735.html)
+  - A survey cited at CIO Summit 2026 says 97% of enterprises are still at the experimentation stage with AI. Many Vietnamese firms have invested in AI without meeting expectations. — [VietTimes](https://viettimes.vn/nhieu-doanh-nghiep-viet-dau-tu-vao-ai-nhung-khong-dat-duoc-ky-vong-post180104.html); [Tiền Phong](https://tienphong.vn/doanh-nghiep-viet-dang-dau-tu-ai-nhu-the-nao-post1882083.tpo)
+  - In an EY survey of more than 100 CIOs, about 32.4% of enterprises had IT budgets exceeding 5% of revenue. Press summary; the exact metric definition is unclear. — [Tiền Phong](https://tienphong.vn/doanh-nghiep-viet-dang-dau-tu-ai-nhu-the-nao-post1882083.tpo)
+  - Investment into Vietnamese AI companies rose from about US$10M (2023) to about US$80M (2024). — [Mekong ASEAN](https://mekongasean.vn/von-dau-tu-vao-doanh-nghiep-ai-viet-nam-tang-8-lan-47205.html)
+- Who wins enterprise AI deals today: incumbents and large-group vendors.
+  - FPT reported newly signed AI and Cloud revenue of VND 1,540 billion in 2025 and recognized AI and Cloud revenue of VND 913 billion, up 48.4% year on year. — [FPT Annual Report 2025](https://fpt.com/en/news/fpt-annual-report-2025-ai-becomes-a-core-capability-in-growth-strategy)
+  - FPT.AI reports more than 200 customers in 15 countries and 10,220 AI agents deployed for customer service, sales, internal operations and analytics. Company-reported. — [FPT.AI](https://fpt.ai/?p=20358)
+  - FPT signed a "tens of millions of USD" AI deal with a global materials group in April 2026, delivered on its own platform. — [The Investor](https://theinvestor.vn/fpt-signs-multi-million-dollar-ai-deal-with-global-materials-group-d18866.html)
+  - FPT positions itself as a 30-year digital-transformation partner to Vietnam's banking sector. — [FPT/LinkedIn](https://vn.linkedin.com/in/hung-tran-5bb08031)
+  - VNPT AI has deployed Face ID for many domestic and international banks. Viettel focuses on sovereign AI and models (VDA LLM). — [VietnamNet](https://vietnamnet.vn/en/ai-powers-business-growth-amid-vietnam-s-digital-transformation-2498973.html)
+  - VinBigData (Vingroup) deployed an AI virtual assistant at ACB bank from Oct 2022 and inside Vinhomes, and in 2024 launched ViFi, a generative-AI suite for banking, finance and insurance. This illustrates group-captive first customers plus bank references. — [The Leader](https://theleader.vn/vinbigdata-ra-mat-nen-tang-tri-tue-nhan-tao-da-nhan-thuc-vinbase-d10557.html); [VnBusiness](https://vnbusiness.vn/vinbigdata-ra-mat-vifi-giai-phap-ai-tao-sinh-toan-dien-cho-nganh-tai-chinh-ngan-hang-bao-hiem.html)
+  - Cinnamon AI (Vietnamese-Japanese, Hanoi engineering) had 50 paying large Japanese corporate customers and raised a US$39M Series C in 2020. This is an example of a few large enterprise accounts sustaining an AI company. — [Startup Intros](https://startupintros.com/orgs/cinnamon); [WEF](https://weforum.org/organizations/cinnamon)
+- Scaling trajectories of Vietnamese B2B SaaS:
+  - Base.vn grew from more than 500 SME and corporate customers in 2018 (logos incl. VIB, VPBank, McDonald's, The Coffee House) to about 5,000 and then more than 9,600 customers across 53 industries and all 63 provinces by SaaS Day 2024. FPT later acquired a majority stake, with the price undisclosed. — [Bizhub](https://bizhub.vietnamnews.vn/basevn-raises-13-million-post301612.html); [Thị trường Tài chính Tiền tệ](https://thitruongtaichinhtiente.vn/saas-day-2024-bien-cong-nghe-thanh-chia-khoa-tang-truong-cho-hon-800-000-doanh-nghiep-tai-viet-nam-64286.html); [Báo Pháp luật/DealStreetAsia](https://doanhnhan.baophapluat.vn/deal-street-asia-eddie-thai-rut-von-fpt-chinh-thuc-mua-lai-phan-lon-co-phan-cua-start-up-basevn-40081.html)
+  - Base.vn's current job ads describe B2B SaaS account-executive roles focused on renewal, upsell and cross-sell. This indicates a land-and-expand motion after first sale. — [TopCV](https://www.topcv.vn/viec-lam/customer-development-account-executive-b2b-saas-renewal-upsell-cross-sell/2259466.html)
+  - MISA served more than 214,000 businesses with accounting software by end of 2024, with about 33% market share in Q2 2025 (company-reported). It committed 2,500 billion VND over 5 years to build a "Make in Vietnam" LLM. — [Thương hiệu & Công luận](https://thuonghieucongluan.com.vn/misa-doanh-nghiep-dan-dau-ve-giai-phap-tai-chinh-ke-toan-quan-tri-doanh-nghiep-va-phat-trien-ai-a284789.html)
+  - KiotViet reported about 250% annual growth after its 2014 launch and raised up to US$45M from KKR (2021). — [Tuoi Tre News](https://tuoitrenews.vn/news/business/20210904/vietnams-startup-kiotviet-raises-45-mn-from-global-investment-firm/62929.html)
+- Public sector and SOE procurement:
+  - Government and SOE software purchases go through Vietnam's national e-procurement portal (e-GP, muasamcong) under national bidding rules. Bidders must demonstrate compliance with technical specifications, delivery capacity and certifications. — [BidsFactory tender listing](https://bidsfactory.com/fr/tenders/trang-bi-ban-quyen-phan-mem-ao-hoa-vietnam_egp-f631b35dad50864a)
+  - A secondary report says Decree 180/2025 gives "Make in Vietnam" localized IT products preferences in government tenders and access to financing. Single secondary source; verify. — [1RU](https://www1.ru/en/news/2026/08/19/429077-rossiiskim-it-vendoram-otkryli-vetnam.amp.html)
+
+### Inferences
+- Implication for Luvix: with typical AI projects at 1-3B VND, roughly 2-4 mid-sized enterprise contracts (for example, a 150-300M VND paid POC that converts to a 300-800M VND annual deployment or subscription) could reach 1B VND. That needs far fewer customers than the SME scenarios in Section 5. The trade-off is longer cycles and concentration risk. A barbell strategy fits the founder's profile:
+  - 3-5 enterprise accounts sourced through the founder's network, which generate most of the revenue and the case studies;
+  - a standardized SME product for volume and recurring revenue.
+- A suggested founder-led enterprise playbook, inferred from the evidence above and general enterprise SaaS practice; not Vietnam-sourced:
+  1. Start with warm introductions to C-level contacts the founder knows (CEO, CFO, CDO and CIO peers). In Vietnam's relationship-driven business culture, a trusted senior referrer shortens the path to a decision maker. This cultural point is general knowledge, not a cited source.
+  2. Sell a narrowly scoped, paid POC (4-8 weeks, a fixed fee, for example 50-200M VND) with written success metrics agreed up front and a pre-agreed price for production rollout. This directly addresses the "97% stuck in experimentation" problem.
+  3. Target use cases with measurable ROI where the founder has domain credibility: CFO finance and accounting automation, customer service and contact center, document processing, internal knowledge assistants.
+  4. Prepare for procurement and IT security review early. Have ready a Vietnamese legal entity, VAT e-invoice capability, NDA and DPA templates, PDP Law and Decree 356 compliance documentation, a data-residency option (on-premise or a Vietnamese cloud such as FPT, Viettel or VNPT), and AI Law risk self-classification. Banks and SOEs are likely to require on-premise or local hosting; verify per account.
+  5. Partner with FPT, CMC, Viettel or VNPT or a systems integrator when the buyer requires an approved vendor or tender eligibility, accepting margin sharing.
+  6. After the first deployment, expand within the account (more departments, subsidiaries) and turn each account into a public case study. Base.vn's logo-led growth and renewal, upsell and cross-sell team structure is the local precedent.
+- Enterprise sales cycles in Vietnam plausibly run about 3-9 months for private conglomerates and longer for SOEs and banks with formal tenders. I found no Vietnam-specific source; this is a general enterprise-software prior.
+
+### Gaps
+- No published Vietnam-specific data on enterprise AI sales-cycle length, POC-to-production conversion rates or typical POC fees.
+- No disclosed revenue figures for Base.vn, KiotViet, Haravan or Vietnamese AI startups crossing tens or hundreds of billions VND. MISA and FPT figures are company-reported, and FPT's are group-scale, not startup-scale.
+- Procurement specifics for private Vietnamese conglomerates (vendor registration, approval thresholds, payment terms such as 30-90 day payables or milestone payments) were not found.
+- The original Vietnam AI Annual Report 2025 (IIT, VNU) was not accessed directly. The 1-3B VND and 43%/30% figures come from press summaries.
