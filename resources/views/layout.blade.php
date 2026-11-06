@@ -33,6 +33,7 @@
     </script>
 
     <link rel="icon" href="/favicon.png" type="image/x-icon">
+    <link rel="preload" href="/fonts/ioskeley/IoskeleyMono-Regular.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="/style.css?v={{ time() }}">
 </head>
 
