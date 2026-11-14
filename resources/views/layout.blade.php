@@ -180,7 +180,7 @@
 
         gtag('config', 'G-3Q4R375R24');
     </script>
-    <script defer src="https://p.daudau.cc/pulse.js?id=EJhPbi2Chc4"></script>
+    <script defer src="https://h.daudau.cc/pulse.js?id=M_gAt-xQ5uQ"></script>
 </body>
 
 </html>
